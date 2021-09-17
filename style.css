@@ -1,0 +1,384 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 0;
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
+
+body {
+    border: 1px solid red;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    background-color: #171717;
+    color: white;
+    box-sizing: border-box;
+    font-family: 'DM Sans', sans-serif;
+}
+
+header {
+    border: 1px solid red;
+    width: 100%;
+    height: 700px;
+}
+
+nav {
+    width: 100%;
+    height: 90px;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav h1 {
+    font-size: 2.2rem;
+}
+
+nav ul li {
+    display: inline;
+    padding: 1rem;
+    font-size: 1.3rem;
+    font-weight: 100;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    transition: .6s;
+}
+
+nav ul li a:hover {
+    border-bottom: 4px solid #00DF5E;
+}
+
+.conteudo-header {
+    width: 100%;
+    padding: 5rem;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.conteudo-texto {
+    width: 50%;
+    padding: 1rem;
+}
+
+.conteudo-texto h1 {
+    width: 80%;
+    padding: 1rem 0;
+    font-weight: 400;
+    font-size: 2.3rem;
+}
+
+.conteudo-texto p {
+    font-size: 1.3rem;
+    color: #828282;
+    padding: 1rem 0;
+}
+
+.conteudo-texto button {
+    width: 60%;
+    margin: 1rem 0;
+    padding: 1.2rem;
+    border-radius: 1rem;
+    font-size: 1.4rem;
+    background-color: #00DF5E;
+    color: white;
+    transition: 1s;
+    cursor: pointer;
+}
+
+.conteudo-texto button:hover {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    box-shadow: 0 0 30px 1px rgba(255, 255, 255, 0.267);
+}
+
+#about-me {
+    border: 1px solid red;
+    width: 90%;
+    height: 100vh;
+    padding: 2rem;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.titulo {
+    padding: 1rem;
+    font-size: 2.7em;
+    font-weight: 200;
+}
+
+#about-me p {
+    padding: 1rem;
+    width: 100%;
+    font-size: 1.1em;
+    text-align: center;
+    color: #828282;
+}
+
+
+.buttons-social {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttons-social i {
+    margin: 1.5rem;
+    padding: 1rem;
+    font-size: 2em;
+    border-radius: 100%;
+    background-color: #212121;
+    color: #00DF5E;
+    transition: .6s;
+}
+
+.buttons-social i:hover {
+    background-color: #00DF5E;
+    color: white;
+    box-shadow: 0 0 20px 1px rgba(255, 255, 255, 0.267);
+}
+
+#projects {
+    border: 1px solid red;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.cards-projetos {
+    width: 100%;
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.card {
+    width: 40%;
+    height: auto;
+    padding: 1rem;
+    margin: 1rem;
+    background-color: #212121;
+    cursor: pointer;
+}
+
+
+.foto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card h2 {
+    padding: 1rem 0;
+    font-weight: 300;
+    color: white;
+}
+
+p {
+    font-weight: 100;
+    font-size: 0.8em;
+}
+
+#service {
+    border: 1px solid red;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cards-services {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.cards {
+    width: 400px;
+    height: 290px;
+    margin: 1rem;
+    padding: 0.5rem;
+    border-bottom: 0.4rem solid #00DF5E;
+    cursor: pointer;
+    box-sizing: border-box;
+    background-color: #212121;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.cards i {
+    font-size: 3rem;
+    padding: 2rem;
+    color: #00DF5E;
+}
+
+.cards h3 {
+    width: 60%;
+    padding: 2rem;
+    font-size: 2em;
+    font-weight: 200;
+}
+
+#skils {
+    border: 1px solid red;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.card-skils {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.skils {
+    width: 20%;
+    height: auto;
+    padding: 2.5rem;
+    margin: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #212121;
+    cursor: pointer;
+}
+
+.skils i {
+    color: #00DF5E;
+    font-size: 4rem;
+}
+
+
+@media (max-width: 900px) {
+
+    body {
+        width: 100%;
+        height: auto;
+    }
+
+
+    .conteudo-header {
+        width: 100%;
+        height: auto;
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column-reverse;
+    }
+
+    .conteudo-header img {
+        width: 70%;
+    }
+
+    .conteudo-texto {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .conteudo-texto h1 {
+        width: 80%;
+        text-align: center;
+    }
+
+    .conteudo-texto a {
+        text-align: center;
+        width: 120%;
+    }
+
+    #projects {
+        width: 90%;
+    }
+
+    .cards-projetos {
+        width: 100%;
+        margin: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .card {
+        width: 80%;
+        height: 30%;
+    }
+
+    .cards-services {
+        width: 100%;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .cards {
+        width: 70%;
+        height: 280px;
+        margin: 1rem;
+    }
+
+
+    .cards h3 {
+        width: 70%;
+    }
+
+
+    .card-skils {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .skils {
+        width: 20%;
+        padding: 1rem;
+        margin: 1rem;
+    }
+
+}
