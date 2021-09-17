@@ -27,35 +27,32 @@ header {
     height: auto;
 }
 
-nav {
+.bar-top{
     width: 100%;
-    height: 90px;
-    padding: 2rem;
+    padding: 1rem;
     display: flex;
     align-items: center;
-    align-items: center;
     justify-content: space-between;
+}
+#menu li {
+    display: inline;
+    padding: 1rem;
+}
+
+#menu li a {
+    color: white;
+    font-size: 1.4rem;
+    text-decoration: none;
+    font-weight: 100;
+    transition: .3s;
+}
+
+#menu li a:hover {
+    border-bottom: 4px solid #5faaff;
 }
 
 nav h1 {
     font-size: 2.2rem;
-}
-
-nav ul li {
-    display: inline;
-    padding: 1rem;
-    font-size: 1.3rem;
-    font-weight: 100;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: white;
-    transition: .6s;
-}
-
-nav ul li a:hover {
-    border-bottom: 4px solid #5faaff;
 }
 
 .conteudo-header {
@@ -293,6 +290,91 @@ p {
         height: auto;
     }
 
+
+    #menu {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        width: 90%;
+        height: 0px;
+        margin: 1rem;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        border-radius: 2rem;
+        background: #000000e7;
+        color: rgb(0, 0, 0);
+        transition: 1s;
+        z-index: 1000;
+        list-style: none;
+        visibility: hidden;
+        overflow-y: hidden;
+    }
+
+    #menu li {
+        padding: 1rem;
+        font-weight: 100;
+    }
+
+    #menu a {
+        text-decoration: none;
+        font-size: 1.8em;
+        padding: 1rem 0;
+        margin: 0 1rem;
+        color: rgb(0, 0, 0);
+    }
+
+    #menu li a:hover {
+        padding: 0.1rem;
+        border-bottom: 3px solid rgb(255, 255, 255);
+    }
+
+    #nav.active #menu {
+        height: calc(40vh);
+        visibility: visible;
+        overflow-y: auto;
+    }
+
+    #btn-mobile {
+        display: flex;
+        padding: 0.8rem 1rem;
+        font-size: 1rem;
+        border: none;
+        background: none;
+        cursor: pointer;
+        gap: 0.5rem;
+    }
+
+    #hamburger {
+        border-top: 2px solid white;
+        width: 25px;
+    }
+
+    #hamburger::after,
+    #hamburger::before {
+        content: "";
+        display: block;
+        width: 25px;
+        height: 2px;
+        background: white;
+        margin-top: 5px;
+        transition: 0.6s;
+        position: relative;
+    }
+
+    #nav.active #hamburger {
+        border-top-color: transparent;
+    }
+
+    #nav.active #hamburger::before {
+        transform: rotate(140deg);
+    }
+
+    #nav.active #hamburger::after {
+        transform: rotate(-140deg);
+        top: -7px;
+    }
 
     .conteudo-header {
         width: 100%;

@@ -13,16 +13,24 @@
 <body>
 
     <header>
-        <nav>
+        <div class="bar-top">
             <h1 id="logo">Portfólio</h1>
 
-            <ul>
-                <li><a href="#about-me">Sobre mim</a></li>
-                <li><a href="#projects">Projetos</a></li>
-                <li><a href="#service">Serviços</a></li>
-                <li><a href="#skils">Minhas Skils</a></li>
-            </ul>
-        </nav>
+            <nav id="nav">
+                <button id="btn-mobile" aria-label="Abrir Menu" aria-haspopup="true" aria-controls="menu"
+                    aria-expanded="false">
+                    <span id="hamburger"></span>
+                </button>
+                <ul id="menu" role="menu">
+                    <li><a href="#about-me">Sobre mim</a></li>
+                    <li><a href="#projects">Projetos</a></li>
+                    <li><a href="#service">Serviços</a></li>
+                    <li><a href="#skils">Minhas Skils</a></li>
+                </ul>
+            </nav>
+        </div>
+
+
 
         <div class="conteudo-header">
             <div class="conteudo-texto">
@@ -162,6 +170,27 @@
     <footer>
 
     </footer>
+
+    <!-- Menu para active -->
+    <script>
+        const btnMobile = document.getElementById('btn-mobile');
+
+        function toggleMenu(event) {
+            if (event.type === 'touchstart') event.preventDefault();
+            const nav = document.getElementById('nav');
+            nav.classList.toggle('active');
+            const active = nav.classList.contains('active');
+            event.currentTarget.setAttribute('aria-expanded', active);
+            if (active) {
+                event.currentTarget.setAttribute('aria-label', 'Fechar Menu');
+            } else {
+                event.currentTarget.setAttribute('aria-label', 'Abrir Menu');
+            }
+        }
+
+        btnMobile.addEventListener('click', toggleMenu);
+        btnMobile.addEventListener('touchstart', toggleMenu);
+    </script>
 </body>
 
 </html>
