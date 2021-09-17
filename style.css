@@ -24,7 +24,7 @@ body {
 
 header {
     width: 100%;
-    height: 700px;
+    height: auto;
 }
 
 nav {
@@ -88,7 +88,7 @@ nav ul li a:hover {
 }
 
 .conteudo-texto button {
-    width: 60%;
+    width: 70%;
     margin: 1rem 0;
     padding: 1.2rem;
     border-radius: 1rem;
@@ -102,7 +102,7 @@ nav ul li a:hover {
 .conteudo-texto button:hover {
     background-color: #ffffff;
     color: rgb(0, 0, 0);
-    box-shadow: 0 0 30px 1px rgba(255, 255, 255, 0.267);
+    box-shadow: 0 0 20px 10px #a6cfff46;
 }
 
 #about-me {
@@ -132,6 +132,7 @@ nav ul li a:hover {
 
 
 .buttons-social {
+    padding: 1rem;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -140,7 +141,7 @@ nav ul li a:hover {
 }
 
 .buttons-social i {
-    margin: 1.5rem;
+    margin: 0.5rem;
     padding: 1rem;
     font-size: 2em;
     border-radius: 100%;
@@ -152,11 +153,12 @@ nav ul li a:hover {
 .buttons-social i:hover {
     background-color: #5faaff;
     color: white;
-    box-shadow: 0 0 20px 1px rgba(255, 255, 255, 0.267);
+    box-shadow: 0 0 20px 1px #a6cfff46;
 }
 
 #projects {
     width: 90%;
+    height: 100%;
     margin: auto;
     display: flex;
     align-items: center;
@@ -202,6 +204,7 @@ p {
 
 #service {
     width: 90%;
+    height: 100%;
     margin: auto;
     display: flex;
     align-items: center;
@@ -231,7 +234,6 @@ p {
     align-items: flex-start;
     justify-content: flex-end;
     flex-direction: column;
-
 }
 
 .cards i {
@@ -258,6 +260,8 @@ p {
 
 .card-skils {
     width: 100%;
+    height: auto;
+    padding: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -266,8 +270,7 @@ p {
 
 .skils {
     width: 20%;
-    height: auto;
-    padding: 2.5rem;
+    padding: 3rem;
     margin: 2rem;
     display: flex;
     align-items: center;
@@ -275,6 +278,7 @@ p {
     background-color: #212121;
     cursor: pointer;
 }
+
 
 .skils i {
     color: #5faaff;
@@ -313,8 +317,9 @@ p {
     }
 
     .conteudo-texto h1 {
-        width: 80%;
-        text-align: center;
+        width: 100%;
+        padding: 2rem;
+        text-align: left;
     }
 
     .conteudo-texto a {
