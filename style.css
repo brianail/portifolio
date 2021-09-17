@@ -117,18 +117,17 @@ nav h1 {
 
 .titulo {
     padding: 1rem;
-    font-size: 2.7em;
+    font-size: 2.5em;
     font-weight: 200;
 }
 
 #about-me p {
-    padding: 1rem;
     width: 100%;
+    padding: 1rem;
     font-size: 1.1em;
     text-align: center;
     color: #828282;
 }
-
 
 .buttons-social {
     padding: 1rem;
@@ -157,7 +156,7 @@ nav h1 {
 
 #projects {
     width: 90%;
-    height: 100%;
+    height: 100vh;
     margin: auto;
     display: flex;
     align-items: center;
@@ -203,7 +202,7 @@ p {
 
 #service {
     width: 90%;
-    height: 100%;
+    height: 100vh;
     margin: auto;
     display: flex;
     align-items: center;
@@ -217,6 +216,7 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
     flex-direction: row;
 }
 
@@ -242,7 +242,7 @@ p {
 }
 
 .cards h3 {
-    width: 80%;
+    width: 60%;
     padding: 2rem;
     font-size: 2em;
     font-weight: 200;
@@ -250,6 +250,7 @@ p {
 
 #skils {
     width: 90%;
+    height: 100vh;
     margin: auto;
     display: flex;
     align-items: center;
@@ -268,7 +269,7 @@ p {
 }
 
 .skils {
-    width: 20%;
+    width: 15%;
     padding: 3rem;
     margin: 2rem;
     display: flex;
@@ -396,8 +397,14 @@ footer{
         width: 120%;
     }
 
+    #about-me{
+        width: 100%;
+        height: 100%;
+    }
+
     #projects {
         width: 90%;
+        height: 100%;
     }
 
     .cards-projetos {
@@ -412,6 +419,11 @@ footer{
     .card {
         width: 90%;
         height: 30%;
+    }
+
+    #service{
+        width: 100%;
+        height: 100%;
     }
 
     .cards-services {
@@ -432,7 +444,6 @@ footer{
     .cards h3 {
         width: 90%;
     }
-
 
     .card-skils {
         width: 100%;
