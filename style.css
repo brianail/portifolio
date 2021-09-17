@@ -29,7 +29,8 @@ header {
 
 .bar-top {
     width: 100%;
-    padding: 1rem;
+    padding: 2rem;
+    background-color: #171717;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -58,7 +59,6 @@ nav h1 {
 
 .conteudo-header {
     width: 100%;
-    padding: 5rem;
     margin: auto;
     display: flex;
     flex-direction: row;
@@ -291,7 +291,6 @@ p {
         height: auto;
     }
 
-
     #menu {
         display: flex;
         align-items: flex-start;
@@ -299,13 +298,12 @@ p {
         justify-content: center;
         width: 300px;
         height: 0;
-        right: 0;
         position: absolute;
         top: 0;
         right: 0;
         background: #000000;
         color: rgb(0, 0, 0);
-        transition: 1s;
+        transition: 0.6s;
         list-style: none;
         visibility: hidden;
         overflow-y: hidden;
