@@ -27,13 +27,14 @@ header {
     height: auto;
 }
 
-.bar-top{
+.bar-top {
     width: 100%;
     padding: 1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
+
 #menu li {
     display: inline;
     padding: 1rem;
@@ -293,45 +294,25 @@ p {
 
     #menu {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         flex-direction: column;
         justify-content: center;
-        width: 90%;
-        height: 0px;
-        margin: 1rem;
-        position: absolute;
-        top: 50px;
+        width: 300px;
+        height: 0;
         right: 0;
-        border-radius: 2rem;
-        background: #000000e7;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: #000000;
         color: rgb(0, 0, 0);
         transition: 1s;
-        z-index: 1000;
         list-style: none;
         visibility: hidden;
         overflow-y: hidden;
     }
 
-    #menu li {
-        padding: 1rem;
-        font-weight: 100;
-    }
-
-    #menu a {
-        text-decoration: none;
-        font-size: 1.8em;
-        padding: 1rem 0;
-        margin: 0 1rem;
-        color: rgb(0, 0, 0);
-    }
-
-    #menu li a:hover {
-        padding: 0.1rem;
-        border-bottom: 3px solid rgb(255, 255, 255);
-    }
-
     #nav.active #menu {
-        height: calc(40vh);
+        height: 100%;
         visibility: visible;
         overflow-y: auto;
     }
@@ -349,6 +330,7 @@ p {
     #hamburger {
         border-top: 2px solid white;
         width: 25px;
+        z-index: 1000;
     }
 
     #hamburger::after,
