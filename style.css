@@ -1,9 +1,9 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     border: 0;
     text-decoration: none;
+    box-sizing: border-box;
 }
 
 html {
@@ -29,6 +29,7 @@ header {
 
 .bar-top {
     width: 100%;
+    box-sizing: border-box;
     padding: 2rem;
     background-color: #171717;
     display: flex;
@@ -59,12 +60,13 @@ nav h1 {
 
 .conteudo-header {
     width: 90%;
-    padding: 2rem;
+    height: 80vh;
+    padding: 1rem;
+    box-sizing: border-box;
     margin: auto;
     display: flex;
     flex-direction: row;
     align-items: center;
-    flex-wrap: wrap;
     justify-content: space-between;
 }
 
@@ -74,7 +76,7 @@ nav h1 {
 }
 
 .conteudo-texto h1 {
-    width: 80%;
+    width: 70%;
     padding: 1rem 0;
     font-weight: 400;
     font-size: 2.3rem;
@@ -108,6 +110,7 @@ nav h1 {
     width: 90%;
     height: 100vh;
     padding: 2rem;
+    box-sizing: border-box;
     margin: auto;
     display: flex;
     align-items: center;
@@ -296,7 +299,22 @@ footer {
 
     body {
         width: 100%;
-        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    header {
+        width: 100%;
+    }
+
+    main {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
     }
 
     #menu {
@@ -368,6 +386,7 @@ footer {
         width: 100%;
         height: auto;
         padding: 1rem;
+        margin: auto;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -375,11 +394,12 @@ footer {
     }
 
     .conteudo-header img {
-        width: 70%;
+        width: 90%;
     }
 
     .conteudo-texto {
         width: 100%;
+        height: auto;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -403,7 +423,7 @@ footer {
     }
 
     #projects {
-        width: 90%;
+        width: 100%;
         height: 100%;
     }
 
@@ -436,7 +456,7 @@ footer {
     }
 
     .cards {
-        width: 80%;
+        width: 90%;
         height: 270px;
     }
 
