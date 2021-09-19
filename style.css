@@ -337,7 +337,6 @@ footer {
 
     #nav.active #menu {
         width: 300px;
-        transition: 3s;
         visibility: visible;
         overflow-y: auto;
     }
