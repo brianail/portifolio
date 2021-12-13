@@ -165,7 +165,7 @@ nav h1 {
     padding: 1rem;
     font-size: 2em;
     border-radius: 100%;
-    background-color: #212121;
+    background-color: #1b2435;
     color: #C50047;
     transition: .6s;
 }
@@ -297,7 +297,7 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #212121;
+    background-color: #1b2435;
     cursor: pointer;
 }
 
