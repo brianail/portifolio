@@ -16,7 +16,7 @@ body {
     width: 100%;
     height: auto;
     margin: auto;
-    background-color: #171717;
+    background-color: #111928;
     color: white;
     box-sizing: border-box;
     font-family: 'DM Sans', sans-serif;
@@ -28,13 +28,19 @@ header {
 }
 
 .bar-top {
-    width: 100%;
-    box-sizing: border-box;
-    padding: 2rem;
-    background-color: #171717;
+    position: fixed;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
+    height: 80px;
+    border: 1px solid red;
+    box-sizing: border-box;
+    padding: 2rem; 
+    backdrop-filter: blur(21px) saturate(80%);
+    -webkit-backdrop-filter: blur(21px) saturate(80%);
+    background-color: #111928cc;
+    border: 1px solid rgba(255, 255, 255, 0.048);
 }
 
 #menu li {
@@ -53,11 +59,11 @@ header {
 #menu a::after {
     content: '';
     width: 0;
-    height: 4px;
+    height: 2px;
     position: absolute;
     left: 0;
     bottom: -5px;
-    background-color: #5faaff;
+    background-color: #c50048be;
     transition: all 300ms ease-in-out;
     transform: scale(0, 0);
 }
@@ -107,7 +113,7 @@ nav h1 {
     padding: 1.2rem;
     border-radius: 1rem;
     font-size: 1.4rem;
-    background-color: #5faaff;
+    background-color: #C50047;
     color: white;
     transition: 1s;
     cursor: pointer;
@@ -160,12 +166,12 @@ nav h1 {
     font-size: 2em;
     border-radius: 100%;
     background-color: #212121;
-    color: #5faaff;
+    color: #C50047;
     transition: .6s;
 }
 
 .buttons-social i:hover {
-    background-color: #5faaff;
+    background-color: #C50047;
     color: white;
     box-shadow: 0 0 20px 1px #a6cfff46;
 }
@@ -194,7 +200,7 @@ nav h1 {
     height: auto;
     padding: 1rem;
     margin: 1rem;
-    background-color: #212121;
+    background-color: #1b2435;
     cursor: pointer;
 }
 
@@ -207,8 +213,8 @@ nav h1 {
 
 .card h2 {
     padding: 1rem 0;
-    font-weight: 300;
-    color: white;
+    font-weight: 500;
+    color: #C50047;
 }
 
 p {
@@ -241,10 +247,10 @@ p {
     height: 290px;
     margin: 1rem;
     padding: 0.5rem;
-    border-bottom: 0.4rem solid #5faaff;
+    border-bottom: 0.4rem solid #C50047;
     cursor: pointer;
     box-sizing: border-box;
-    background-color: #212121;
+    background-color: #1b2435;
     display: flex;
     align-items: flex-start;
     justify-content: flex-end;
@@ -254,7 +260,7 @@ p {
 .cards i {
     font-size: 3rem;
     padding: 2rem;
-    color: #5faaff;
+    color: #C50047;
 }
 
 .cards h3 {
@@ -297,7 +303,7 @@ p {
 
 
 .skils i {
-    color: #5faaff;
+    color: #C50047;
     font-size: 4rem;
 }
 
