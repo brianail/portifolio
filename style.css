@@ -41,6 +41,7 @@ header {
     -webkit-backdrop-filter: blur(21px) saturate(80%);
     background-color: #111928cc;
     border: 1px solid rgba(255, 255, 255, 0.048);
+    z-index: 1000;
 }
 
 #menu li {
@@ -143,7 +144,7 @@ nav h1 {
     font-weight: 200;
 }
 
-#about-me p {
+.paragrafo-about-me {
     width: 100%;
     padding: 1rem;
     font-size: 1.1em;

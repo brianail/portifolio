@@ -8,13 +8,20 @@
     <link rel="stylesheet" href="style.css">
     <title>Home - Brian Ail</title>
     <script src="https://kit.fontawesome.com/4c65401d66.js" crossorigin="anonymous"></script>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <script>
+        ScrollReveal({ reset: true });
+    </script>
+
 </head>
 
 <body>
 
     <header>
         <div class="bar-top">
-            <img src="/img/logo.svg" alt="" width="200px">
+            <img src="/img/logo.svg" alt="" width="200px" class="imagem-header">
 
             <nav id="nav">
                 <button id="btn-mobile" aria-label="Abrir Menu" aria-haspopup="true" aria-controls="menu"
@@ -32,8 +39,7 @@
 
         <div class="conteudo-header">
             <div class="conteudo-texto">
-                <h1>Olá, eu sou o Brian.
-                    <br>
+                <h1 class= "principal-titulo">Olá, eu sou o Brian.
                     Gostaria muito de poder ajudar você :)</h1>
                 <p>IOS Developer</p>
 
@@ -48,14 +54,17 @@
         <section id="about-me">
             <h1 class="titulo"> Sobre Mim</h1>
 
-            <p>
+            <p class="paragrafo-about-me">
                 Gostaria de agradecer a você que está lendo e apreciando meu trabalho, quero que deixe qualquer sugestão
                 no meu e-mail :)
                 <br><br>
                 Acho que boa parte de ter escolhido o ramo da tecnologia, foi pra mostrar o quão capaz eu sou...
-                Minha paixão começou com a apple, assistindo uma "WWDC", uma apresentação do IOS 8 que me deixou tão entusiasmado que logo comecei a procurar tudo sobre a apple
-                é ali alimentei uma paixão de verdade pelo ecosistema da maçã, uso o IOS e MAC OS, na minha rotina o tempo todo e comecei meus estudos para me ternar um IOS Developer.
-                Acreditei em mim mesmo e estou alimentando meu sonho, quero torna-lo realidade e poder colocar minhas ideias em um app, e colocar ele a disposição de todos na App Store.
+                Minha paixão começou com a apple, assistindo uma "WWDC", uma apresentação do IOS 8 que me deixou tão
+                entusiasmado que logo comecei a procurar tudo sobre a apple
+                é ali alimentei uma paixão de verdade pelo ecosistema da maçã, uso o IOS e MAC OS, na minha rotina o
+                tempo todo e comecei meus estudos para me ternar um IOS Developer.
+                Acreditei em mim mesmo e estou alimentando meu sonho, quero torna-lo realidade e poder colocar minhas
+                ideias em um app, e colocar ele a disposição de todos na App Store.
             </p>
 
             <div class="buttons-social">
@@ -77,6 +86,7 @@
             <h1 class="titulo">Meus Projetos </h1>
 
             <div class="cards-projetos">
+                
                 <div class="card">
                     <div class="foto">
                         <img src="/img/Arquivo 3.png" width="100%">
@@ -170,27 +180,8 @@
         </section>
     </main>
 
-    <!-- Menu para active -->
-    <script>
-        const btnMobile = document.getElementById('btn-mobile');
-
-        function toggleMenu(event) {
-            if (event.type === 'touchstart') event.preventDefault();
-            const nav = document.getElementById('nav');
-            nav.classList.toggle('active');
-            const active = nav.classList.contains('active');
-            event.currentTarget.setAttribute('aria-expanded', active);
-            if (active) {
-                event.currentTarget.setAttribute('aria-label', 'Fechar Menu');
-            } else {
-                event.currentTarget.setAttribute('aria-label', 'Abrir Menu');
-            }
-        }
-
-        btnMobile.addEventListener('click', toggleMenu);
-        btnMobile.addEventListener('touchstart', toggleMenu);
-    </script>
-
+    <script src="/index.js"></script>
+   
 </body>
 
 </html>
