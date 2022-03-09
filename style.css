@@ -23,7 +23,7 @@ body {
 }
 
 header{
-    width: 90%;
+    width: 100%;
     margin: auto;
     height: 100vh;
     padding-bottom: 2rem;
@@ -450,7 +450,6 @@ footer {
         width: 90%;
         height: 270px;
     }
-
 
     .cards h3 {
         width: 80%;
