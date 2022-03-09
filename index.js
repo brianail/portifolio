@@ -25,7 +25,7 @@ function typeWrite(elemento) {
 
         setTimeout(function () {
             elemento.innerHTML += letra;
-        }, 90 * i)
+        }, 300 * i)
 
     });
 }
@@ -42,31 +42,31 @@ ScrollReveal().reveal('.imagem-header', {
 ScrollReveal().reveal('.conteudo-texto', {
     distance: '150%',
     delay: 700,
-    origin: 'left', 
+    origin: 'left',
 });
 
 ScrollReveal().reveal('section', {
     distance: '150%',
     delay: 500,
-    origin: 'right', 
+    origin: 'right',
 });
 
 ScrollReveal().reveal('.paragrafo-about-me', {
     distance: '150%',
     delay: 800,
-    origin: 'left', 
+    origin: 'left',
 });
 
 ScrollReveal().reveal('.titulo', {
     distance: '300%',
     delay: 750,
-    origin: 'top', 
+    origin: 'top',
 });
 
 ScrollReveal().reveal('.buttons-social', {
     distance: '300%',
     delay: 900,
-    origin: 'left', 
+    origin: 'left',
 });
 
 ScrollReveal().reveal('.card', {
@@ -90,5 +90,3 @@ ScrollReveal().reveal('.card-skils', {
     duration: 200,
     easing: 'steps(5)'
 });
-
-

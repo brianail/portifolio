@@ -15,7 +15,7 @@ html {
 body {
     width: 100%;
     height: auto;
-    margin: auto;
+    box-sizing: border-box;
     background-color: #111928;
     color: white;
     box-sizing: border-box;
@@ -320,6 +320,7 @@ footer {
 
     body {
         width: 100%;
+        box-sizing: border-box;
         display: flex;
         align-items: center;
         justify-content: center;
