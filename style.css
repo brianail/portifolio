@@ -466,11 +466,9 @@ footer {
         justify-content:space-around;
         flex-direction: row;
         flex-wrap: wrap;
-        border: 1px solid red;
     }
 
     .skils {
-        border: 1px solid red;
         width: 30%;
         padding: 1rem;
         margin: 0.5rem;

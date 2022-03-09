@@ -75,20 +75,16 @@ ScrollReveal().reveal('.card', {
     distance: '100%',
     delay: 1000,
     origin: 'bottom',
-    duration: 700
 });
 
 ScrollReveal().reveal('.cards', {
     distance: '100%',
     delay: 1000,
     origin: 'left',
-    duration: 500
 });
 
 ScrollReveal().reveal('.card-skils', {
     distance: '100%',
-    delay: 1500,
-    origin: 'bottom',
-    duration: 200,
-    easing: 'steps(5)'
+    delay: 1200,
+    origin: 'left',
 });
