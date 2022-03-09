@@ -25,66 +25,68 @@ function typeWrite(elemento) {
 
         setTimeout(function () {
             elemento.innerHTML += letra;
-        }, 300 * i)
+        }, 100 * i)
 
     });
 }
+
 const titulo = document.querySelector('.principal-titulo');
 typeWrite(titulo);
 
+
+
 ScrollReveal().reveal('.imagem-header', {
-    distance: '150%',
     delay: 100,
     origin: 'right',
     reset: false
 });
 
 ScrollReveal().reveal('.conteudo-texto', {
-    distance: '150%',
+    distance: '100%',
     delay: 700,
     origin: 'left',
 });
 
 ScrollReveal().reveal('section', {
-    distance: '150%',
+    distance: '100%',
     delay: 500,
-    origin: 'right',
+    origin: 'left',
 });
 
 ScrollReveal().reveal('.paragrafo-about-me', {
-    distance: '150%',
+    distance: '100%',
     delay: 800,
     origin: 'left',
 });
 
 ScrollReveal().reveal('.titulo', {
-    distance: '300%',
+    distance: '100%',
     delay: 750,
     origin: 'top',
 });
 
 ScrollReveal().reveal('.buttons-social', {
-    distance: '300%',
+    distance: '100%',
     delay: 900,
     origin: 'left',
 });
 
 ScrollReveal().reveal('.card', {
-    distance: '140%',
+    distance: '100%',
     delay: 1000,
     origin: 'bottom',
     duration: 700
 });
 
 ScrollReveal().reveal('.cards', {
-    distance: '300%',
+    distance: '100%',
     delay: 1000,
     origin: 'left',
     duration: 500
 });
 
 ScrollReveal().reveal('.card-skils', {
-    distance: '30%',
+    distance: '100%',
     delay: 1500,
     origin: 'bottom',
     duration: 200,

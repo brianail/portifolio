@@ -15,26 +15,37 @@ html {
 body {
     width: 100%;
     height: auto;
+    margin: auto;
     box-sizing: border-box;
     background-color: #111928;
     color: white;
-    box-sizing: border-box;
     font-family: 'DM Sans', sans-serif;
 }
 
-header {
-    width: 100%;
-    height: auto;
+header{
+    width: 90%;
+    margin: auto;
+    height: 100vh;
+    padding-bottom: 2rem;
 }
 
-.bar-top {
+section{
+    width: 90%;
+    height: 100vh;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header-bar{
+    width: 90%;
+    height: 80px;
     position: fixed;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
-    height: 80px;
-    border: 1px solid red;
     box-sizing: border-box;
     padding: 0.5rem; 
     backdrop-filter: blur(21px) saturate(80%);
@@ -80,9 +91,9 @@ nav h1 {
 
 .conteudo-header {
     width: 90%;
-    height: 80vh;
+    height: 90vh;
+    margin: auto;
     padding-top: 10rem;
-    box-sizing: border-box;
     margin: auto;
     display: flex;
     flex-direction: row;
@@ -126,18 +137,6 @@ nav h1 {
     box-shadow: 0 0 20px 10px #a6cfff46;
 }
 
-#about-me {
-    width: 90%;
-    height: 100vh;
-    padding: 2rem;
-    box-sizing: border-box;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-}
-
 .titulo {
     padding: 1rem;
     font-size: 2.5em;
@@ -145,9 +144,9 @@ nav h1 {
 }
 
 .paragrafo-about-me {
-    width: 100%;
+    width: 80%;
     padding: 1rem;
-    font-size: 1.1em;
+    font-size: 1.2em;
     text-align: center;
     color: #828282;
 }
@@ -177,18 +176,8 @@ nav h1 {
     box-shadow: 0 0 20px 1px #a6cfff46;
 }
 
-#projects {
-    width: 90%;
-    height: 100vh;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-
 .cards-projetos {
-    width: 100%;
+    width: 90%;
     margin: 1rem;
     display: flex;
     align-items: center;
@@ -204,7 +193,6 @@ nav h1 {
     background-color: #1b2435;
     cursor: pointer;
 }
-
 
 .foto {
     display: flex;
@@ -223,19 +211,9 @@ p {
     font-size: 0.8em;
 }
 
-#service {
-    width: 90%;
-    height: 100vh;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-}
-
 .cards-services {
     width: 90%;
-    margin: auto;
+    margin: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -244,18 +222,18 @@ p {
 }
 
 .cards {
-    width: 400px;
-    height: 290px;
+    width: 35%;
+    height: 45%;
     margin: 1rem;
     padding: 0.5rem;
-    border-bottom: 0.3rem solid #C50047;
-    cursor: pointer;
-    box-sizing: border-box;
-    background-color: #1b2435;
     display: flex;
     align-items: flex-start;
     justify-content: flex-end;
     flex-direction: column;
+    border-bottom: 0.3rem solid #C50047;
+    cursor: pointer;
+    box-sizing: border-box;
+    background-color: #1b2435;
 }
 
 .cards i {
@@ -271,20 +249,9 @@ p {
     font-weight: 200;
 }
 
-#skils {
-    width: 90%;
-    height: 100vh;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-
 .card-skils {
     width: 100%;
-    height: auto;
-    padding: 1rem;
+    padding: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -292,7 +259,7 @@ p {
 }
 
 .skils {
-    width: 15%;
+    width: 20%;
     padding: 3rem;
     margin: 2rem;
     border-radius: 1rem;
@@ -302,7 +269,6 @@ p {
     background-color: #1b2435;
     cursor: pointer;
 }
-
 
 .skils i {
     color: #C50047;
@@ -321,14 +287,16 @@ footer {
     body {
         width: 100%;
         box-sizing: border-box;
-        display: flex;
+        overflow-x: hidden;
         align-items: center;
         justify-content: center;
         flex-direction: column;
     }
 
-    header {
+    header{
         width: 100%;
+        overflow-x: hidden;
+        height: 100%;
     }
 
     main {
@@ -337,6 +305,21 @@ footer {
         align-items: center;
         justify-content: center;
         flex-direction: column;
+    }
+
+    section{
+        width: 90%;
+        height: 100%;
+        margin: auto;
+        display: flex;
+        padding: 2rem 0;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .header-bar{
+        width: 100%;
     }
 
     #menu {
@@ -440,16 +423,6 @@ footer {
         width: 120%;
     }
 
-    #about-me {
-        width: 100%;
-        height: 100%;
-    }
-
-    #projects {
-        width: 100%;
-        height: 100%;
-    }
-
     .cards-projetos {
         width: 100%;
         margin: 1rem;
@@ -462,11 +435,6 @@ footer {
     .card {
         width: 90%;
         height: 30%;
-    }
-
-    #service {
-        width: 100%;
-        height: 100%;
     }
 
     .cards-services {
