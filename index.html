@@ -10,8 +10,11 @@
 
     <title>Home - Brian Ail</title>
 
+
     <script src="https://kit.fontawesome.com/4c65401d66.js" crossorigin="anonymous"></script>
+    <!--  
     <script src="https://unpkg.com/scrollreveal"></script>
+-->
     <script>
         ScrollReveal({
             reset: true
@@ -24,7 +27,7 @@
 
     <header>
         <div class="header-bar">
-            <img src="/img/logo.svg" alt="" width="200px" class="imagem-header">
+            <img src="/assets/logo.svg" alt="" width="200px" class="imagem-header">
 
             <nav id="nav">
                 <button id="btn-mobile" aria-label="Abrir Menu" aria-haspopup="true" aria-controls="menu"
@@ -49,36 +52,39 @@
                 <a href="mailto:brianaildasilva90@gmail.com"><button>Entre em contato</button></a>
             </div>
 
-            <img src="/img/undraw_real_time_sync_re_nky7.svg" width="45%">
+            <img src="/assets/undraw_programming_re_kg9v.svg" width="45%">
         </div>
     </header>
 
     <main>
         <section id="about-me">
+
             <h1 class="titulo"> Sobre Mim</h1>
 
-            <p class="paragrafo-about-me">
-                Gostaria de agradecer a você que está lendo e apreciando meu trabalho, quero que deixe qualquer sugestão
-                no meu e-mail :)
-                <br><br>
-                Acho que boa parte de ter escolhido o ramo da tecnologia, foi pra mostrar o quão capaz eu sou...
-                Minha paixão começou com a apple, assistindo uma "WWDC", uma apresentação do IOS 8 que me deixou tão
-                entusiasmado que logo comecei a procurar tudo sobre a apple
-                é ali alimentei uma paixão de verdade pelo ecosistema da maçã, uso o IOS e MAC OS, na minha rotina o
-                tempo todo e comecei meus estudos para me ternar um IOS Developer.
-                Acreditei em mim mesmo e estou alimentando meu sonho, quero torna-lo realidade e poder colocar minhas
-                ideias em um app, e colocar ele a disposição de todos na App Store.
-            </p>
+            <div class="info-me">
 
-            <div class="buttons-social">
+                <div class="informacoes-text">
+                    <p class="paragrafo-about-me">
+                        Gostaria de agradecer a você que está lendo e apreciando meu trabalho, quero que deixe qualquer
+                        sugestão
+                        no meu e-mail :)
+                        <br><br>
+                        Acho que boa parte de ter escolhido o ramo da tecnologia, foi pra mostrar o quão capaz eu sou...
+                        Minha paixão começou com a apple, assistindo uma "WWDC", uma apresentação do IOS 8 que me deixou
+                        tão
+                        entusiasmado que logo comecei a procurar tudo sobre a apple
+                        é ali alimentei uma paixão de verdade pelo ecosistema da maçã, uso o IOS e MAC OS, na minha
+                        rotina o
+                        tempo todo e comecei meus estudos para me ternar um IOS Developer.
+                        Acreditei em mim mesmo e estou alimentando meu sonho, quero torna-lo realidade e poder colocar
+                        minhas
+                        ideias em um app, e colocar ele a disposição de todos na App Store.
+                    </p>
+                    <a href="/assets/Brian Ail.pdf" download="CV-Brian_Ail" class="download"> Currículo</a>
+                </div>
 
-                <a href="https://www.instagram.com/brian_ail/"><i class="fab fa-instagram"></i></a>
+                <img src="/assets/undraw_message_sent_re_q2kl.svg" alt="" class="img-perfil">
 
-                <a href="https://github.com/brianail"><i class="fab fa-github"></i></a>
-
-                <a href="https://www.linkedin.com/in/brian-ail-b2748b168/"><i class="fab fa-linkedin-in"></i></a>
-
-                <a href="tel:55 5198417-9767"><i class="fas fa-phone-alt"></i></a>
 
             </div>
 
@@ -92,7 +98,7 @@
 
                 <div class="card">
                     <div class="foto">
-                        <img src="/img/Arquivo 3.png" width="100%">
+                        <img src="/assets/Arquivo 3.png" width="100%">
                     </div>
 
                     <a href="https://loopstudio-home.netlify.app">
@@ -103,7 +109,7 @@
 
                 <div class="card">
                     <div class="foto">
-                        <img src="/img/Arquivo 2.png" width="100%">
+                        <img src="/assets/Arquivo 2.png" width="100%">
                     </div>
 
                     <a href="https://home-fylo.netlify.app">
@@ -114,7 +120,7 @@
 
                 <div class="card">
                     <div class="foto">
-                        <img src="/img/arquivo 10.png" width="100%">
+                        <img src="/assets/arquivo 10.png" width="100%">
                     </div>
 
                     <a href="https://easy-bank-home.netlify.app">
@@ -182,6 +188,36 @@
 
         </section>
     </main>
+
+    <footer>
+        <div>
+            <img src="/assets/logo.svg" alt="" width="200px" class="imagem-header">
+        </div>
+
+        <div class="container">
+            <h1 class="footer-title">Contato</h1>
+            <form action="" class="form-contact" method="POST" tabindex="1">
+                <input type="text" class="form-contact-input" name="nome" placeholder="Nome" required />
+                <input type="email" class="form-contact-input" name="email" placeholder="Email" required />
+                <textarea class="form-contact-textarea" name="conteudo" placeholder="Deixe uma mensagem"
+                    required></textarea>
+                <button type="submit" class="form-contact-button">Enviar</button>
+            </form>
+        </div>
+
+        <div class="buttons-social">
+
+            <a href="https://www.instagram.com/brian_ail/"><i class="fab fa-instagram"></i></a>
+
+            <a href="https://github.com/brianail"><i class="fab fa-github"></i></a>
+
+            <a href="https://www.linkedin.com/in/brian-ail-b2748b168/"><i class="fab fa-linkedin-in"></i></a>
+
+            <a href="tel:55 5198417-9767"><i class="fas fa-phone-alt"></i></a>
+
+        </div>
+
+    </footer>
 
     <script src="/index.js"></script>
 

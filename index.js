@@ -34,7 +34,6 @@ const titulo = document.querySelector('.principal-titulo');
 typeWrite(titulo);
 
 
-
 ScrollReveal().reveal('.imagem-header', {
     delay: 100,
     origin: 'right',

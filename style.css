@@ -22,14 +22,14 @@ body {
     font-family: 'DM Sans', sans-serif;
 }
 
-header{
+header {
     width: 100%;
     margin: auto;
     height: 100vh;
     padding-bottom: 2rem;
 }
 
-section{
+section {
     width: 90%;
     height: 100vh;
     margin: auto;
@@ -39,7 +39,7 @@ section{
     justify-content: center;
 }
 
-.header-bar{
+.header-bar {
     width: 100%;
     height: 80px;
     position: fixed;
@@ -47,7 +47,7 @@ section{
     align-items: center;
     justify-content: space-between;
     box-sizing: border-box;
-    padding: 0.5rem; 
+    padding: 0.5rem;
     backdrop-filter: blur(21px) saturate(80%);
     -webkit-backdrop-filter: blur(21px) saturate(80%);
     background-color: #111928cc;
@@ -143,37 +143,48 @@ nav h1 {
     font-weight: 200;
 }
 
+.info-me {
+    margin: 1rem 0;
+    padding: 3rem;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-around;
+    border-radius: 2rem;
+}
+
+.img-perfil {
+    margin: 1.5rem 0;
+    width: 25%;
+}
+
+.informacoes-text {
+    width: 100%;
+    margin: 0 6rem ;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
 .paragrafo-about-me {
     width: 80%;
-    padding: 1rem;
+    padding: 0.5rem 0; 
     font-size: 1.2em;
-    text-align: center;
+    text-align: left;
     color: #828282;
 }
 
-.buttons-social {
+.download {
+    width: 50%;
     padding: 1rem;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-}
-
-.buttons-social i {
-    margin: 0.5rem;
-    padding: 1rem;
-    font-size: 2em;
-    border-radius: 100%;
-    background-color: #1b2435;
-    color: #C50047;
-    transition: .6s;
-}
-
-.buttons-social i:hover {
-    background-color: #C50047;
+    margin: 2rem 0;
     color: white;
-    box-shadow: 0 0 20px 1px #a6cfff46;
+    text-align: center;
+    background-color: #C50047;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-size: 1.1rem;
 }
 
 .cards-projetos {
@@ -275,12 +286,112 @@ p {
     font-size: 4rem;
 }
 
-footer {
-    width: 100%;
-    height: 40vh;
-    background-color: #212121;
+.buttons-social {
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 
+.buttons-social i {
+    margin: 0.5rem;
+    padding: 1rem;
+    font-size: 2em;
+    border-radius: 100%;
+    background-color: #1b2435;
+    color: #C50047;
+    transition: .6s;
+}
+
+.buttons-social i:hover {
+    background-color: #C50047;
+    color: white;
+    box-shadow: 0 0 20px 1px #a6cfff46;
+}
+
+footer {
+    width: 100%;
+    padding: 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #111620;
+    border: 1px solid red;
+}
+
+.container {
+    width: 30%;
+    margin: 0 auto;
+  }
+
+  .footer-title{
+      margin: 1rem 0;
+      font-weight: 300;
+  }
+  
+  .form-contact {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: "Arial", Times, serif;
+  }
+  
+  .form-contact-input {
+    width: 100%;
+    color: #292929;
+    font-size: 18px;
+    background-color: #E9E9E9;
+    border: 1px solid #E9E9E9;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    height: 40px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    text-indent: 20px;
+  }
+  
+  .form-contact-textarea {
+    width: 100%;
+    color: #292929;
+    font-size: 18px;
+    background-color: #E9E9E9;
+    border: 1px solid #E9E9E9;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    height: 200px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    text-indent: 20px;
+    padding-top: 16px;
+    padding-left: 0;
+    padding-right: 0;
+    font-family: "Arial", Times, serif;
+  }
+  
+  .form-contact-button {
+    width: 100%;
+    font-size: 18px;
+    border-radius: 4px;
+    color: #fff;
+    height: 40px;
+    opacity: .8;
+    margin-bottom: 20px;
+    cursor: pointer;
+    background:#C50047;
+    display: block;
+    border: none;
+    border-bottom: 1px solid #500707;
+    border-right: 1px solid #500707;
+    transition: 1s;
+  }
 
 @media (max-width: 900px) {
 
@@ -293,7 +404,7 @@ footer {
         flex-direction: column;
     }
 
-    header{
+    header {
         width: 100%;
         overflow-x: hidden;
         height: 100%;
@@ -307,7 +418,7 @@ footer {
         flex-direction: column;
     }
 
-    section{
+    section {
         width: 90%;
         height: 100%;
         margin: auto;
@@ -318,7 +429,7 @@ footer {
         justify-content: center;
     }
 
-    .header-bar{
+    .header-bar {
         width: 100%;
     }
 
@@ -338,7 +449,7 @@ footer {
         list-style: none;
         visibility: hidden;
         overflow-y: hidden;
-  
+
     }
 
     #nav.active #menu {
@@ -423,6 +534,36 @@ footer {
         width: 120%;
     }
 
+    .info-me {
+        margin: 1rem 0;
+        padding: 3rem;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 2rem;
+    }
+    
+    .informacoes-text {
+        width: 100%;
+        margin: 0 6rem ;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+    
+    .img-perfil {
+        width: 30%;
+    }
+    .paragrafo-about-me {
+        width: 100%;
+        padding: 0.5rem 0; 
+        font-size: 1.2em;
+        text-align: left;
+        color: #828282;
+    }
+
     .cards-projetos {
         width: 100%;
         margin: 1rem;
@@ -462,7 +603,7 @@ footer {
         padding: 2rem 0;
         display: flex;
         align-items: center;
-        justify-content:space-around;
+        justify-content: space-around;
         flex-direction: row;
         flex-wrap: wrap;
     }
