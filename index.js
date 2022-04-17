@@ -1,3 +1,5 @@
+
+// Menu Hamburguer
 const btnMobile = document.getElementById('btn-mobile');
 
 function toggleMenu(event) {
@@ -17,7 +19,7 @@ btnMobile.addEventListener('click', toggleMenu);
 btnMobile.addEventListener('touchstart', toggleMenu);
 
 
-
+// Efeito maquina de escrever
 function typeWrite(elemento) {
     const textoArray = elemento.innerHTML.split('');
     elemento.innerHTML = ' ';
@@ -33,6 +35,8 @@ function typeWrite(elemento) {
 const titulo = document.querySelector('.principal-titulo');
 typeWrite(titulo);
 
+
+// Scrollreveal
 
 ScrollReveal().reveal('.imagem-header', {
     delay: 100,
@@ -89,19 +93,41 @@ ScrollReveal().reveal('.buttons-social', {
 });
 
 ScrollReveal().reveal('.card', {
-    distance: '100%',
+    distance: '20%',
     delay: 1000,
-    origin: 'bottom',
+    origin: 'top',
+    interval: 400
 });
 
 ScrollReveal().reveal('.cards', {
-    distance: '100%',
+    distance: '20%',
     delay: 1000,
     origin: 'left',
+    interval: 400
 });
 
-ScrollReveal().reveal('.card-skils', {
-    distance: '100%',
-    delay: 1200,
-    origin: 'left',
+ScrollReveal().reveal('.skils', {
+    distance: '20%',
+    delay: 800,
+    origin: 'bottom',
+    interval: 400
 });
+
+
+// Codigo para enviar os forms para o Netify
+document
+  .querySelector("form")
+  .addEventListener("submit", handleSubmit);
+
+const handleSubmit = (e) => {
+  e.preventDefault();
+  let myForm = document.getElementById("pizzaOrder");
+  let formData = new FormData(myForm);
+  fetch("/", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams(formData).toString(),
+  })
+    .then(() => console.log("Form successfully submitted"))
+    .catch((error) => alert(error));
+};

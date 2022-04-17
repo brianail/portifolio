@@ -17,7 +17,7 @@ body {
     height: auto;
     margin: auto;
     box-sizing: border-box;
-    background-color: #111928;
+    background-color:#111620;
     color: white;
     font-family: 'DM Sans', sans-serif;
 }
@@ -157,7 +157,7 @@ nav h1 {
 
 .informacoes-text {
     width: 100%;
-    margin: 0 6rem ;
+    margin: 0 6rem;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
@@ -166,7 +166,7 @@ nav h1 {
 
 .paragrafo-about-me {
     width: 100%;
-    padding: 0.5rem 0; 
+    padding: 0.5rem 0;
     font-size: 1.2em;
     text-align: left;
     color: #828282;
@@ -315,28 +315,27 @@ footer {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #111620;
 }
 
 .container {
     width: 30%;
     margin: 0 auto;
-  }
+}
 
-  .footer-title{
-      margin: 1rem 0;
-      font-weight: 300;
-  }
-  
-  .form-contact {
+.footer-title {
+    margin: 1rem 0;
+    font-weight: 300;
+}
+
+.form-contact {
     width: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
     font-family: "Arial", Times, serif;
-  }
-  
-  .form-contact-input {
+}
+
+.form-contact-input {
     width: 100%;
     color: #292929;
     font-size: 18px;
@@ -350,9 +349,9 @@ footer {
     border-bottom: 1px solid #ccc;
     border-left: 1px solid #ccc;
     text-indent: 20px;
-  }
-  
-  .form-contact-textarea {
+}
+
+.form-contact-textarea {
     width: 100%;
     color: #292929;
     font-size: 18px;
@@ -370,9 +369,9 @@ footer {
     padding-left: 0;
     padding-right: 0;
     font-family: "Arial", Times, serif;
-  }
-  
-  .form-contact-button {
+}
+
+.form-contact-button {
     width: 100%;
     font-size: 18px;
     border-radius: 4px;
@@ -381,13 +380,13 @@ footer {
     opacity: .8;
     margin-bottom: 20px;
     cursor: pointer;
-    background:#C50047;
+    background: #C50047;
     display: block;
     border: none;
     border-bottom: 1px solid #500707;
     border-right: 1px solid #500707;
     transition: 1s;
-  }
+}
 
 @media (max-width: 900px) {
 
@@ -429,6 +428,7 @@ footer {
         width: 100%;
     }
 
+    /* Menu Hamburguer*/
     #menu {
         display: flex;
         align-items: center;
@@ -495,6 +495,7 @@ footer {
         top: -7px;
     }
 
+    /* Header */
     .conteudo-header {
         width: 100%;
         height: auto;
@@ -530,6 +531,7 @@ footer {
         width: 120%;
     }
 
+    /* About me */
     .info-me {
         margin: 1rem 0;
         padding: 3rem;
@@ -539,27 +541,29 @@ footer {
         justify-content: space-between;
         border-radius: 2rem;
     }
-    
+
     .informacoes-text {
         width: 100%;
-        margin: 0 6rem ;
+        margin: 0 6rem;
         display: flex;
         align-items: center;
         justify-content: space-between;
         flex-direction: column;
     }
-    
+
     .img-perfil {
         width: 70%;
     }
+
     .paragrafo-about-me {
         width: 100%;
-        padding: 0.5rem 0; 
+        padding: 0.5rem 0;
         font-size: 1.2em;
         text-align: left;
         color: #828282;
     }
 
+    /* Projects */
     .cards-projetos {
         width: 100%;
         margin: 1rem;
@@ -574,6 +578,7 @@ footer {
         height: 30%;
     }
 
+    /* Services */
     .cards-services {
         width: 100%;
         margin: auto;
@@ -592,6 +597,7 @@ footer {
         width: 80%;
     }
 
+    /* Skils */
     .card-skils {
         width: 90%;
         height: 70vh;
@@ -611,9 +617,10 @@ footer {
 
     }
 
+    /* Footer */
     .container {
         width: 90%;
         margin: 0 auto;
-      }
+    }
 
 }
