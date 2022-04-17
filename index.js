@@ -40,9 +40,15 @@ ScrollReveal().reveal('.imagem-header', {
     reset: false
 });
 
+ScrollReveal().reveal('.header-logo', {
+    distance: '100%',
+    delay: 600,
+    origin: 'top',
+});
+
 ScrollReveal().reveal('.conteudo-texto', {
     distance: '100%',
-    delay: 700,
+    delay: 850,
     origin: 'left',
 });
 
@@ -55,6 +61,18 @@ ScrollReveal().reveal('section', {
 ScrollReveal().reveal('.paragrafo-about-me', {
     distance: '100%',
     delay: 800,
+    origin: 'left',
+});
+
+ScrollReveal().reveal('.download', {
+    distance: '100%',
+    delay: 1000,
+    origin: 'left',
+});
+
+ScrollReveal().reveal('.img-perfil', {
+    distance: '100%',
+    delay: 600,
     origin: 'left',
 });
 
