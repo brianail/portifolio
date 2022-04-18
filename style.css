@@ -233,6 +233,12 @@ p {
     flex-direction: row;
 }
 
+.carrosel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .carrosel img{
  width: 60%;
 }
