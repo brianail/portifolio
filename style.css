@@ -131,6 +131,9 @@ nav h1 {
     padding: 1rem;
     font-size: 2.5em;
     font-weight: 200;
+    background-image: linear-gradient( 127.6deg,  rgba(0,198,103,1) 19.4%, rgba(130,208,205,1) 81.3% );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .info-me {
@@ -181,13 +184,15 @@ nav h1 {
     align-items: center;
     justify-content: center;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .card {
-    width: 40%;
-    height: auto;
+    width: 30%;
+    height: 330px;
     padding: 1rem;
     margin: 1rem;
+    border-radius: 1rem;
     background-color: rgba(255, 255, 255, 0.048);
     cursor: pointer;
 }
@@ -207,6 +212,81 @@ nav h1 {
 p {
     font-weight: 100;
     font-size: 0.8em;
+    padding: 2rem 0;
+}
+
+.cards-mobile {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-mobile{
+    width: 100%;
+    margin: 3rem;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.carrosel img{
+ width: 60%;
+}
+
+.app-conteudo {
+    width: 50%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.app-conteudo h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    background-image: linear-gradient( 127.6deg,  rgba(0,198,103,1) 29.4%, rgba(130,208,205,1) 81.3% );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.app-conteudo h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    background-image: linear-gradient( 127.6deg,  rgba(0,198,103,1) 29.4%, rgba(130,208,205,1) 81.3% );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.app-conteudo h4 {
+    padding: 0.5rem 1rem;
+    font-size: 1.3rem;
+    font-weight: 300;
+    font-weight: 500;
+    background-image: linear-gradient( 127.6deg,  rgba(0,198,103,1) 29.4%, rgba(130,208,205,1) 81.3% );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.app-conteudo p {
+    font-size: 1.3rem;
+    background-image: linear-gradient( 127.6deg,  rgba(0,198,103,1) 29.4%, rgba(130,208,205,1) 81.3% );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.see-github{
+    width: 60%;
+    margin: 2rem 0;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    color: white;
+    background-color: #00C667;
 }
 
 .cards-services {
@@ -377,6 +457,7 @@ footer {
     border-right: 1px solid #00C667;
     transition: 1s;
 }
+
 
 @media (max-width: 900px) {
 
@@ -566,6 +647,35 @@ footer {
     .card {
         width: 90%;
         height: 30%;
+    }
+
+
+    .cards-mobile {
+        width: 100%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid red;
+    }
+    
+    .card-mobile{
+        width: 90%;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    
+    .carrosel img{
+     width: 40%;
+    }
+    
+    .app-conteudo {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
     }
 
     /* Services */

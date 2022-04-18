@@ -14,7 +14,7 @@
 
 
     <script src="https://kit.fontawesome.com/4c65401d66.js" crossorigin="anonymous"></script>
-
+    <!--  
     <script src="https://unpkg.com/scrollreveal"></script>
 
     <script>
@@ -22,13 +22,13 @@
             reset: true
         });
     </script>
-
+-->
 </head>
 
 <body>
     <header>
         <div class="header-bar">
-            <img src="/assets/logo.svg" alt="" width="200px" class="imagem-header">
+            <a href="/index.html"><img src="/assets/logo.svg" alt="" width="200px" class="imagem-header"></a>
 
             <nav id="nav">
                 <button id="btn-mobile" aria-label="Abrir Menu" aria-haspopup="true" aria-controls="menu"
@@ -101,41 +101,92 @@
             <div class="cards-projetos">
 
                 <div class="card">
+                    <a href="https://loopstudio-home.netlify.app">
+                        <h2>Loopstudios</h2>
+                    </a>
+
                     <div class="foto">
                         <img src="/assets/Arquivo 3.png" width="100%">
                     </div>
 
-                    <a href="https://loopstudio-home.netlify.app">
-                        <h2>Loopstudios</h2>
-                    </a>
                     <p>Tecnologias: HTML | CSS | JAVASCRIPT</p>
                 </div>
 
                 <div class="card">
+                    <a href="https://home-fylo.netlify.app">
+                        <h2>Fylo</h2>
+                    </a>
+
                     <div class="foto">
                         <img src="/assets/Arquivo 2.png" width="100%">
                     </div>
 
-                    <a href="https://home-fylo.netlify.app">
-                        <h2>Fylo</h2>
-                    </a>
                     <p>Tecnologias: HTML | CSS | JAVASCRIPT</p>
                 </div>
 
                 <div class="card">
-                    <div class="foto">
-                        <img src="/assets/arquivo 10.png" width="100%">
-                    </div>
 
                     <a href="https://easy-bank-home.netlify.app">
                         <h2>Easybank</h2>
                     </a>
+
+                    <div class="foto">
+                        <img src="/assets/arquivo 10.png" width="100%">
+                    </div>
+
                     <p>Tecnologias: HTML | CSS | JAVASCRIPT</p>
                 </div>
 
             </div>
 
         </section>
+
+
+        <div class="cards-mobile">
+
+            <h1 class="titulo">Projetos Mobile </h1>
+
+            <div class="card-mobile">
+                <div class="carrosel">
+                    <img src="/assets/Screens/bytecoin.png" alt="">
+                </div>
+
+                <div class="app-conteudo">
+                    <h1>
+                        ByteCoin
+                    </h1>
+                    <p>
+                        Um aplicativo que converte o valor do Bitcoin, para moeda que você desejar.
+                    </p>
+                    <h2>Tecnologia usada</h2>
+                    <h4>• Swift</h4>
+                    <h4>• UIkit</h4>
+
+                    <a href="" class="see-github">Veja no Github</a>
+                </div>
+
+            </div>
+
+            <div class="card-mobile">
+                <div class="carrosel">
+                    <img src="/assets/Screens/bmicalculator1.png" alt="">
+                </div>
+                <div class="app-conteudo">
+                    <h1>
+                        Calculadora de IMC
+                    </h1>
+                    <p>
+                        Um aplicativo que converte o valor da altura e peso, para o imc, totalmente intuitivo, com
+                        resultado na hora.
+                    </p>
+                    <h2>Tecnologia usada</h2>
+                    <h4>• Swift</h4>
+                    <h4>• UIkit</h4>
+
+                    <a href="" class="see-github">Veja no Github</a>
+                </div>
+            </div>
+        </div>
 
 
         <section id="service">
@@ -160,6 +211,7 @@
                     <i class="fas fa-mobile-alt"></i>
                     <h3>Sites Responsivos</h3>
                 </div>
+
             </div>
 
         </section>
@@ -221,6 +273,8 @@
     </footer>
 
     <script src="/index.js"></script>
+
+
 
 </body>
 
