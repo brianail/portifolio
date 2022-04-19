@@ -281,7 +281,7 @@ p {
 }
 
 .see-github{
-    width: 100%;
+    width: 50%;
     margin: 2rem 0;
     padding: 1rem;
     text-align: center;
@@ -461,7 +461,7 @@ footer {
 }
 
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
 
     body {
         width: 100%;
