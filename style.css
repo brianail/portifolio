@@ -17,7 +17,7 @@ body {
     height: auto;
     margin: auto;
     box-sizing: border-box;
-    background-color:#0f0f0f;
+    background-color: #0f0f0f;
     color: white;
     font-family: 'DM Sans', sans-serif;
 }
@@ -33,6 +33,7 @@ section {
     width: 90%;
     height: 100vh;
     margin: auto;
+    margin-top: 5rem;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -131,8 +132,8 @@ nav h1 {
     padding: 1rem;
     font-size: 2.5em;
     font-weight: 200;
-    background: rgb(0,198,103);
-    background: linear-gradient(155deg, rgba(0,198,103,1) 12%, rgba(68,224,255,1) 45%, rgba(0,198,103,1) 74%);
+    background: rgb(0, 198, 103);
+    background: linear-gradient(155deg, rgba(0, 198, 103, 1) 12%, rgba(68, 224, 255, 1) 45%, rgba(0, 198, 103, 1) 74%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -190,8 +191,7 @@ nav h1 {
 
 .card {
     width: 30%;
-    height: 330px;
-    padding: 1rem;
+    padding: 1.5rem;
     margin: 1rem;
     border-radius: 1rem;
     background-color: rgba(255, 255, 255, 0.048);
@@ -217,14 +217,15 @@ p {
 }
 
 .cards-mobile {
-    width: 80%;
+    width: 90%;
     margin: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow-x: scroll;
 }
 
-.card-mobile{
+.card-mobile {
     width: 100%;
     margin: 3rem;
     padding: 1rem;
@@ -235,14 +236,15 @@ p {
 }
 
 .carrosel {
+    width: 50%;
     display: flex;
     align-items: center;
-    justify-content: center;    
+    justify-content: center;
     margin-bottom: 3rem;
 }
 
-.carrosel img{
- width: 60%;
+.carrosel img {
+    width: 35%;
 }
 
 .app-conteudo {
@@ -256,17 +258,17 @@ p {
 .app-conteudo h1 {
     font-size: 3rem;
     font-weight: 600;
-    background-image: linear-gradient( 127.6deg,  rgba(0,198,103,1) 29.4%, rgba(130,208,205,1) 81.3% );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(127.6deg, rgba(0, 198, 103, 1) 29.4%, rgba(130, 208, 205, 1) 81.3%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .app-conteudo h2 {
     font-size: 2rem;
     font-weight: 600;
-    background-image: linear-gradient( 127.6deg,  rgba(0,198,103,1) 29.4%, rgba(130,208,205,1) 81.3% );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(127.6deg, rgba(0, 198, 103, 1) 29.4%, rgba(130, 208, 205, 1) 81.3%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .app-conteudo h4 {
@@ -280,7 +282,7 @@ p {
     font-size: 1.3rem;
 }
 
-.see-github{
+.see-github {
     width: 50%;
     margin: 2rem 0;
     padding: 1rem;
@@ -302,13 +304,13 @@ p {
 }
 
 .cards {
-    width: 35%;
-    height: 45%;
+    width: 20%;
+    height: 100%;
     margin: 1rem;
-    padding: 0.5rem;
+    padding: 0.3rem;
     display: flex;
     align-items: flex-start;
-    justify-content: flex-end;
+    justify-content: flex-start;
     flex-direction: column;
     border-bottom: 0.3rem solid #00C667;
     cursor: pointer;
@@ -323,9 +325,9 @@ p {
 }
 
 .cards h3 {
-    width: 60%;
-    padding: 2rem;
-    font-size: 2em;
+    width: 80%;
+    padding: 0 2rem;
+    font-size: 1.5em;
     font-weight: 200;
 }
 
@@ -369,7 +371,7 @@ p {
     padding: 1rem;
     font-size: 2em;
     border-radius: 100%;
-    background-color: #1b2435;
+    background-color: rgba(255, 255, 255, 0.048);
     color: #00C667;
     transition: .6s;
 }
@@ -459,7 +461,6 @@ footer {
     border-right: 1px solid #00C667;
     transition: 1s;
 }
-
 
 @media (max-width: 1000px) {
 
@@ -659,18 +660,18 @@ footer {
         flex-direction: column;
         align-items: center;
     }
-    
-    .card-mobile{
+
+    .card-mobile {
         width: 90%;
         align-items: center;
         justify-content: center;
         flex-direction: column;
     }
-    
-    .carrosel img{
-     width: 40%;
+
+    .carrosel img {
+        width: 40%;
     }
-    
+
     .app-conteudo {
         width: 100%;
         display: flex;
@@ -690,8 +691,10 @@ footer {
     }
 
     .cards {
-        width: 90%;
-        height: 270px;
+        width: 80%;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding-bottom: 1.5rem;
     }
 
     .cards h3 {

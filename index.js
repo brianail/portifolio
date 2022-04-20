@@ -1,4 +1,3 @@
-
 // Menu Hamburguer
 const btnMobile = document.getElementById('btn-mobile');
 
@@ -100,9 +99,9 @@ ScrollReveal().reveal('.card', {
 });
 
 ScrollReveal().reveal('.cards', {
-    distance: '20%',
+    distance: '30%',
     delay: 1000,
-    origin: 'left',
+    origin: 'bottom',
     interval: 400
 });
 
@@ -114,49 +113,48 @@ ScrollReveal().reveal('.skils', {
 });
 
 ScrollReveal().reveal('.card-mobile', {
-  distance: '20%',
-  delay: 200,
-  origin: 'left',
-  interval: 400
+    distance: '20%',
+    delay: 200,
+    origin: 'left',
+    interval: 400
 });
 
 ScrollReveal().reveal('.carrosel', {
-  distance: '100%',
-  delay: 200,
-  origin: 'left',
-  interval: 200
+    distance: '100%',
+    delay: 200,
+    origin: 'left',
+    interval: 200
 });
 
 ScrollReveal().reveal('.app-conteudo', {
-  distance: '20%',
-  delay: 700,
-  origin: 'left',
+    distance: '20%',
+    delay: 700,
+    origin: 'left',
 });
 
 ScrollReveal().reveal('.see-github', {
-  distance: '20%',
-  delay: 1000,
-  origin: 'bottom',
+    distance: '20%',
+    delay: 800,
+    origin: 'bottom',
 });
 
 
 // Codigo para enviar os forms para o Netify
 document
-  .querySelector("form")
-  .addEventListener("submit", handleSubmit);
+    .querySelector("form")
+    .addEventListener("submit", handleSubmit);
 
 const handleSubmit = (e) => {
-  e.preventDefault();
-  let myForm = document.getElementById("pizzaOrder");
-  let formData = new FormData(myForm);
-  fetch("/", {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams(formData).toString(),
-  })
-    .then(() => console.log("Form successfully submitted"))
-    .catch((error) => alert(error));
+    e.preventDefault();
+    let myForm = document.getElementById("pizzaOrder");
+    let formData = new FormData(myForm);
+    fetch("/", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            body: new URLSearchParams(formData).toString(),
+        })
+        .then(() => console.log("Form successfully submitted"))
+        .catch((error) => alert(error));
 };
-
-
-
