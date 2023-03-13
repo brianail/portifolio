@@ -10,16 +10,16 @@ html {
     scroll-behavior: smooth;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
-
 body {
     width: 100%;
     height: auto;
     margin: auto;
     box-sizing: border-box;
-    background-color: #0f0f0f;
+    background: url('/assets/Background.svg') no-repeat center/cover;
     color: white;
     font-family: 'DM Sans', sans-serif;
+    -webkit-backdrop-filter: blur(21px);
+    backdrop-filter: blur(21px) saturate(80%);
 }
 
 header {
@@ -36,21 +36,21 @@ section {
     margin-top: 5rem;
     display: flex;
     align-items: center;
-    flex-direction: column;
     justify-content: center;
+    flex-direction: column;
 }
 
-.header-bar {
+.header-nav {
     width: 100%;
     height: 80px;
     position: fixed;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    box-sizing: border-box;
     padding: 0.5rem;
-    backdrop-filter: blur(21px) saturate(80%);
+    box-sizing: border-box;
     -webkit-backdrop-filter: blur(21px) saturate(80%);
+    backdrop-filter: blur(21px) saturate(80%);
     background-color: #0f0f0fb9;
     border: 1px solid rgba(255, 255, 255, 0.048);
     z-index: 1000;
@@ -69,7 +69,6 @@ section {
     position: relative;
 }
 
-
 #menu a:hover {
     border-bottom: 4px solid #00C667;
     transform: scale(1.1);
@@ -85,7 +84,6 @@ nav h1 {
     height: 90vh;
     margin: auto;
     padding-top: 10rem;
-    margin: auto;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -196,171 +194,117 @@ nav h1 {
     border-radius: 1rem;
     background-color: rgba(255, 255, 255, 0.048);
     cursor: pointer;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-.foto {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.card .foto {
+    width: 100%;
+    height: 150px;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+
+.card h1 {
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+}
+
+.card p {
+    font-size: 1.2rem;
+    color: #828282;
+    line-height: 1.5;
 }
 
 .card h2 {
     padding: 1rem 0;
     font-weight: 700;
     color: #ffffff;
+    font-size: 1.5rem;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-p {
+.card p {
     font-weight: 100;
     font-size: 0.8em;
     padding: 2rem 0;
-}
-
-.cards-mobile {
-    width: 90%;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow-x: scroll;
-}
-
-.card-mobile {
-    width: 100%;
-    margin: 3rem;
-    padding: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-}
-
-.carrosel {
-    width: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 3rem;
-}
-
-.carrosel img {
-    width: 35%;
-}
-
-.app-conteudo {
-    width: 50%;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    flex-direction: column;
-}
-
-.app-conteudo h1 {
-    font-size: 3rem;
-    font-weight: 600;
-    background-image: linear-gradient(127.6deg, rgba(0, 198, 103, 1) 29.4%, rgba(130, 208, 205, 1) 81.3%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.app-conteudo h2 {
-    font-size: 2rem;
-    font-weight: 600;
-    background-image: linear-gradient(127.6deg, rgba(0, 198, 103, 1) 29.4%, rgba(130, 208, 205, 1) 81.3%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.app-conteudo h4 {
-    padding: 0.5rem 1rem;
-    font-size: 1.3rem;
-    font-weight: 300;
-    font-weight: 500;
-}
-
-.app-conteudo p {
-    font-size: 1.3rem;
-}
-
-.see-github {
-    width: 50%;
-    margin: 2rem 0;
-    padding: 1rem;
     text-align: center;
-    border-radius: 0.5rem;
-    text-decoration: none;
-    color: white;
-    background-color: #00C667;
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-.cards-services {
+.card button {
+    width: 70%;
+    margin-top: 1rem;
+    padding: 0.8rem;
+    border-radius: 1rem;
+    font-size: 1.2rem;
+    background-color: #00C667;
+    color: white;
+    transition: 1s;
+    cursor: pointer;
+}
+
+.card button:hover {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    box-shadow: 0 0 20px 10px #a6cfff46;
+}
+
+.cards-services,
+.card-skils {
     width: 90%;
     margin: 1rem;
     display: flex;
-    align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
-    flex-direction: row;
 }
 
 .cards {
-    width: 20%;
-    height: 100%;
+    width: 220px;
+    height: 250px;
+    padding: 1rem;
     margin: 1rem;
-    padding: 0.3rem;
     display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
     flex-direction: column;
-    border-bottom: 0.3rem solid #00C667;
-    cursor: pointer;
-    box-sizing: border-box;
+    align-items: flex-start;
+    justify-content: space-evenly;
     background-color: rgba(255, 255, 255, 0.048);
-}
-
-.cards i {
-    font-size: 3rem;
-    padding: 2rem;
-    color: #00C667;
-}
-
-.cards h3 {
-    width: 80%;
-    padding: 0 2rem;
-    font-size: 1.5em;
-    font-weight: 200;
-}
-
-.card-skils {
-    width: 100%;
-    padding: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
+    border-radius: 1rem;
+    cursor: pointer;
 }
 
 .skils {
     width: 20%;
     padding: 3rem;
-    margin: 2rem;
+    margin: 1rem;
     border-radius: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: rgba(255, 255, 255, 0.048);
-    cursor: pointer;
 }
 
+.cards i,
 .skils i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
     color: #00C667;
-    font-size: 4rem;
+}
+
+.cards h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: white;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
 }
 
 .buttons-social {
     padding: 1rem;
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
@@ -404,19 +348,17 @@ footer {
 .form-contact {
     width: 100%;
     display: flex;
-    align-items: center;
     flex-direction: column;
     font-family: "Arial", Times, serif;
 }
 
-.form-contact-input {
+.form-contact-input,
+.form-contact-textarea {
     width: 100%;
     color: #292929;
     font-size: 18px;
     background-color: #E9E9E9;
     border: 1px solid #E9E9E9;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
     border-radius: 5px;
     height: 40px;
     margin-bottom: 20px;
@@ -498,9 +440,6 @@ footer {
         justify-content: center;
     }
 
-    .header-bar {
-        width: 100%;
-    }
 
     /* Menu Hamburguer*/
     #menu {
@@ -509,16 +448,17 @@ footer {
         flex-direction: column;
         justify-content: center;
         width: 0;
-        height: 100vh;
+        height: auto;
         position: absolute;
         top: 0;
         right: 0;
-        background-color: #0f0f0f;
-        color: rgb(0, 0, 0);
         transition: 0.6s;
         list-style: none;
         visibility: hidden;
         overflow-y: hidden;
+        backdrop-filter: blur(21px) saturate(80%);
+        -webkit-backdrop-filter: blur(50px) saturate(90%);
+        background-color: #0f0f0fb9;
 
     }
 
@@ -652,48 +592,23 @@ footer {
         height: 30%;
     }
 
-
-    .cards-mobile {
-        width: 100%;
-        margin: auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .card-mobile {
-        width: 90%;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-    }
-
-    .carrosel img {
-        width: 40%;
-    }
-
-    .app-conteudo {
-        width: 100%;
-        display: flex;
-        align-items: flex-start;
-        justify-content: center;
-        flex-direction: column;
+    .card,
+    .foto {
+        width: 50%;
     }
 
     /* Services */
     .cards-services {
-        width: 100%;
-        margin: auto;
-        display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
-        flex-direction: column;
     }
 
     .cards {
         width: 80%;
+        flex-direction: column;
         align-items: flex-start;
-        justify-content: flex-start;
+        justify-content: space-evenly;
         padding-bottom: 1.5rem;
     }
 
@@ -709,13 +624,14 @@ footer {
         padding: 2rem 0;
         display: flex;
         align-items: center;
-        justify-content: space-around;
+        justify-content: space-between;
         flex-direction: row;
         flex-wrap: wrap;
     }
 
     .skils {
         width: 30%;
+        height: 25%;
         padding: 1rem;
         margin: 0.5rem;
 
