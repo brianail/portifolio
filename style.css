@@ -1,3 +1,4 @@
+/* RESET DE ESTILOS */
 * {
     margin: 0;
     padding: 0;
@@ -6,6 +7,47 @@
     box-sizing: border-box;
 }
 
+/* Preloader */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    backdrop-filter: blur(21px) saturate(80%);
+}
+
+#loader {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    margin: -25px 0 0 -25px;
+    border: 3px solid #ccc;
+    border-top-color: #333;
+    border-radius: 50%;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.hide {
+    opacity: 0;
+    transition: opacity 1s ease-in;
+}
+
+.show {
+    opacity: 1;
+}
+
+/* ESTILOS GERAIS */
 html {
     scroll-behavior: smooth;
 }
@@ -40,6 +82,7 @@ section {
     flex-direction: column;
 }
 
+/* Header*/
 .header-nav {
     width: 100%;
     height: 80px;
@@ -126,6 +169,7 @@ nav h1 {
     box-shadow: 0 0 20px 10px #a6cfff46;
 }
 
+/* Sobre Mim*/
 .titulo {
     padding: 1rem;
     font-size: 2.5em;
@@ -177,6 +221,9 @@ nav h1 {
     font-size: 1.1rem;
 }
 
+/* Carossel */
+
+/* Projetos */
 .cards-projetos {
     width: 90%;
     margin: 1rem;
@@ -188,32 +235,23 @@ nav h1 {
 }
 
 .card {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
     width: 30%;
     padding: 1.5rem;
     margin: 1rem;
     border-radius: 1rem;
     background-color: rgba(255, 255, 255, 0.048);
     cursor: pointer;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-.card .foto {
-    width: 100%;
-    height: 150px;
-    border-radius: 1rem;
-    margin-bottom: 1rem;
-}
-
-.card h1 {
-    font-size: 1.8rem;
-    font-weight: 300;
-    margin-bottom: 0.5rem;
 }
 
 .card p {
-    font-size: 1.2rem;
     color: #828282;
-    line-height: 1.5;
+    font-weight: 100;
+    font-size: 0.8em;
+    padding: 2rem 0;
 }
 
 .card h2 {
@@ -225,33 +263,18 @@ nav h1 {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.card p {
-    font-weight: 100;
-    font-size: 0.8em;
-    padding: 2rem 0;
-    text-align: center;
-    color: rgba(255, 255, 255, 0.8);
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+.card img {
+    width: 100%;
+    border-radius: 0.5rem;
 }
 
-.card button {
-    width: 70%;
-    margin-top: 1rem;
-    padding: 0.8rem;
-    border-radius: 1rem;
-    font-size: 1.2rem;
-    background-color: #00C667;
-    color: white;
-    transition: 1s;
-    cursor: pointer;
+.card h1 {
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin-bottom: 0.5rem;
 }
 
-.card button:hover {
-    background-color: #ffffff;
-    color: rgb(0, 0, 0);
-    box-shadow: 0 0 20px 10px #a6cfff46;
-}
-
+/* Serviços */
 .cards-services,
 .card-skils {
     width: 90%;
@@ -274,6 +297,7 @@ nav h1 {
     cursor: pointer;
 }
 
+/* Skils */
 .skils {
     width: 20%;
     padding: 3rem;
@@ -326,6 +350,7 @@ nav h1 {
     box-shadow: 0 0 20px 1px #a6cfff46;
 }
 
+/* FOOTER */
 footer {
     width: 100%;
     padding: 1.5rem 0;
@@ -439,7 +464,6 @@ footer {
         flex-direction: column;
         justify-content: center;
     }
-
 
     /* Menu Hamburguer*/
     #menu {
@@ -578,24 +602,12 @@ footer {
     }
 
     /* Projects */
-    .cards-projetos {
-        width: 100%;
-        margin: 1rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-    }
-
     .card {
-        width: 90%;
-        height: 30%;
+        width: 100%;
+        padding: 1rem;
+        margin: 1.5rem;
     }
 
-    .card,
-    .foto {
-        width: 50%;
-    }
 
     /* Services */
     .cards-services {

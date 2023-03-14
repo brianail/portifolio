@@ -16,192 +16,181 @@
 
     <script>
         ScrollReveal({
-            reset: true
+            reset: false
         });
     </script>
-
 </head>
 
 <body>
-    <header>
-        <div class="header-nav">
-            <a href="/index.html"><img src="/assets/logo.svg" alt="" width="200px" class="imagem-header"></a>
 
-            <nav id="nav">
-                <button id="btn-mobile" aria-label="Abrir Menu" aria-haspopup="true" aria-controls="menu"
-                    aria-expanded="false">
-                    <span id="hamburger"></span>
-                </button>
-                <ul id="menu" role="menu">
-                    <li><a href="#about-me">Sobre mim</a></li>
-                    <li><a href="#projects">Projetos</a></li>
-                    <li><a href="#service">Serviços</a></li>
-                    <li><a href="#skils">Minhas Skils</a></li>
-                </ul>
-            </nav>
-        </div>
+    <div id="preloader">
+        <div id="loader"></div>
+    </div>
+    <div id="content" class="hide">
+        <header>
+            <div class="header-nav">
+                <a href="/index.html"><img src="/assets/logo.svg" alt="" width="200px" class="imagem-header"></a>
 
-        <div class="conteudo-header">
-            <div class="conteudo-texto">
-                <h1 class="principal-titulo">Olá, meu nome é Brian e estou empolgado em apresentar meu portfólio!
-                    Ficarei feliz em poder ajudá-lo de alguma forma.</h1>
-
-                <a href="#contat-me"><button>Entre em contato</button></a>
+                <nav id="nav">
+                    <button id="btn-mobile" aria-label="Abrir Menu" aria-haspopup="true" aria-controls="menu"
+                        aria-expanded="false">
+                        <span id="hamburger"></span>
+                    </button>
+                    <ul id="menu" role="menu">
+                        <li><a href="#about-me">Sobre mim</a></li>
+                        <li><a href="#projects">Projetos</a></li>
+                        <li><a href="#service">Serviços</a></li>
+                        <li><a href="#skils">Minhas Skils</a></li>
+                    </ul>
+                </nav>
             </div>
 
-            <img src="/assets/undraw_programming_re_kg9v.svg" width="45%" class="header-logo">
-        </div>
-    </header>
+            <div class="conteudo-header">
+                <div class="conteudo-texto">
+                    <h1 class="principal-titulo">Olá, meu nome é Brian e estou empolgado em apresentar meu portfólio!
+                        Ficarei feliz em poder ajudá-lo de alguma forma.</h1>
 
-    <main>
-        <section id="about-me">
-
-            <h1 class="titulo"> Sobre Mim</h1>
-
-            <div class="info-me">
-
-                <div class="informacoes-text">
-                    <p class="paragrafo-about-me">
-                        Agradeço por dedicar seu tempo para ler meu trabalho. Caso tenha alguma sugestão ou comentário,
-                        ficarei muito feliz em recebê-los através do meu e-mail. Obrigado!
-                        <br><br>
-                        Sou estudante de análise de sistemas apaixonado por tecnologia e seus infinitos potenciais. Foco
-                        em análise de dados por acreditar ser uma das áreas mais emocionantes e importantes. Estou
-                        fazendo um curso onde aprendo habilidades em programação, estatística e visualização de dados.
-                        Meu amor pela tecnologia começou há muito tempo e quero fazer minha parte para mudar o mundo.
-                        Estou aberto a sugestões e ideias interessantes para explorar novos horizontes na jornada como
-                        analista de dados.
-                    </p>
-                    <a href="/assets/curriculo.pdf" download="CV-Brian_Ail" class="download"> Currículo</a>
+                    <a href="#contat-me"><button>Entre em contato</button></a>
                 </div>
 
-                <img src="/assets/undraw_profile_details_re_ch9r.svg" alt="" class="img-perfil">
-
+                <img src="/assets/undraw_programming_re_kg9v.svg" width="45%" class="header-logo">
             </div>
+        </header>
 
-        </section>
+        <main>
+            <section id="about-me">
+                <h1 class="titulo"> Sobre Mim</h1>
+                <div class="info-me">
+                    <div class="informacoes-text">
+                        <p class="paragrafo-about-me">
+                            Agradeço por dedicar seu tempo para ler meu trabalho. Caso tenha alguma sugestão ou
+                            comentário,
+                            ficarei muito feliz em recebê-los através do meu e-mail. Obrigado!
+                            <br><br>
+                            Sou estudante de análise de sistemas apaixonado por tecnologia e seus infinitos potenciais.
+                            Foco
+                            em análise de dados por acreditar ser uma das áreas mais emocionantes e importantes. Estou
+                            fazendo um curso onde aprendo habilidades em programação, estatística e visualização de
+                            dados.
+                            Meu amor pela tecnologia começou há muito tempo e quero fazer minha parte para mudar o
+                            mundo.
+                            Estou aberto a sugestões e ideias interessantes para explorar novos horizontes na jornada
+                            como
+                            analista de dados.
+                        </p>
+                        <a href="/assets/curriculo.pdf" download="CV-Brian_Ail" class="download"> Currículo</a>
+                    </div>
+                    <img src="/assets/undraw_profile_details_re_ch9r.svg" alt="" class="img-perfil">
+                </div>
+            </section>
+              
+            <section id="projects">
+                <h1 class="titulo">Meus Projetos </h1>
+                <div class="cards-projetos">
+                    <div class="card">
+                        <a href="https://loopstudio-home.netlify.app">
+                            <h2>Loopstudios</h2>
+                            <p>Tecnologias: HTML | CSS | JAVASCRIPT</p>
+                        </a>
+                        <div class="foto">
+                            <img src="/assets/Arquivo 3.png">
+                        </div>
 
-        <section id="projects">
-
-            <h1 class="titulo">Meus Projetos </h1>
-
-            <div class="cards-projetos">
-
-                <div class="card">
-                    <a href="https://loopstudio-home.netlify.app">
-                        <h2>Loopstudios</h2>
-                    </a>
-
-                    <div class="foto">
-                        <img src="/assets/Arquivo 3.png" width="100%">
                     </div>
 
-                    <p>Tecnologias: HTML | CSS | JAVASCRIPT</p>
-                </div>
-
-                <div class="card">
-                    <a href="https://home-fylo.netlify.app">
-                        <h2>Fylo</h2>
-                    </a>
-
-                    <div class="foto">
-                        <img src="/assets/Arquivo 2.png" width="100%">
+                    <div class="card">
+                        <a href="https://home-fylo.netlify.app">
+                            <h2>Fylo</h2>
+                            <p>Tecnologias: HTML | CSS | JAVASCRIPT</p>
+                        </a>
+                        <div class="foto">
+                            <img src="/assets/Arquivo 2.png" width="100%">
+                        </div>
                     </div>
 
-                    <p>Tecnologias: HTML | CSS | JAVASCRIPT</p>
+                    <div class="card">
+                        <a href="https://easy-bank-home.netlify.app">
+                            <h2>Easybank</h2>
+                            <p>Tecnologias: HTML | CSS | JAVASCRIPT</p>
+                        </a>
+                        <div class="foto">
+                            <img src="/assets/arquivo 10.png" width="100%">
+                        </div>
+                    </div>
                 </div>
+            </section>
 
-                <div class="card">
-
-                    <a href="https://easy-bank-home.netlify.app">
-                        <h2>Easybank</h2>
-                    </a>
-
-                    <div class="foto">
-                        <img src="/assets/arquivo 10.png" width="100%">
+            <section id="service">
+                <h1 class="titulo">Serviços</h1>
+                <div class="cards-services">
+                    <div class="cards">
+                        <i class="fas fa-file-code"></i>
+                        <h3>Criação de Sites</h3>
                     </div>
 
-                    <p>Tecnologias: HTML | CSS | JAVASCRIPT</p>
+                    <div class="cards">
+                        <i class="fas fa-envelope-open-text"></i>
+                        <h3>E-mail profissionais</h3>
+                    </div>
+
+                    <div class="cards">
+                        <i class="fab fa-figma"></i>
+                        <h3>UX UI</h3>
+                    </div>
+
+                    <div class="cards">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>Aplicativos</h3>
+                    </div>
                 </div>
 
+            </section>
+
+            <section id="skils">
+                <h1 class="titulo">Skils</h1>
+                <div class="card-skils">
+                    <div class="skils">
+                        <i class="fab fa-html5"></i>
+                    </div>
+
+                    <div class="skils">
+                        <i class="fab fa-css3-alt"></i>
+                    </div>
+                    <div class="skils">
+                        <i class="fab fa-bootstrap"></i>
+                    </div>
+
+                    <div class="skils">
+                        <i class="fab fa-js-square"></i>
+                    </div>
+
+                    <div class="skils">
+                        <i class="fab fa-swift"></i>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer id="contat-me">
+            <div class="container">
+                <h1 class="footer-title">Contato</h1>
+                <form action="" class="form-contact" data-netlify="true" method="POST" tabindex="1">
+                    <input type="text" class="form-contact-input" name="nome" placeholder="Nome" required />
+                    <input type="email" class="form-contact-input" name="email" placeholder="Email" required />
+                    <textarea class="form-contact-textarea" name="conteudo" placeholder="Deixe uma mensagem"
+                        required></textarea>
+                    <button type="submit" class="form-contact-button">Enviar</button>
+                </form>
             </div>
 
-        </section>
-
-        <section id="service">
-            <h1 class="titulo">Serviços</h1>
-            <div class="cards-services">
-                <div class="cards">
-                    <i class="fas fa-file-code"></i>
-                    <h3>Criação de Sites</h3>
-                </div>
-
-                <div class="cards">
-                    <i class="fas fa-envelope-open-text"></i>
-                    <h3>E-mail profissionais</h3>
-                </div>
-
-                <div class="cards">
-                    <i class="fab fa-figma"></i>
-                    <h3>UX UI</h3>
-                </div>
-
-                <div class="cards">
-                    <i class="fas fa-mobile-alt"></i>
-                    <h3>Aplicativos</h3>
-                </div>
-
+            <div class="buttons-social">
+                <a href="https://www.instagram.com/brian_ail/"><i class="fab fa-instagram"></i></a>
+                <a href="https://github.com/brianail"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/brian-ail-b2748b168/"><i class="fab fa-linkedin-in"></i></a>
+                <a href="tel:55 5198417-9767"><i class="fas fa-phone-alt"></i></a>
             </div>
-
-        </section>
-
-        <section id="skils">
-
-            <h1 class="titulo">Skils</h1>
-
-            <div class="card-skils">
-                <div class="skils">
-                    <i class="fab fa-html5"></i>
-                </div>
-
-                <div class="skils">
-                    <i class="fab fa-css3-alt"></i>
-                </div>
-                <div class="skils">
-                    <i class="fab fa-bootstrap"></i>
-                </div>
-
-                <div class="skils">
-                    <i class="fab fa-js-square"></i>
-                </div>
-
-                <div class="skils">
-                    <i class="fab fa-swift"></i>
-                </div>
-
-            </div>
-        </section>
-    </main>
-
-    <footer id="contat-me">
-        <div class="container">
-            <h1 class="footer-title">Contato</h1>
-            <form action="" class="form-contact" data-netlify="true" method="POST" tabindex="1">
-                <input type="text" class="form-contact-input" name="nome" placeholder="Nome" required />
-                <input type="email" class="form-contact-input" name="email" placeholder="Email" required />
-                <textarea class="form-contact-textarea" name="conteudo" placeholder="Deixe uma mensagem"
-                    required></textarea>
-                <button type="submit" class="form-contact-button">Enviar</button>
-            </form>
-        </div>
-
-        <div class="buttons-social">
-            <a href="https://www.instagram.com/brian_ail/"><i class="fab fa-instagram"></i></a>
-            <a href="https://github.com/brianail"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/brian-ail-b2748b168/"><i class="fab fa-linkedin-in"></i></a>
-            <a href="tel:55 5198417-9767"><i class="fas fa-phone-alt"></i></a>
-        </div>
-    </footer>
+        </footer>
+    </div>
 
     <script src="/index.js"></script>
 
