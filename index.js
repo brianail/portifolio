@@ -54,10 +54,6 @@ function typeWrite(elemento) {
     });
 }
 
-//carossel
-
-
-
 // Scrollreveal
 ScrollReveal().reveal('.imagem-header', {
     delay: 100,
