@@ -7,46 +7,6 @@
     box-sizing: border-box;
 }
 
-/* Preloader */
-#preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 9999;
-    backdrop-filter: blur(21px) saturate(80%);
-}
-
-#loader {
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 50px;
-    height: 50px;
-    margin: -25px 0 0 -25px;
-    border: 3px solid #ccc;
-    border-top-color: #333;
-    border-radius: 50%;
-    animation: spin 1s ease-in-out infinite;
-}
-
-@keyframes spin {
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-.hide {
-    opacity: 0;
-    transition: opacity 1s ease-in;
-}
-
-.show {
-    opacity: 1;
-}
-
 /* ESTILOS GERAIS */
 html {
     scroll-behavior: smooth;
@@ -64,25 +24,26 @@ body {
     backdrop-filter: blur(21px) saturate(80%);
 }
 
-header {
-    width: 100%;
-    margin: auto;
-    height: 100vh;
-    padding-bottom: 2rem;
-}
-
 section {
     width: 90%;
-    height: 100vh;
+    height: auto;
     margin: auto;
     margin-top: 5rem;
+    padding: 2rem;
+    /* Adicionando padding para espaçamento interno */
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
 
-/* Header*/
+header {
+    width: 100%;
+    margin: auto;
+    padding-bottom: 2rem;
+}
+
+/* Header */
 .header-nav {
     width: 100%;
     height: 80px;
@@ -90,18 +51,36 @@ section {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.5rem;
+    padding: 0.5rem 2rem;
+    /* Aumentar o padding lateral para mais espaçamento */
     box-sizing: border-box;
-    -webkit-backdrop-filter: blur(21px) saturate(80%);
     backdrop-filter: blur(21px) saturate(80%);
-    background-color: #0f0f0fb9;
-    border: 1px solid rgba(255, 255, 255, 0.048);
+    background-color: rgba(15, 15, 15, 0.8);
+    /* Cor de fundo com leve transparência */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    /* Borda inferior */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    /* Sombra suave */
     z-index: 1000;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    /* Transições suaves */
+}
+
+/* Estilização do menu */
+#menu {
+    list-style: none;
+    /* Remove os marcadores padrão */
+    display: flex;
+    /* Alinha os itens em linha */
+    padding: 0;
+    /* Remove o padding padrão */
+    margin: 0;
+    /* Remove a margem padrão */
 }
 
 #menu li {
-    display: inline;
-    padding: 1rem;
+    margin: 0 1rem;
+    /* Espaçamento entre os itens do menu */
 }
 
 #menu li a {
@@ -110,23 +89,38 @@ section {
     text-decoration: none;
     font-weight: 100;
     position: relative;
+    padding: 0.5rem;
+    /* Adiciona um pouco de espaçamento interno */
+    transition: transform 0.3s ease, color 0.3s ease;
+    /* Transição suave para transformações */
 }
 
 #menu a:hover {
     border-bottom: 4px solid #00C667;
+    /* Efeito de borda ao passar o mouse */
     transform: scale(1.1);
-    width: 100%;
+    /* Efeito de aumento ao passar o mouse */
+    color: #00C667;
+    /* Muda a cor ao passar o mouse */
 }
 
+/* Título no cabeçalho */
 nav h1 {
     font-size: 2.2rem;
+    color: white;
+    /* Cor do título */
+    margin: 0;
+    /* Remove margens do título */
 }
 
+/* Conteúdo do cabeçalho */
 .conteudo-header {
     width: 90%;
     height: 90vh;
+    /* Certifique-se de que a altura seja adequada ao layout */
     margin: auto;
     padding-top: 10rem;
+    /* Espaço acima do conteúdo */
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -139,10 +133,15 @@ nav h1 {
 }
 
 .conteudo-texto h1 {
-    width: 70%;
+    width: 100%;
     padding: 1rem 0;
     font-weight: 400;
-    font-size: 2.3rem;
+    font-size: 1.2rem;
+    height: 150px;
+    /* Defina uma altura fixa */
+    overflow: hidden;
+    /* Esconde o excesso de texto se a altura for menor */
+
 }
 
 .conteudo-texto p {
@@ -223,55 +222,145 @@ nav h1 {
 
 /* Carossel */
 
-/* Projetos */
+/* Título da seção */
+.titulos {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 3rem;
+    font-weight: bold;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+}
+
+/* Estilo dos contêineres dos cards */
 .cards-projetos {
     width: 90%;
-    margin: 1rem;
+    margin: 0 auto;
+    /* Centraliza o conteúdo */
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
-    flex-direction: row;
     flex-wrap: wrap;
+    gap: 2rem;
+    /* Espaçamento entre os cards */
 }
 
+/* Estilo individual dos cards */
 .card {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: space-evenly;
-    width: 30%;
-    padding: 1.5rem;
-    margin: 1rem;
+    background-color: rgba(255, 255, 255, 0.1);
     border-radius: 1rem;
-    background-color: rgba(255, 255, 255, 0.048);
+    padding: 1.5rem;
+    width: 300px;
+    /* Tamanho fixo para os cards */
     cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    /* Sombra suave nos cards */
 }
 
-.card p {
-    color: #828282;
-    font-weight: 100;
-    font-size: 0.8em;
-    padding: 2rem 0;
+/* Efeito ao passar o mouse sobre o card */
+.card:hover {
+    transform: scale(1.05);
+    background-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    /* Sombra mais forte no hover */
 }
 
+/* Estilo do título dentro do card */
 .card h2 {
-    padding: 1rem 0;
-    font-weight: 700;
+    font-size: 1.8rem;
+    font-weight: 600;
     color: #ffffff;
-    font-size: 1.5rem;
     text-align: center;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin: 0.5rem 0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
+/* Estilo do parágrafo dentro do card */
+.card p {
+    color: #cccccc;
+    font-weight: 300;
+    font-size: 0.9em;
+    text-align: center;
+    margin: 0.5rem 0 1rem 0;
+}
+
+/* Estilo das imagens dentro do card */
 .card img {
     width: 100%;
     border-radius: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    /* Sombra nas imagens */
 }
 
-.card h1 {
-    font-size: 1.8rem;
-    font-weight: 300;
-    margin-bottom: 0.5rem;
+#galvao-app {
+    width: 90%;
+    margin: 5rem auto; /* Espaço superior e centralização */
+    padding: 2rem;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1); /* Fundo levemente translúcido */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Sombra suave */
+    color: #ffffff; /* Cor do texto */
+}
+
+.titulo {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center; /* Centraliza o título */
+    color: #00C667; /* Cor do título */
+}
+
+.descricao {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.6; /* Aumenta a altura da linha para melhor legibilidade */
+}
+
+.funcionalidades {
+    margin-bottom: 2rem;
+}
+
+.funcionalidades h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #00C667; /* Linha abaixo do título */
+    padding-bottom: 0.5rem;
+}
+
+.funcionalidades ul {
+    list-style-type: none; /* Remove bullets padrão */
+    padding: 0; /* Remove padding */
+}
+
+.funcionalidades li {
+    background: rgba(255, 255, 255, 0.2); /* Fundo para as funcionalidades */
+    padding: 1rem;
+    margin: 0.5rem 0; /* Margem entre as funcionalidades */
+    border-radius: 8px; /* Bordas arredondadas */
+    transition: transform 0.3s; /* Transição suave */
+}
+
+.funcionalidades li:hover {
+    transform: translateY(-3px); /* Eleva o item ao passar o mouse */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adiciona sombra ao passar o mouse */
+}
+
+.imagens-app {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.imagens-app img {
+    max-width: 100%; /* Imagem responsiva */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 10px; /* Bordas arredondadas na imagem */
+}
+
+.conclusao {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-top: 1rem; /* Espaço superior */
 }
 
 /* Serviços */
@@ -283,6 +372,7 @@ nav h1 {
     justify-content: center;
 }
 
+/* Estilo geral para as cards */
 .cards {
     width: 220px;
     height: 250px;
@@ -290,30 +380,83 @@ nav h1 {
     margin: 1rem;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    /* Centraliza os itens */
     justify-content: space-evenly;
-    background-color: rgba(255, 255, 255, 0.048);
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Fundo um pouco mais claro */
     border-radius: 1rem;
     cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    /* Transição suave */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    /* Sombra suave */
 }
 
-/* Skils */
+/* Efeito ao passar o mouse sobre as cards */
+.cards:hover {
+    transform: scale(1.05);
+    /* Leve escalonamento */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    /* Sombra mais intensa no hover */
+}
+
+/* Estilo para as skils */
 .skils {
-    width: 20%;
-    padding: 3rem;
+    width: 130px;
+    max-width: 220px;
+    /* Largura máxima para evitar que fique muito grande */
+    padding: 2rem;
+    /* Padding para espaçamento interno */
     margin: 1rem;
     border-radius: 1rem;
     display: flex;
+    flex-direction: column;
+    /* Alinha ícones e texto em coluna */
     align-items: center;
+    /* Centraliza os itens */
     justify-content: center;
-    background-color: rgba(255, 255, 255, 0.048);
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Fundo um pouco mais claro */
+    transition: transform 0.3s, box-shadow 0.3s;
+    /* Transição suave */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    /* Sombra suave */
 }
 
+/* Efeito ao passar o mouse sobre as skils */
+.skils:hover {
+    transform: scale(1.05);
+    /* Leve escalonamento */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    /* Sombra mais intensa no hover */
+}
+
+/* Estilo dos ícones dentro das cards e skils */
 .cards i,
 .skils i {
     font-size: 3rem;
-    margin-bottom: 1rem;
+    /* Tamanho do ícone */
+    margin-bottom: 0.5rem;
+    /* Margem reduzida */
     color: #00C667;
+    /* Cor dos ícones */
+}
+
+/* Adicionando estilo ao texto (caso haja) */
+.cards h3,
+/* Estilo do título da skill */
+.skils h3 {
+    font-size: 1rem;
+    /* Tamanho do texto */
+    color: #ffffff;
+    /* Cor do texto */
+    text-align: center;
+    /* Centraliza o texto */
+    margin-top: 0.5rem;
+    /* Espaço acima do texto */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    /* Sombra para o texto */
 }
 
 .cards h3 {
@@ -465,47 +608,82 @@ footer {
         justify-content: center;
     }
 
-    /* Menu Hamburguer*/
+    /* Menu Hamburguer */
     #menu {
         display: flex;
         align-items: center;
         flex-direction: column;
         justify-content: center;
-        width: 0;
-        height: auto;
-        position: absolute;
-        top: 0;
+        width: 100%;
+        /* Largura total do menu */
+        height: 200px;
+        /* Altura automática para permitir transições fluidas */
+        position: fixed;
+        /* Fixa o menu em relação à janela */
+        top: 80px;
+        /* Ajusta para a altura do header */
         right: 0;
-        transition: 0.6s;
+        /* Alinhado à direita */
+        transition: max-height 0.6s ease, visibility 0.3s ease;
+        /* Transições suaves */
+        max-height: 0;
+        /* Começa com altura 0 */
+        overflow: hidden;
+        /* Esconde o conteúdo quando não está ativo */
         list-style: none;
         visibility: hidden;
-        overflow-y: hidden;
-        backdrop-filter: blur(21px);
-        -webkit-backdrop-filter: blur(21px);
-        background-color: #0f0f0fb9;
+        /* Oculta o menu inicialmente */
+        background-color: rgba(0, 0, 0, 0.9);
+        /* Cor de fundo com leve transparência */
+        z-index: 999;
+        /* Z-index para garantir que o menu esteja acima de outros elementos */
+    }
 
+    #menu li {
+        padding: 0.5rem 0; /* Adiciona padding vertical aos itens */
+    }
+
+    #menu li a {
+        font-size: 1.2rem; /* Ajuste o tamanho da fonte se necessário */
     }
 
     #nav.active #menu {
-        width: 100%;
+        max-height: 400px;
+        /* Defina uma altura máxima ao ativar o menu */
         visibility: visible;
-        overflow-y: auto;
+        /* Visível quando ativo */
     }
 
+    /* Estilo do botão do menu */
     #btn-mobile {
         display: flex;
+        align-items: center;
+        /* Alinhamento central */
         padding: 0.8rem 1rem;
         font-size: 1rem;
         border: none;
         background: none;
         cursor: pointer;
         gap: 0.5rem;
+        transition: background-color 0.3s ease;
+        /* Efeito de transição para o fundo */
     }
 
+    #btn-mobile:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        /* Efeito de hover */
+        border-radius: 0.5rem;
+        /* Borda arredondada no hover */
+    }
+
+    /* Estilo do ícone do hambúrguer */
     #hamburger {
         border-top: 2px solid white;
+        /* Linha superior */
         width: 25px;
+        /* Largura do ícone */
         z-index: 1000;
+        /* Z-index para garantir que fique acima */
     }
 
     #hamburger::after,
@@ -513,24 +691,39 @@ footer {
         content: "";
         display: block;
         width: 25px;
+        /* Largura das linhas */
         height: 2px;
+        /* Altura das linhas */
         background: white;
+        /* Cor das linhas */
         margin-top: 5px;
-        transition: 0.6s;
+        /* Espaçamento entre as linhas */
+        transition: transform 0.6s ease;
+        /* Transição suave para transformação */
         position: relative;
     }
 
     #nav.active #hamburger {
         border-top-color: transparent;
+        /* Torna a linha superior invisível */
     }
 
     #nav.active #hamburger::before {
         transform: rotate(140deg);
+        /* Rotação da linha superior */
     }
 
     #nav.active #hamburger::after {
         transform: rotate(-140deg);
+        /* Rotação da linha inferior */
         top: -7px;
+        /* Ajuste da posição após a rotação */
+    }
+
+    /* Acessibilidade */
+    #btn-mobile[aria-expanded="true"] #hamburger {
+        border-top-color: transparent;
+        /* Torna a linha superior invisível quando o menu está aberto */
     }
 
     /* Header */

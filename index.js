@@ -1,15 +1,3 @@
-// Preloader
-window.addEventListener("load", function () {
-    const preloader = document.getElementById("preloader");
-    setTimeout(function () {
-        preloader.style.display = "none";
-        const content = document.getElementById("content");
-        content.classList.add("show");
-        content.classList.remove("hide");
-    }, 3000); // Atraso de 3 segundos
-});
-
-
 // Menu Hamburguer
 const btnMobile = document.getElementById('btn-mobile');
 const nav = document.getElementById('nav');
@@ -43,16 +31,22 @@ navLinks.forEach((link) => {
 document.addEventListener('click', closeMenuOnClickOutside);
 
 
-// Efeito maquina de escrever
+// Efeito máquina de escrever
 function typeWrite(elemento) {
     const textoArray = elemento.innerHTML.split('');
-    elemento.innerHTML = ' ';
+    elemento.innerHTML = ''; // Limpa o conteúdo inicial
     textoArray.forEach(function (letra, i) {
         setTimeout(function () {
-            elemento.innerHTML += letra;
-        }, 100 * i)
+            elemento.innerHTML += letra; // Adiciona cada letra com um atraso
+        }, 100 * i);
     });
 }
+
+// Chama a função após o carregamento da página
+window.onload = function() {
+    const titulo = document.getElementById('principal-titulo');
+    typeWrite(titulo);
+};
 
 // Scrollreveal
 ScrollReveal().reveal('.imagem-header', {
@@ -156,6 +150,54 @@ ScrollReveal().reveal('.see-github', {
     origin: 'bottom',
 });
 
+ScrollReveal().reveal('#galvao-app .titulo', {
+    distance: '50px',
+    delay: 300,
+    origin: 'top',
+    opacity: 0,
+    duration: 800
+});
+
+ScrollReveal().reveal('#galvao-app .descricao', {
+    distance: '30px',
+    delay: 400,
+    origin: 'bottom',
+    opacity: 0,
+    duration: 800
+});
+
+ScrollReveal().reveal('#galvao-app .funcionalidades h2', {
+    distance: '40px',
+    delay: 500,
+    origin: 'left',
+    opacity: 0,
+    duration: 800
+});
+
+ScrollReveal().reveal('#galvao-app .funcionalidades ul li', {
+    distance: '20px',
+    delay: 600,
+    origin: 'left',
+    opacity: 0,
+    duration: 700,
+    interval: 100 // Intervalo para aparecerem em sequência
+});
+
+ScrollReveal().reveal('#galvao-app .imagens-app img', {
+    distance: '40px',
+    delay: 700,
+    origin: 'right',
+    opacity: 0,
+    duration: 900
+});
+
+ScrollReveal().reveal('#galvao-app .conclusao', {
+    distance: '30px',
+    delay: 800,
+    origin: 'bottom',
+    opacity: 0,
+    duration: 800
+});
 
 // Codigo para enviar os forms para o Netify
 document

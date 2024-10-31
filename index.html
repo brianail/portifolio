@@ -8,7 +8,7 @@
     <meta name="copyright" content="Brian_ail 2022" />
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="/assets/fav.ico" type="image/x-icon" />
-    <title>Home - Brian Ail</title>
+    <title>Brian Ail</title>
     <script src="https://kit.fontawesome.com/4c65401d66.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
 
@@ -20,10 +20,6 @@
 </head>
 
 <body>
-
-    <div id="preloader">
-        <div id="loader"></div>
-    </div>
     <div id="content" class="hide">
         <header>
             <div class="header-nav">
@@ -45,8 +41,9 @@
 
             <div class="conteudo-header">
                 <div class="conteudo-texto">
-                    <h1 class="principal-titulo">Olá, meu nome é Brian e estou empolgado em apresentar meu portfólio!
-                        Ficarei feliz em poder ajudá-lo de alguma forma.</h1>
+                    <h1 id="principal-titulo" class="principal-titulo">
+                        Olá, sou Brian! Estou muito animado para apresentar meu portfólio a você. Estou à disposição para ajudar e colaborar de qualquer maneira que eu puder. Fique à vontade para explorar e me contatar se precisar de alguma assistência!
+                    </h1>
 
                     <a href="#contat-me"><button>Entre em contato</button></a>
                 </div>
@@ -61,20 +58,9 @@
                 <div class="info-me">
                     <div class="informacoes-text">
                         <p class="paragrafo-about-me">
-                            Agradeço por dedicar seu tempo para ler meu trabalho. Caso tenha alguma sugestão ou
-                            comentário,
-                            ficarei muito feliz em recebê-los através do meu e-mail. Obrigado!
+                            Agradeço por dedicar seu tempo para ler meu trabalho. Caso tenha alguma sugestão ou comentário, ficarei muito feliz em recebê-los através do meu e-mail. Obrigado! 
                             <br><br>
-                            Sou estudante de análise de sistemas apaixonado por tecnologia e seus infinitos potenciais.
-                            Foco
-                            em análise de dados por acreditar ser uma das áreas mais emocionantes e importantes. Estou
-                            fazendo um curso onde aprendo habilidades em programação, estatística e visualização de
-                            dados.
-                            Meu amor pela tecnologia começou há muito tempo e quero fazer minha parte para mudar o
-                            mundo.
-                            Estou aberto a sugestões e ideias interessantes para explorar novos horizontes na jornada
-                            como
-                            analista de dados.
+                            Atualmente, sou estudante de Análise de Dados, analista de cadastros e freelancer na criação de sites. Sou apaixonado por tecnologia e seus infinitos potenciais, com um foco especial em Análise de Dados, pois acredito que essa é uma das áreas mais emocionantes e importantes atualmente. Estou aprendendo habilidades em programação, estatística e visualização de dados. Meu amor pela tecnologia começou há muito tempo, e quero fazer a minha parte para mudar o mundo. Estou aberto a sugestões e ideias interessantes para explorar novos horizontes na minha jornada na área de TI.
                         </p>
                         <a href="/assets/curriculo.pdf" download="CV-Brian_Ail" class="download"> Currículo</a>
                     </div>
@@ -83,8 +69,29 @@
             </section>
               
             <section id="projects">
-                <h1 class="titulo">Meus Projetos </h1>
+                <h1 class="titulos">Meus Projetos </h1>
                 <div class="cards-projetos">
+                    <div class="card">
+                        <a href="https://marinacampos.netlify.app">
+                            <h2>Marina Campos</h2>
+                            <p>Tecnologias: HTML | CSS | JAVASCRIPT</p>
+                        </a>
+                        <div class="foto">
+                            <img src="/assets/marina.png">
+                        </div>
+
+                    </div>
+                    <div class="card">
+                        <a href="https://petegato.netlify.app">
+                            <h2>Pet & Gatô</h2>
+                            <p>Tecnologias: HTML | CSS | JAVASCRIPT</p>
+                        </a>
+                        <div class="foto">
+                            <img src="/assets/pet.png">
+                        </div>
+
+                    </div>
+
                     <div class="card">
                         <a href="https://loopstudio-home.netlify.app">
                             <h2>Loopstudios</h2>
@@ -116,6 +123,32 @@
                         </div>
                     </div>
                 </div>
+            </section>
+
+            <section id="galvao-app">
+                <h1 class="titulo">XLSX Extractor - Galvão Advogados</h1>
+                <p class="descricao">
+                    O <strong>XLSX Extractor</strong> foi desenvolvido para Galvão Advogados, com o intuito de revolucionar o processo de extração de dados de planilhas Excel. Em um ambiente jurídico onde a precisão e a eficiência são fundamentais, este aplicativo permite a coleta e a organização de informações de forma simplificada, otimizando o fluxo de trabalho da equipe jurídica e reduzindo o tempo gasto em tarefas manuais.
+                </p>
+                <div class="funcionalidades">
+                    <h2>Funcionalidades Principais:</h2>
+                    <ul>
+                        <li><strong>Extração Rápida de Dados:</strong> O aplicativo permite importar e extrair dados de arquivos XLSX com facilidade, agilizando o acesso a informações essenciais.</li>
+                        <li><strong>Interface Intuitiva:</strong> Desenvolvida com foco na usabilidade, a interface é amigável e permite que usuários de todos os níveis de habilidade naveguem pelo aplicativo sem dificuldades.</li>
+                        <li><strong>Relatórios Personalizados:</strong> Crie relatórios dinâmicos e adaptáveis com base nos dados extraídos, permitindo que a equipe atenda às necessidades específicas de cada caso jurídico.</li>
+                        <li><strong>Suporte para Múltiplos Formatos:</strong> Trabalhe com diversos formatos de dados, incluindo texto, números e datas, aplicando filtros personalizados para facilitar a análise.</li>
+                        <li><strong>Reconhecimento Automático de Dados:</strong> O aplicativo possui a capacidade de identificar automaticamente linhas de telefone e outros campos relevantes, simplificando ainda mais a extração.</li>
+                        <li><strong>Exportação Eficiente:</strong> Os dados extraídos podem ser salvos em vários formatos, como CSV e PDF, permitindo uma fácil integração com outras ferramentas e sistemas.</li>
+                        <li><strong>Armazenamento Seguro:</strong> Todas as informações extraídas são armazenadas de forma segura, garantindo a privacidade e a confidencialidade dos dados sensíveis tratados pelo escritório de advocacia.</li>
+                        <li><strong>Atualizações e Manutenção:</strong> O aplicativo é projetado para ser facilmente atualizado, com novas funcionalidades e melhorias sendo implementadas regularmente, com base no feedback dos usuários.</li>
+                    </ul>
+                </div>
+                <div class="imagens-app">
+                    <img src="/assets/xlsx.jpg" alt="Captura de tela do XLSX Extractor">
+                </div>
+                <p class="conclusao">
+                    O desenvolvimento do <strong>XLSX Extractor</strong> foi uma experiência enriquecedora que me permitiu aplicar e expandir minhas habilidades em programação, design de interface e gestão de projetos. O aplicativo não apenas melhorou a eficiência operacional da equipe de Galvão Advogados, mas também me proporcionou uma compreensão mais profunda das necessidades do setor jurídico. O feedback positivo dos usuários e os resultados tangíveis alcançados destacam o valor da solução criada, reforçando meu compromisso em desenvolver aplicações que atendam a demandas reais do mercado.
+                </p>
             </section>
 
             <section id="service">
@@ -164,6 +197,14 @@
 
                     <div class="skils">
                         <i class="fab fa-swift"></i>
+                    </div>
+
+                    <div class="skils">
+                        <i class="fab fa-python"></i> <!-- Ícone do Python -->
+                    </div>
+
+                    <div class="skils">
+                        <i class="fas fa-chart-line"></i> <!-- Ícone de gráfico representando análise -->
                     </div>
                 </div>
             </section>
