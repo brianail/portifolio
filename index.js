@@ -199,6 +199,15 @@ ScrollReveal().reveal('#galvao-app .conclusao', {
     duration: 800
 });
 
+ScrollReveal().reveal('.faq-item', {
+    distance: '30px',
+    delay: 300,
+    origin: 'bottom',
+    opacity: 0,
+    duration: 700,
+    interval: 200 // Define o intervalo entre cada item para um efeito em cascata
+});
+
 // Codigo para enviar os forms para o Netify
 document
     .querySelector("form")
@@ -218,3 +227,27 @@ const handleSubmit = (e) => {
         .then(() => console.log("Form successfully submitted"))
         .catch((error) => alert(error));
 };
+
+document.querySelectorAll(".faq-question").forEach(button => {
+    button.addEventListener("click", () => {
+        const faqItem = button.parentElement;
+        const answer = faqItem.querySelector(".faq-answer");
+
+        // Fecha todas as respostas abertas antes de abrir a nova
+        document.querySelectorAll(".faq-item").forEach(item => {
+            const itemAnswer = item.querySelector(".faq-answer");
+            if (item !== faqItem) {
+                item.classList.remove("open");
+                itemAnswer.style.maxHeight = null;
+            }
+        });
+
+        // Alterna a resposta atual com animação de altura
+        faqItem.classList.toggle("open");
+        if (faqItem.classList.contains("open")) {
+            answer.style.maxHeight = answer.scrollHeight + "px"; // Define a altura para abrir
+        } else {
+            answer.style.maxHeight = null; // Reseta para fechar
+        }
+    });
+});
