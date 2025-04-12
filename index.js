@@ -1,35 +1,17 @@
-// Menu Hamburguer
-const btnMobile = document.getElementById('btn-mobile');
-const nav = document.getElementById('nav');
-
-function toggleMenu(event) {
-    if (event.type === 'touchstart') event.preventDefault();
+document.getElementById('btn-mobile').addEventListener('click', function () {
+    const nav = document.getElementById('menu');
     nav.classList.toggle('active');
-    const active = nav.classList.contains('active');
-    event.currentTarget.setAttribute('aria-expanded', active);
-    if (active) {
-        event.currentTarget.setAttribute('aria-label', 'Fechar Menu');
-    } else {
-        event.currentTarget.setAttribute('aria-label', 'Abrir Menu');
-    }
-}
-
-function closeMenuOnClickOutside(event) {
-    if (nav.classList.contains('active') && !nav.contains(event.target) && event.target !== btnMobile) {
-        toggleMenu(event);
-    }
-}
-
-btnMobile.addEventListener('click', toggleMenu);
-btnMobile.addEventListener('touchstart', toggleMenu);
-
-const navLinks = document.querySelectorAll('.nav-link');
-navLinks.forEach((link) => {
-    link.addEventListener('click', toggleMenu);
+    this.classList.toggle('active');
 });
 
-document.addEventListener('click', closeMenuOnClickOutside);
+document.getElementById('abrir-curriculo').addEventListener('click', function (e) {
+    e.preventDefault();
+    document.getElementById('modal-curriculo').style.display = 'block';
+});
 
+document.querySelector('.fechar-modal').addEventListener('click', function () {
+    document.getElementById('modal-curriculo').style.display = 'none';
+});
 
 // Efeito máquina de escrever
 function typeWrite(elemento) {
@@ -41,6 +23,31 @@ function typeWrite(elemento) {
         }, 100 * i);
     });
 }
+
+
+document.querySelectorAll(".faq-question").forEach(button => {
+    button.addEventListener("click", () => {
+        const faqItem = button.parentElement;
+        const answer = faqItem.querySelector(".faq-answer");
+
+        // Fecha todas as respostas abertas antes de abrir a nova
+        document.querySelectorAll(".faq-item").forEach(item => {
+            const itemAnswer = item.querySelector(".faq-answer");
+            if (item !== faqItem) {
+                item.classList.remove("open");
+                itemAnswer.style.maxHeight = null;
+            }
+        });
+
+        // Alterna a resposta atual com animação de altura
+        faqItem.classList.toggle("open");
+        if (faqItem.classList.contains("open")) {
+            answer.style.maxHeight = answer.scrollHeight + "px"; // Define a altura para abrir
+        } else {
+            answer.style.maxHeight = null; // Reseta para fechar
+        }
+    });
+});
 
 // Chama a função após o carregamento da página
 window.onload = function() {
@@ -208,46 +215,44 @@ ScrollReveal().reveal('.faq-item', {
     interval: 200 // Define o intervalo entre cada item para um efeito em cascata
 });
 
-// Codigo para enviar os forms para o Netify
-document
-    .querySelector("form")
-    .addEventListener("submit", handleSubmit);
+ScrollReveal().reveal('.footer-container', {
+    distance: '40px',
+    delay: 500,
+    origin: 'bottom',
+    opacity: 0,
+    duration: 800
+});
 
-const handleSubmit = (e) => {
-    e.preventDefault();
-    let myForm = document.getElementById("pizzaOrder");
-    let formData = new FormData(myForm);
-    fetch("/", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/x-www-form-urlencoded"
-            },
-            body: new URLSearchParams(formData).toString(),
-        })
-        .then(() => console.log("Form successfully submitted"))
-        .catch((error) => alert(error));
-};
+ScrollReveal().reveal('.footer-contact h2, .footer-contact p', {
+    distance: '30px',
+    delay: 600,
+    origin: 'top',
+    opacity: 0,
+    duration: 700,
+    interval: 200
+});
 
-document.querySelectorAll(".faq-question").forEach(button => {
-    button.addEventListener("click", () => {
-        const faqItem = button.parentElement;
-        const answer = faqItem.querySelector(".faq-answer");
+ScrollReveal().reveal('.footer-button', {
+    distance: '20px',
+    delay: 700,
+    origin: 'bottom',
+    opacity: 0,
+    duration: 600
+});
 
-        // Fecha todas as respostas abertas antes de abrir a nova
-        document.querySelectorAll(".faq-item").forEach(item => {
-            const itemAnswer = item.querySelector(".faq-answer");
-            if (item !== faqItem) {
-                item.classList.remove("open");
-                itemAnswer.style.maxHeight = null;
-            }
-        });
+ScrollReveal().reveal('.footer-social a', {
+    distance: '20px',
+    delay: 750,
+    origin: 'bottom',
+    opacity: 0,
+    duration: 600,
+    interval: 150
+});
 
-        // Alterna a resposta atual com animação de altura
-        faqItem.classList.toggle("open");
-        if (faqItem.classList.contains("open")) {
-            answer.style.maxHeight = answer.scrollHeight + "px"; // Define a altura para abrir
-        } else {
-            answer.style.maxHeight = null; // Reseta para fechar
-        }
-    });
+ScrollReveal().reveal('.footer-copy', {
+    distance: '20px',
+    delay: 800,
+    origin: 'bottom',
+    opacity: 0,
+    duration: 600
 });

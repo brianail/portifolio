@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="copyright" content="Brian_ail 2022" />
-    <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="/assets/fav.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css">
     <title>Brian Ail</title>
     <script src="https://kit.fontawesome.com/4c65401d66.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
@@ -17,14 +17,16 @@
             reset: false
         });
     </script>
+
 </head>
 
 <body>
     <div id="content" class="hide">
         <header>
             <div class="header-nav">
-                <a href="/index.html"><img src="/assets/logo.svg" alt="" width="200px" class="imagem-header"></a>
-
+                <a href="/index.html">
+                    <img src="/assets/logo.svg" alt="Logo Brian Ail" width="15%" class="imagem-header">
+                </a>
                 <nav id="nav">
                     <button id="btn-mobile" aria-label="Abrir Menu" aria-haspopup="true" aria-controls="menu"
                         aria-expanded="false">
@@ -33,16 +35,23 @@
                     <ul id="menu" role="menu">
                         <li><a href="#about-me">Sobre mim</a></li>
                         <li><a href="#projects">Projetos</a></li>
+                        <li><a href="#galvao-app">XLSX Extractor</a></li>
                         <li><a href="#service">Serviços</a></li>
                         <li><a href="#skils">Minhas Skils</a></li>
+                        <li><a href="#contact-me">Contato</a></li>
                     </ul>
                 </nav>
             </div>
+        </header>
+
+        <main>
 
             <div class="conteudo-header">
                 <div class="conteudo-texto">
                     <h1 id="principal-titulo" class="principal-titulo">
-                        Olá, sou Brian! Estou muito animado para apresentar meu portfólio a você. Estou à disposição para ajudar e colaborar de qualquer maneira que eu puder. Fique à vontade para explorar e me contatar se precisar de alguma assistência!
+                        Olá, sou Brian! Estou muito animado para apresentar meu portfólio a você. Estou à disposição
+                        para ajudar e colaborar de qualquer maneira que eu puder. Fique à vontade para explorar e me
+                        contatar se precisar de alguma assistência!
                     </h1>
 
                     <a href="#contat-me"><button>Entre em contato</button></a>
@@ -50,25 +59,33 @@
 
                 <img src="/assets/undraw_programming_re_kg9v.svg" width="45%" class="header-logo">
             </div>
-        </header>
 
-        <main>
             <section id="about-me">
                 <h1 class="titulo"> Sobre Mim</h1>
                 <div class="info-me">
                     <div class="informacoes-text">
                         <p class="paragrafo-about-me">
-                            Agradeço por dedicar seu tempo para ler meu trabalho. Caso tenha alguma sugestão ou comentário, ficarei muito feliz em recebê-los através do meu e-mail. Obrigado! 
+                            Agradeço sinceramente por dedicar um tempo para conhecer meu trabalho. Caso tenha sugestões ou comentários, terei o maior prazer em recebê-los por e-mail. Sua opinião é sempre muito bem-vinda!
                             <br><br>
-                            Atualmente, sou estudante de Análise de Dados, analista de cadastros e freelancer na criação de sites. Sou apaixonado por tecnologia e seus infinitos potenciais, com um foco especial em Análise de Dados, pois acredito que essa é uma das áreas mais emocionantes e importantes atualmente. Estou aprendendo habilidades em programação, estatística e visualização de dados. Meu amor pela tecnologia começou há muito tempo, e quero fazer a minha parte para mudar o mundo. Estou aberto a sugestões e ideias interessantes para explorar novos horizontes na minha jornada na área de TI.
+                            Sou estudante de Análise de Dados, atuo como analista de cadastros e também trabalho como freelancer na criação de sites. Tenho uma paixão genuína por tecnologia e seus infinitos potenciais, com um olhar especial para a Análise de Dados — uma área que considero essencial e repleta de possibilidades transformadoras.
+                            <br><br>
+                            Atualmente, estou aprofundando meus conhecimentos em programação, estatística e visualização de dados. Minha jornada com a tecnologia começou há muitos anos, e sigo motivado pelo desejo de contribuir com soluções que façam a diferença. Estou sempre aberto a boas ideias, parcerias e novos desafios na área de TI.
                         </p>
-                        <a href="/assets/curriculo.pdf" download="CV-Brian_Ail" class="download"> Currículo</a>
+                        <a href="#" id="abrir-curriculo" class="btn-curriculo">Ver Currículo</a>
+                        <div id="modal-curriculo" class="modal">
+                            <div class="modal-content">
+                                <span class="fechar-modal">&times;</span>
+                                <iframe src="/curriculo.html" frameborder="0"></iframe>
+                            </div>
+                        </div>
                     </div>
-                    <img src="/assets/undraw_profile_details_re_ch9r.svg" alt="" class="img-perfil">
+                    <div class="about-img">
+                        <img src="/assets/fotoweb.png" alt="Foto de Brian" class="img-perfil">
+                    </div>
                 </div>
             </section>
-              
-            <section id="projects">
+
+            <section id="projects" class="projects">
                 <h1 class="titulo">Meus Projetos </h1>
                 <div class="cards-projetos">
                     <div class="card">
@@ -128,55 +145,87 @@
             <section id="galvao-app">
                 <h1 class="titulo">XLSX Extractor - Galvão Advogados</h1>
                 <p class="descricao">
-                    O <strong>XLSX Extractor</strong> foi desenvolvido para Galvão Advogados, com o intuito de revolucionar o processo de extração de dados de planilhas Excel. Em um ambiente jurídico onde a precisão e a eficiência são fundamentais, este aplicativo permite a coleta e a organização de informações de forma simplificada, otimizando o fluxo de trabalho da equipe jurídica e reduzindo o tempo gasto em tarefas manuais.
+                    O <strong>XLSX Extractor</strong> foi desenvolvido para Galvão Advogados, com o intuito de
+                    revolucionar o processo de extração de dados de planilhas Excel. Em um ambiente jurídico onde a
+                    precisão e a eficiência são fundamentais, este aplicativo permite a coleta e a organização de
+                    informações de forma simplificada, otimizando o fluxo de trabalho da equipe jurídica e reduzindo o
+                    tempo gasto em tarefas manuais.
                 </p>
                 <div class="funcionalidades">
                     <h2>Funcionalidades Principais:</h2>
                     <ul>
-                        <li><strong>Extração Rápida de Dados:</strong> O aplicativo permite importar e extrair dados de arquivos XLSX com facilidade, agilizando o acesso a informações essenciais.</li>
-                        <li><strong>Interface Intuitiva:</strong> Desenvolvida com foco na usabilidade, a interface é amigável e permite que usuários de todos os níveis de habilidade naveguem pelo aplicativo sem dificuldades.</li>
-                        <li><strong>Relatórios Personalizados:</strong> Crie relatórios dinâmicos e adaptáveis com base nos dados extraídos, permitindo que a equipe atenda às necessidades específicas de cada caso jurídico.</li>
-                        <li><strong>Suporte para Múltiplos Formatos:</strong> Trabalhe com diversos formatos de dados, incluindo texto, números e datas, aplicando filtros personalizados para facilitar a análise.</li>
-                        <li><strong>Reconhecimento Automático de Dados:</strong> O aplicativo possui a capacidade de identificar automaticamente linhas de telefone e outros campos relevantes, simplificando ainda mais a extração.</li>
-                        <li><strong>Exportação Exclusiva para .txt:</strong> Os dados extraídos são salvos em um arquivo .txt totalmente customizado, com um cabeçalho personalizado e todos os dados obtidos do XLSX. Isso garante uma integração direta com outras ferramentas e sistemas e atende aos requisitos específicos da equipe jurídica.</li>
-                        <li><strong>Armazenamento Seguro:</strong> Todas as informações extraídas são armazenadas de forma segura, garantindo a privacidade e a confidencialidade dos dados sensíveis tratados pelo escritório de advocacia.</li>
-                        <li><strong>Atualizações e Manutenção:</strong> O aplicativo é projetado para ser facilmente atualizado, com novas funcionalidades e melhorias sendo implementadas regularmente, com base no feedback dos usuários.</li>
+                        <li><strong>Extração Rápida de Dados:</strong> O aplicativo permite importar e extrair dados de
+                            arquivos XLSX com facilidade, agilizando o acesso a informações essenciais.</li>
+                        <li><strong>Interface Intuitiva:</strong> Desenvolvida com foco na usabilidade, a interface é
+                            amigável e permite que usuários de todos os níveis de habilidade naveguem pelo aplicativo
+                            sem dificuldades.</li>
+                        <li><strong>Relatórios Personalizados:</strong> Crie relatórios dinâmicos e adaptáveis com base
+                            nos dados extraídos, permitindo que a equipe atenda às necessidades específicas de cada caso
+                            jurídico.</li>
+                        <li><strong>Suporte para Múltiplos Formatos:</strong> Trabalhe com diversos formatos de dados,
+                            incluindo texto, números e datas, aplicando filtros personalizados para facilitar a análise.
+                        </li>
+                        <li><strong>Reconhecimento Automático de Dados:</strong> O aplicativo possui a capacidade de
+                            identificar automaticamente linhas de telefone e outros campos relevantes, simplificando
+                            ainda mais a extração.</li>
+                        <li><strong>Exportação Exclusiva para .txt:</strong> Os dados extraídos são salvos em um arquivo
+                            .txt totalmente customizado, com um cabeçalho personalizado e todos os dados obtidos do
+                            XLSX. Isso garante uma integração direta com outras ferramentas e sistemas e atende aos
+                            requisitos específicos da equipe jurídica.</li>
+                        <li><strong>Armazenamento Seguro:</strong> Todas as informações extraídas são armazenadas de
+                            forma segura, garantindo a privacidade e a confidencialidade dos dados sensíveis tratados
+                            pelo escritório de advocacia.</li>
+                        <li><strong>Atualizações e Manutenção:</strong> O aplicativo é projetado para ser facilmente
+                            atualizado, com novas funcionalidades e melhorias sendo implementadas regularmente, com base
+                            no feedback dos usuários.</li>
                     </ul>
                 </div>
                 <div class="imagens-app">
                     <img src="/assets/xlsx.jpg" alt="Captura de tela do XLSX Extractor">
                 </div>
                 <p class="conclusao">
-                    O desenvolvimento do <strong>XLSX Extractor</strong> foi uma experiência enriquecedora que me permitiu aplicar e expandir minhas habilidades em programação, design de interface e gestão de projetos. O aplicativo não apenas melhorou a eficiência operacional da equipe de Galvão Advogados, mas também me proporcionou uma compreensão mais profunda das necessidades do setor jurídico. O feedback positivo dos usuários e os resultados tangíveis alcançados destacam o valor da solução criada, reforçando meu compromisso em desenvolver aplicações que atendam a demandas reais do mercado.
+                    O desenvolvimento do <strong>XLSX Extractor</strong> foi uma experiência enriquecedora que me
+                    permitiu aplicar e expandir minhas habilidades em programação, design de interface e gestão de
+                    projetos. O aplicativo não apenas melhorou a eficiência operacional da equipe de Galvão Advogados,
+                    mas também me proporcionou uma compreensão mais profunda das necessidades do setor jurídico. O
+                    feedback positivo dos usuários e os resultados tangíveis alcançados destacam o valor da solução
+                    criada, reforçando meu compromisso em desenvolver aplicações que atendam a demandas reais do
+                    mercado.
                 </p>
             </section>
 
             <section id="service">
                 <h1 class="titulo">Serviços</h1>
-                <p class="descricao">Exploro e ofereço uma variedade de serviços para fortalecer a presença digital e a experiência do usuário, atendendo desde desenvolvimento de sites a criação de aplicativos. Cada serviço é adaptado para trazer resultados eficazes e profissionais.</p>
+                <p class="descricao">Exploro e ofereço uma variedade de serviços para fortalecer a presença digital e a
+                    experiência do usuário, atendendo desde desenvolvimento de sites a criação de aplicativos. Cada
+                    serviço é adaptado para trazer resultados eficazes e profissionais.</p>
                 <div class="cards-services">
                     <div class="card">
                         <i class="fas fa-file-code"></i>
                         <h3>Criação de Sites</h3>
-                        <p>Desenvolvimento de sites responsivos, modernos e otimizados para SEO, proporcionando uma experiência agradável e funcional aos visitantes.</p>
+                        <p>Desenvolvimento de sites responsivos, modernos e otimizados para SEO, proporcionando uma
+                            experiência agradável e funcional aos visitantes.</p>
                     </div>
-            
+
                     <div class="card">
                         <i class="fas fa-envelope-open-text"></i>
                         <h3>E-mails Profissionais</h3>
-                        <p>Configuração de e-mails corporativos com domínio personalizado, reforçando a credibilidade e profissionalismo da sua marca.</p>
+                        <p>Configuração de e-mails corporativos com domínio personalizado, reforçando a credibilidade e
+                            profissionalismo da sua marca.</p>
                     </div>
-            
+
                     <div class="card">
                         <i class="fab fa-figma"></i>
                         <h3>UX/UI Design</h3>
-                        <p>Design centrado no usuário para interfaces intuitivas, garantindo uma navegação fluida e visual agradável para seus clientes.</p>
+                        <p>Design centrado no usuário para interfaces intuitivas, garantindo uma navegação fluida e
+                            visual agradável para seus clientes.</p>
                     </div>
-            
+
                     <div class="card">
                         <i class="fas fa-mobile-alt"></i>
                         <h3>Desenvolvimento de Aplicativos</h3>
-                        <p>Aplicativos customizados, com design responsivo e performance otimizada, focados nas necessidades e objetivos do usuário final.</p>
+                        <p>Aplicativos customizados, com design responsivo e performance otimizada, focados nas
+                            necessidades e objetivos do usuário final.</p>
                     </div>
                 </div>
             </section>
@@ -204,11 +253,11 @@
                     </div>
 
                     <div class="skils">
-                        <i class="fab fa-python"></i> 
+                        <i class="fab fa-python"></i>
                     </div>
 
                     <div class="skils">
-                        <i class="fas fa-chart-line"></i> 
+                        <i class="fas fa-chart-line"></i>
                     </div>
                 </div>
             </section>
@@ -217,40 +266,64 @@
                 <h2>F.A.Q</h2>
                 <h3>Perguntas Frequentes</h3>
                 <div class="faq-item">
-                    <button class="faq-question">Qual o meu foco como desenvolvedor? <span class="toggle-icon">+</span></button>
+                    <button class="faq-question">Qual o meu foco como desenvolvedor? <span
+                            class="toggle-icon">+</span></button>
                     <div class="faq-answer">
-                        <p>Meu foco está em criar soluções personalizadas e de fácil usabilidade, sempre otimizadas para proporcionar a melhor experiência ao usuário, com um design moderno e funcionalidades eficientes.</p>
+                        <p>Meu foco está em criar soluções personalizadas e de fácil usabilidade, sempre otimizadas para
+                            proporcionar a melhor experiência ao usuário, com um design moderno e funcionalidades
+                            eficientes.</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question">Quanto tempo leva para desenvolver um projeto? <span class="toggle-icon">+</span></button>
+                    <button class="faq-question">Quanto tempo leva para desenvolver um projeto? <span
+                            class="toggle-icon">+</span></button>
                     <div class="faq-answer">
-                        <p>O prazo depende da complexidade e das especificações do projeto, mas trabalho sempre com um cronograma estruturado, mantendo uma comunicação transparente para cumprir os prazos com a melhor qualidade.</p>
+                        <p>O prazo depende da complexidade e das especificações do projeto, mas trabalho sempre com um
+                            cronograma estruturado, mantendo uma comunicação transparente para cumprir os prazos com a
+                            melhor qualidade.</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question">Como sei se o projeto vai ficar como eu espero? <span class="toggle-icon">+</span></button>
+                    <button class="faq-question">Como sei se o projeto vai ficar como eu espero? <span
+                            class="toggle-icon">+</span></button>
                     <div class="faq-answer">
-                        <p>Durante o desenvolvimento, faço reuniões periódicas para alinhar expectativas e apresentar o progresso. Assim, cada etapa é validada, garantindo que o resultado final esteja de acordo com suas expectativas.</p>
+                        <p>Durante o desenvolvimento, faço reuniões periódicas para alinhar expectativas e apresentar o
+                            progresso. Assim, cada etapa é validada, garantindo que o resultado final esteja de acordo
+                            com suas expectativas.</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question">Quais são os serviços que ofereço? <span class="toggle-icon">+</span></button>
+                    <button class="faq-question">Quais são os serviços que ofereço? <span
+                            class="toggle-icon">+</span></button>
                     <div class="faq-answer">
-                        <p>Atualmente, ofereço criação de sites responsivos, design de interfaces, e desenvolvimento de aplicativos e sistemas. Todos os serviços são personalizados e adaptados para atender necessidades específicas.</p>
+                        <p>Atualmente, ofereço criação de sites responsivos, design de interfaces, e desenvolvimento de
+                            aplicativos e sistemas. Todos os serviços são personalizados e adaptados para atender
+                            necessidades específicas.</p>
                     </div>
                 </div>
             </section>
         </main>
 
         <footer id="contact-me">
-            <img src="/assets/logo.svg" alt="Logo do Portfólio" width="200px">
-        
-            <div class="buttons-social">
-                <a href="https://www.instagram.com/brian_ail/" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://github.com/brianail" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/brian-ail-b2748b168/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                <a href="tel:+551984179767"><i class="fas fa-phone-alt"></i></a>
+            <div class="footer-container">
+                <div class="footer-logo">
+                    <img src="/assets/logo.svg" alt="Logo do Portfólio" width="180">
+                </div>
+                <div class="footer-contact">
+                    <h2>Vamos conversar?</h2>
+                    <p>Entre em contato comigo para iniciarmos um projeto juntos ou simplesmente para trocar ideias!</p>
+                    <a href="mailto:brianail.dev@gmail.com" class="footer-button">Enviar e-mail</a>
+                </div>
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/brian_ail/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://github.com/brianail" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/brian-ail-b2748b168/" target="_blank"><i
+                            class="fab fa-linkedin-in"></i></a>
+                    <a href="tel:+551984179767"><i class="fas fa-phone-alt"></i></a>
+                </div>
+                <div class="footer-copy">
+                    <p>&copy; 2024 Brian Ail. Todos os direitos reservados.</p>
+                </div>
             </div>
         </footer>
     </div>
