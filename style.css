@@ -215,6 +215,7 @@ nav a:hover {
 
 /* SEÇÕES */
 section {
+  scroll-margin-top: 120px;
   padding: 2rem 1.5rem;
 }
 
@@ -330,8 +331,14 @@ section {
   text-align: center;
 }
 
+.footer-logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
 .footer-logo img {
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .footer-contact h2 {
@@ -384,6 +391,147 @@ section {
   color: var(--muted);
 }
 
+#timeline {
+  background: linear-gradient(135deg, #0e1117, #1c1f26);
+  padding: 4rem 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 30px rgba(88, 166, 255, 0.1);
+  margin: 2rem auto;
+  max-width: 1100px;
+  position: relative;
+}
+
+.timeline-wrapper {
+  position: relative;
+  max-width: 1100px;
+  margin: auto;
+  padding-top: 1rem;
+  padding-bottom: 4rem;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 110%;
+  background: linear-gradient(to bottom, #fca311, #5e60ce, #4cc9f0);
+  z-index: 1;
+  border-radius: 2px;
+}
+
+.timeline-entry {
+  position: relative;
+  width: 50%;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.timeline-entry.left {
+  left: 0;
+  text-align: right;
+}
+
+.timeline-entry.right {
+  left: 50%;
+  text-align: left;
+}
+
+.timeline-circle {
+  width: 70px;
+  height: 70px;
+  background-color: #0d1117;
+  border: 5px solid var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: var(--primary);
+  font-size: 1.2rem;
+  position: absolute;
+  top: 0;
+  z-index: 300;
+}
+
+.timeline-entry.left .timeline-circle {
+  right: -35px;
+  transform: translateY(-50%);
+}
+
+.timeline-entry.right .timeline-circle {
+  left: -35px;
+  transform: translateY(-50%);
+}
+
+.timeline-content {
+  background-color: #161b22;
+  padding: 1rem 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 2;
+  max-width: 90%;
+  margin-top: 2rem;
+}
+
+.timeline-content h3 {
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.timeline-entry+.timeline-entry {
+  margin-top: 1rem;
+}
+
+#clientes {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  padding: 4rem 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 30px rgba(88, 166, 255, 0.1);
+  margin: 2rem auto;
+  max-width: 1100px;
+  text-align: center;
+}
+
+#clientes .titulo {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 2rem;
+}
+
+.clientes-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.logo-empresa {
+  width: 140px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: filter 0.3s ease, transform 0.3s ease;
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  padding: 0.5rem;
+}
+
+.logo-empresa:hover {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+
+.logo-empresa img {
+  max-width: 100%;
+  max-height: 80px;
+  object-fit: contain;
+}
+
 /* RESPONSIVO */
 @media (max-width: 768px) {
   nav ul {
@@ -415,75 +563,8 @@ section {
 }
 
 /* Centralização do conteúdo com margem lateral */
-body > div#content {
+body>div#content {
   margin: 0 auto;
-}
-
-/* Estilo sofisticado para a seção Galvão App */
-#galvao-app {
-  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-  padding: 4rem 2rem;
-  border-radius: var(--border-radius);
-  box-shadow: 0 0 20px rgba(88, 166, 255, 0.2);
-  margin: 2rem auto;
-  max-width: 1100px;
-}
-
-#galvao-app .titulo {
-  font-size: 2.5rem;
-  color: #58a6ff;
-  margin-bottom: 1.5rem;
-}
-
-#galvao-app .descricao,
-#galvao-app .conclusao {
-  font-size: 1.1rem;
-  color: #c9d1d9;
-  line-height: 1.8;
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-#galvao-app .funcionalidades h2 {
-  color: #58a6ff;
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
-#galvao-app .funcionalidades ul {
-  list-style: none;
-  padding-left: 0;
-  color: #c9d1d9;
-  max-width: 900px;
-  margin: 0 auto;
-  text-align: left;
-}
-
-#galvao-app .funcionalidades li {
-  margin-bottom: 1rem;
-  background: rgba(255, 255, 255, 0.05);
-  padding: 1rem;
-  border-left: 4px solid #58a6ff;
-  border-radius: 5px;
-  transition: background 0.3s;
-}
-
-#galvao-app .funcionalidades li:hover {
-  background: rgba(255, 255, 255, 0.1);
-}
-
-#galvao-app .imagens-app {
-  margin: 2rem 0;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-}
-
-#galvao-app .imagens-app img {
-  width: 40%;
-  max-width: 800px;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(88, 166, 255, 0.3);
 }
 
 /* Estilo para a seção Service */
@@ -647,21 +728,27 @@ body > div#content {
 }
 
 .faq-answer {
-  display: none;
-  padding: 1rem 1.5rem;
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 1.5rem;
   background-color: #1c1f26;
   border-top: 1px solid #30363d;
-  animation: fadeIn 0.3s ease-in-out;
+  transition: max-height 0.4s ease, padding 0.4s ease;
 }
 
-.faq-item.active .faq-answer {
-  display: block;
+.faq-item.open .faq-answer {
+  max-height: 1000px;
+  padding: 1rem 1.5rem;
 }
 
 .faq-answer p {
   text-align: center;
   color: var(--muted);
   line-height: 1.6;
+}
+
+.faq-item.open .faq-answer p {
+  animation: fadeInText 0.5s ease forwards;
 }
 
 .toggle-icon {
@@ -672,18 +759,6 @@ body > div#content {
 
 .faq-item.active .toggle-icon {
   transform: rotate(45deg);
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-5px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 #projects {
@@ -841,4 +916,96 @@ body > div#content {
   font-size: 2rem;
   font-weight: bold;
   cursor: pointer;
+}
+
+#timeline {
+  padding: 4rem 2rem;
+  overflow-x: auto;
+}
+
+.timeline-container {
+  display: flex;
+  gap: 1rem;
+  padding-bottom: 2rem;
+}
+
+.timeline-item {
+  background-color: #1f232a;
+  border: 1px solid var(--primary);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  min-width: 260px;
+  flex-shrink: 0;
+  scroll-snap-align: center;
+  position: relative;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.timeline-icon {
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.timeline-content h3 {
+  color: var(--primary);
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-entry {
+  width: 100%;
+  left: 0 !important;
+  text-align: center;
+  padding: 1rem;
+}
+
+.timeline-entry.left .timeline-circle,
+.timeline-entry.right .timeline-circle {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 1rem;
+}
+
+.timeline-line {
+  left: 20px;
+  transform: none;
+}
+
+.timeline-content {
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

@@ -24,235 +24,238 @@ function typeWrite(elemento) {
     });
 }
 
-
 document.querySelectorAll(".faq-question").forEach(button => {
     button.addEventListener("click", () => {
-        const faqItem = button.parentElement;
+        const faqItem = button.closest(".faq-item");
         const answer = faqItem.querySelector(".faq-answer");
+        const icon = button.querySelector(".toggle-icon");
+        const isOpen = faqItem.classList.contains("open");
 
-        // Fecha todas as respostas abertas antes de abrir a nova
+        // Fecha todos
         document.querySelectorAll(".faq-item").forEach(item => {
-            const itemAnswer = item.querySelector(".faq-answer");
-            if (item !== faqItem) {
-                item.classList.remove("open");
-                itemAnswer.style.maxHeight = null;
-            }
+            item.classList.remove("open", "active");
+            item.querySelector(".faq-answer").style.maxHeight = null;
+            item.querySelector(".toggle-icon").style.transform = "rotate(0deg)";
         });
 
-        // Alterna a resposta atual com animação de altura
-        faqItem.classList.toggle("open");
-        if (faqItem.classList.contains("open")) {
-            answer.style.maxHeight = answer.scrollHeight + "px"; // Define a altura para abrir
-        } else {
-            answer.style.maxHeight = null; // Reseta para fechar
+        // Abre somente se não estava aberto
+        if (!isOpen) {
+            faqItem.classList.add("open", "active");
+            answer.style.maxHeight = answer.scrollHeight + "px";
+            icon.style.transform = "rotate(45deg)";
         }
     });
 });
 
 // Chama a função após o carregamento da página
-window.onload = function() {
+window.onload = function () {
     const titulo = document.getElementById('principal-titulo');
     typeWrite(titulo);
 };
 
-// Scrollreveal
-ScrollReveal().reveal('.imagem-header', {
-    delay: 100,
-    origin: 'right',
-    reset: false
+document.addEventListener("DOMContentLoaded", function () {
+    const sr = ScrollReveal({
+        reset: true
+    });
+
+    sr.reveal('.titulo', {
+        origin: 'top',
+        distance: '50px',
+        duration: 1000,
+        delay: 200
+    });
+
+    sr.reveal('.conteudo-texto, .info-me, .about-img', {
+        origin: 'bottom',
+        distance: '40px',
+        duration: 800,
+        interval: 200
+    });
+
+    sr.reveal('.header-logo', {
+        origin: 'top',
+        distance: '40px',
+        duration: 800,
+        delay: 300
+    });
+
+    sr.reveal('.card', {
+        origin: 'bottom',
+        distance: '50px',
+        duration: 800,
+        interval: 150
+    });
+
+    sr.reveal('.card-skils > div', {
+        origin: 'bottom',
+        distance: '30px',
+        duration: 800,
+        interval: 150
+    });
+
+    sr.reveal('.timeline-entry.left', {
+        origin: 'left',
+        distance: '50px',
+        duration: 1000,
+        interval: 200
+    });
+
+    sr.reveal('.timeline-entry.right', {
+        origin: 'right',
+        distance: '50px',
+        duration: 1000,
+        interval: 200
+    });
+
+    sr.reveal('.faq-item', {
+        origin: 'bottom',
+        distance: '30px',
+        duration: 700,
+        interval: 150
+    });
+
+    sr.reveal('.footer-container > div', {
+        origin: 'bottom',
+        distance: '40px',
+        duration: 700,
+        interval: 200
+    });
+
+    sr.reveal('.footer-copy', {
+        origin: 'bottom',
+        distance: '20px',
+        duration: 600,
+        delay: 400
+    });
+    
+    // Lista de funcionalidades (ul li)
+    sr.reveal('#galvao-app .funcionalidades ul li', {
+        origin: 'left',
+        distance: '30px',
+        duration: 700,
+        interval: 100
+    });
 });
 
-ScrollReveal().reveal('.header-logo', {
-    distance: '100%',
-    delay: 600,
-    origin: 'top',
-});
+document.addEventListener("DOMContentLoaded", function () {
+    const sr = ScrollReveal({
+        reset: true
+    });
 
-ScrollReveal().reveal('.conteudo-texto', {
-    distance: '100%',
-    delay: 850,
-    origin: 'left',
-});
+    sr.reveal('.titulo', {
+        origin: 'top',
+        distance: '50px',
+        duration: 1000,
+        delay: 200
+    });
 
-ScrollReveal().reveal('section', {
-    distance: '100%',
-    delay: 500,
-    origin: 'left',
-});
+    sr.reveal('.conteudo-texto, .info-me, .about-img', {
+        origin: 'bottom',
+        distance: '40px',
+        duration: 800,
+        interval: 200
+    });
 
-ScrollReveal().reveal('.paragrafo-about-me', {
-    distance: '100%',
-    delay: 800,
-    origin: 'left',
-});
+    sr.reveal('.header-logo', {
+        origin: 'top',
+        distance: '40px',
+        duration: 800,
+        delay: 300
+    });
 
-ScrollReveal().reveal('.download', {
-    distance: '100%',
-    delay: 1000,
-    origin: 'left',
-});
+    sr.reveal('.card', {
+        origin: 'bottom',
+        distance: '50px',
+        duration: 800,
+        interval: 150
+    });
 
-ScrollReveal().reveal('.img-perfil', {
-    distance: '100%',
-    delay: 600,
-    origin: 'left',
-});
+    sr.reveal('.card-skils > div', {
+        origin: 'bottom',
+        distance: '30px',
+        duration: 800,
+        interval: 150
+    });
 
-ScrollReveal().reveal('.titulo', {
-    distance: '100%',
-    delay: 750,
-    origin: 'top',
-});
+    sr.reveal('.timeline-entry.left', {
+        origin: 'left',
+        distance: '50px',
+        duration: 1000,
+        interval: 200
+    });
 
-ScrollReveal().reveal('.buttons-social', {
-    distance: '100%',
-    delay: 900,
-    origin: 'left',
-});
+    sr.reveal('.timeline-entry.right', {
+        origin: 'right',
+        distance: '50px',
+        duration: 1000,
+        interval: 200
+    });
 
-ScrollReveal().reveal('.card', {
-    distance: '20%',
-    delay: 1000,
-    origin: 'top',
-    interval: 400
-});
+    sr.reveal('.faq-item', {
+        origin: 'bottom',
+        distance: '30px',
+        duration: 700,
+        interval: 150
+    });
 
-ScrollReveal().reveal('.cards', {
-    distance: '30%',
-    delay: 1000,
-    origin: 'bottom',
-    interval: 400
-});
+    sr.reveal('.footer-container > div', {
+        origin: 'bottom',
+        distance: '40px',
+        duration: 700,
+        interval: 200
+    });
 
-ScrollReveal().reveal('.skils', {
-    distance: '20%',
-    delay: 800,
-    origin: 'bottom',
-    interval: 400
-});
+    sr.reveal('.footer-copy', {
+        origin: 'bottom',
+        distance: '20px',
+        duration: 600,
+        delay: 400
+    });
+    
+    // Projetos (cards da seção #projects)
+    sr.reveal('.cards-projetos .card', {
+        origin: 'bottom',
+        distance: '40px',
+        duration: 800,
+        interval: 150
+    });
 
-ScrollReveal().reveal('.card-mobile', {
-    distance: '20%',
-    delay: 200,
-    origin: 'left',
-    interval: 400
-});
+    // Imagem da seção "Sobre Mim"
+    sr.reveal('.about-img', {
+        origin: 'right',
+        distance: '50px',
+        duration: 800,
+        delay: 300
+    });
 
-ScrollReveal().reveal('.carrosel', {
-    distance: '100%',
-    delay: 200,
-    origin: 'left',
-    interval: 200
-});
+    // Descrição e imagens do XLSX Extractor
+    sr.reveal('#galvao-app .descricao, #galvao-app .funcionalidades, #galvao-app .imagens-app img, #galvao-app .conclusao', {
+        origin: 'bottom',
+        distance: '40px',
+        duration: 800,
+        interval: 150
+    });
 
-ScrollReveal().reveal('.app-conteudo', {
-    distance: '20%',
-    delay: 700,
-    origin: 'left',
-});
+    // Depoimento da gestora
+    sr.reveal('.depoimento-gestora', {
+        origin: 'left',
+        distance: '50px',
+        duration: 800,
+        delay: 400
+    });
 
-ScrollReveal().reveal('.see-github', {
-    distance: '20%',
-    delay: 800,
-    origin: 'bottom',
-});
+    // Logos das empresas
+    sr.reveal('#clientes .titulo', {
+        origin: 'top',
+        distance: '50px',
+        duration: 800,
+        delay: 200
+    });
 
-ScrollReveal().reveal('#galvao-app .titulo', {
-    distance: '50px',
-    delay: 300,
-    origin: 'top',
-    opacity: 0,
-    duration: 800
-});
-
-ScrollReveal().reveal('#galvao-app .descricao', {
-    distance: '30px',
-    delay: 400,
-    origin: 'bottom',
-    opacity: 0,
-    duration: 800
-});
-
-ScrollReveal().reveal('#galvao-app .funcionalidades h2', {
-    distance: '40px',
-    delay: 500,
-    origin: 'left',
-    opacity: 0,
-    duration: 800
-});
-
-ScrollReveal().reveal('#galvao-app .funcionalidades ul li', {
-    distance: '20px',
-    delay: 600,
-    origin: 'left',
-    opacity: 0,
-    duration: 700,
-    interval: 100 // Intervalo para aparecerem em sequência
-});
-
-ScrollReveal().reveal('#galvao-app .imagens-app img', {
-    distance: '40px',
-    delay: 700,
-    origin: 'right',
-    opacity: 0,
-    duration: 900
-});
-
-ScrollReveal().reveal('#galvao-app .conclusao', {
-    distance: '30px',
-    delay: 800,
-    origin: 'bottom',
-    opacity: 0,
-    duration: 800
-});
-
-ScrollReveal().reveal('.faq-item', {
-    distance: '30px',
-    delay: 300,
-    origin: 'bottom',
-    opacity: 0,
-    duration: 700,
-    interval: 200 // Define o intervalo entre cada item para um efeito em cascata
-});
-
-ScrollReveal().reveal('.footer-container', {
-    distance: '40px',
-    delay: 500,
-    origin: 'bottom',
-    opacity: 0,
-    duration: 800
-});
-
-ScrollReveal().reveal('.footer-contact h2, .footer-contact p', {
-    distance: '30px',
-    delay: 600,
-    origin: 'top',
-    opacity: 0,
-    duration: 700,
-    interval: 200
-});
-
-ScrollReveal().reveal('.footer-button', {
-    distance: '20px',
-    delay: 700,
-    origin: 'bottom',
-    opacity: 0,
-    duration: 600
-});
-
-ScrollReveal().reveal('.footer-social a', {
-    distance: '20px',
-    delay: 750,
-    origin: 'bottom',
-    opacity: 0,
-    duration: 600,
-    interval: 150
-});
-
-ScrollReveal().reveal('.footer-copy', {
-    distance: '20px',
-    delay: 800,
-    origin: 'bottom',
-    opacity: 0,
-    duration: 600
+    sr.reveal('.logo-empresa', {
+        origin: 'bottom',
+        distance: '40px',
+        duration: 700,
+        interval: 150
+    });
 });
