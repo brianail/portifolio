@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Página não encontrada - 404</title>
+  <link rel="stylesheet" href="/style.css" />
+  <style>
+    body {
+      background: #161b22;
+      color: #fff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 2rem;
+      background: linear-gradient(135deg, #16181d);
+    }
+
+    .box-404 {
+      background: linear-gradient(135deg, #1d2b64, #f8cdda);
+      border-radius: var(--border-radius);
+      box-shadow: 0 0 30px rgba(88, 166, 255, 0.08);
+      padding: 4rem 2rem;
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+      animation: fadeIn 0.6s ease-in-out;
+    }
+
+    img {
+      display: block;
+      max-width: 480px;
+      width: 100%;
+      margin: 2rem auto;
+      opacity: 0.9;
+    }
+
+    .erro-codigo {
+      font-size: 5rem;
+      color: var( --bg-color);
+      margin-bottom: 0.5rem;
+      text-shadow: 0 0 10px rgba(88, 166, 255, 0.3);
+    }
+
+    .mensagem-erro {
+      font-size: 1.25rem;
+      color: var( --highlight);
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+
+    a.btn-voltar {
+      background-color: var(--accent);
+      color: #fff;
+      padding: 0.8rem 1.5rem;
+      border-radius: var(--border-radius);
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    a.btn-voltar:hover {
+      background-color: #3081d0;
+      transform: scale(1.05);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.98);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="box-404">
+      <img src="/assets/undraw_page-not-found_6wni.svg" alt="Erro 404">
+      <p class="mensagem-erro">Oops! A página que você está procurando não foi encontrada.</p>
+      <a href="/" class="btn-voltar">Voltar para a página inicial</a>
+    </div>
+  </main>
+</body>
+</html>

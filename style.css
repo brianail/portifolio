@@ -22,13 +22,15 @@
   box-sizing: border-box;
 }
 
-body {
+html, body {
   font-family: "Segoe UI", sans-serif;
   background-color: var(--bg-color);
   color: var(--text);
   line-height: 1.6;
   scroll-behavior: smooth;
   text-align: center;
+  overflow-x: hidden;
+  position: relative;
 }
 
 a {
@@ -50,9 +52,6 @@ img {
 /*         HEADER E NAVEGAÇÃO    */
 /* ============================== */
 header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -62,6 +61,17 @@ header {
   backdrop-filter: blur(8px);
   border-bottom: 1px solid #2a2f36;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+}
+
+.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(33, 38, 45, 0.9);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
 }
 
 .header-nav {
@@ -164,6 +174,7 @@ nav a:hover {
   color: #fff;
   text-align: center;
   max-width: 1100px;
+  transition: all 0.4s ease;
 }
 
 .conteudo-texto {
@@ -297,9 +308,20 @@ nav a:hover {
 /* ============================== */
 /*        TIMELINE                */
 /* ============================== */
+
 #timeline {
+  height: 1220px;
   padding: 4rem 2rem;
-  overflow-x: auto;
+  background: linear-gradient(135deg, #0e1117, #1c1f26);
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 30px rgba(88, 166, 255, 0.1);
+  margin: 2rem auto;
+  max-width: 1100px;
+  position: relative;
+}
+
+#timeline h1{
+  padding-bottom: 1.5rem;
 }
 
 .timeline-container {
@@ -336,16 +358,6 @@ nav a:hover {
   color: var(--primary);
   font-size: 1.25rem;
   margin-bottom: 0.5rem;
-}
-
-#timeline {
-  background: linear-gradient(135deg, #0e1117, #1c1f26);
-  padding: 4rem 2rem;
-  border-radius: var(--border-radius);
-  box-shadow: 0 0 30px rgba(88, 166, 255, 0.1);
-  margin: 2rem auto;
-  max-width: 1100px;
-  position: relative;
 }
 
 .timeline-wrapper {
@@ -651,7 +663,7 @@ section {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .card {
@@ -659,7 +671,7 @@ section {
   padding: 1.5rem;
   border-radius: var(--border-radius);
   box-shadow: 0 0 10px rgba(88, 166, 255, 0.1);
-  width: 280px;
+  width: 100%;
   transition: var(--transition);
 }
 
@@ -843,6 +855,9 @@ section {
   object-fit: contain;
 }
 
+/* ============================== */
+/*              FAQ               */
+/* ============================== */
 .faq {
   background: linear-gradient(135deg, #20232a, #282c34);
   padding: 4rem 2rem;
@@ -882,7 +897,7 @@ section {
   border: none;
   width: 100%;
   text-align: left;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 600;
   padding: 1rem 1.5rem;
   cursor: pointer;
@@ -893,17 +908,17 @@ section {
 }
 
 .faq-answer {
-  max-height: 0;
-  overflow: hidden;
-  padding: 0 1.5rem;
-  background-color: #1c1f26;
-  border-top: 1px solid #30363d;
-  transition: max-height 0.4s ease, padding 0.4s ease;
+  display: none;
+  opacity: 0;
+  padding: 1rem;
+  transform: translateY(-10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
 .faq-item.open .faq-answer {
-  max-height: 1000px;
-  padding: 1rem 1.5rem;
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .faq-answer p {
@@ -917,6 +932,7 @@ section {
 }
 
 .toggle-icon {
+  padding-left: 10px;
   font-size: 1.2rem;
   color: var(--primary);
   transition: transform 0.3s ease;
@@ -945,11 +961,6 @@ section {
 .footer-logo {
   display: flex;
   justify-content: center;
-  margin-bottom: 1rem;
-}
-
-.footer-logo img {
-  margin-bottom: 0.5rem;
 }
 
 .footer-contact h2 {
@@ -997,7 +1008,7 @@ section {
 }
 
 .footer-copy {
-  margin-top: 2rem;
+  margin: 2rem 1rem;
   font-size: 0.9rem;
   color: var(--muted);
 }
@@ -1016,16 +1027,21 @@ section {
     display: none;
     background: var(--highlight);
     position: absolute;
-    top: 70px;
+    top: 90px;
     right: 1rem;
-    width: 220px;
+    width: 320px;
     padding: 1rem;
     border-radius: var(--border-radius);
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
   }
 
   nav ul.active {
     display: flex;
+    opacity: 1;
+    transform: translateY(0);
   }
 
   #btn-mobile {
@@ -1040,11 +1056,15 @@ section {
     text-align: center;
   }
 
+  #timeline{
+    height: 1800px;
+  }
+
   .timeline-entry {
     width: 100%;
     left: 0 !important;
     text-align: center;
-    padding: 1rem;
+    padding: 30px;
     margin-left: 0;
   }
 
@@ -1074,7 +1094,7 @@ section {
   }
 
   .timeline-entry + .timeline-entry {
-    margin-top: 3rem;
+    margin-top: 0.1rem;
   }
 }
 

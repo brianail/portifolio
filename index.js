@@ -1,7 +1,33 @@
+window.addEventListener("scroll", function () {
+    const header = document.querySelector("header");
+
+    if (window.scrollY > 100) {
+      header.classList.add("fixed-header");
+    } else {
+      header.classList.remove("fixed-header");
+    }
+  });
+
 document.getElementById('btn-mobile').addEventListener('click', function () {
     const nav = document.getElementById('menu');
     nav.classList.toggle('active');
     this.classList.toggle('active');
+});
+document.addEventListener('click', function (e) {
+    const btn = document.getElementById('btn-mobile');
+    const nav = document.getElementById('menu');
+
+    // Fecha o menu ao clicar fora dele
+    if (!nav.contains(e.target) && !btn.contains(e.target)) {
+        nav.classList.remove('active');
+        btn.classList.remove('active');
+    }
+
+    // Fecha o menu ao clicar em um link
+    if (e.target.tagName === 'A' && nav.classList.contains('active')) {
+        nav.classList.remove('active');
+        btn.classList.remove('active');
+    }
 });
 
 document.getElementById('abrir-curriculo').addEventListener('click', function (e) {
