@@ -839,7 +839,7 @@ section {
   align-items: center;
   justify-content: center;
   transition: filter 0.3s ease, transform 0.3s ease;
-  background: var(--card-bg);
+  background: rgba(247, 253, 255, 0.925);
   border-radius: var(--border-radius);
   padding: 0.5rem;
 }
