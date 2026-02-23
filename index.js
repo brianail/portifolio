@@ -39,17 +39,6 @@ document.querySelector('.fechar-modal').addEventListener('click', function () {
     document.getElementById('modal-curriculo').style.display = 'none';
 });
 
-// Efeito máquina de escrever
-function typeWrite(elemento) {
-    const textoArray = elemento.innerHTML.split('');
-    elemento.innerHTML = ''; // Limpa o conteúdo inicial
-    textoArray.forEach(function (letra, i) {
-        setTimeout(function () {
-            elemento.innerHTML += letra; // Adiciona cada letra com um atraso
-        }, 100 * i);
-    });
-}
-
 document.querySelectorAll(".faq-question").forEach(button => {
     button.addEventListener("click", () => {
         const faqItem = button.closest(".faq-item");
