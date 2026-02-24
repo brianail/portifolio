@@ -1,411 +1,986 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO & Social Sharing -->
+    <title>Brian Ail | Web Dev & Data Analytics</title>
+    <meta name="description" content="Desenvolvedor Web e Analista de Dados focado em automação e soluções inteligentes.">
+    <meta property="og:title" content="Brian Ail | Portfólio Profissional">
+    <meta property="og:description" content="Especialista em transformar dados complexos em interfaces funcionais.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
-    <title>Brian Ail | Desenvolvedor Web & Análise de Dados</title>
-    <meta name="description"
-        content="Portfólio de Brian Ail — Desenvolvedor Web e Analista de Dados. Soluções personalizadas em tecnologia, automação e design.">
-    <meta name="author" content="Brian Ail">
-    <meta name="robots" content="index, follow">
-    <meta name="copyright" content="Brian Ail © 2024" />
-    <link rel="icon" href="/assets/fav.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="/style.css">
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/4c65401d66.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+
     <style>
+        :root {
+            --bg-color: #0b0e14;
+            --card-bg: rgba(22, 27, 34, 0.7);
+            --primary: #58a6ff;
+            --accent: #1f6feb;
+            --text: #e6edf3;
+            --muted: #8b949e;
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            overflow-wrap: break-word; /* Evita que textos muito longos quebrem o limite da tela */
+        }
+
+        html, body {
+            overflow-x: hidden; /* Trava mestre para impedir rolagem horizontal */
+            width: 100%;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Background Mesh Effect */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 10% 20%, rgba(88, 166, 255, 0.05) 0%, transparent 40%),
+                        radial-gradient(circle at 90% 80%, rgba(31, 111, 235, 0.05) 0%, transparent 40%);
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 1.5rem; /* Ajustado padding geral */
+        }
+
+        /* Header */
+        header  {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1.25rem 0;
+            transition: var(--transition);
+        }
+
+        header .container{
+            padding: 0 1.5rem;
+        }
+        
+        header.scrolled {
+            background: rgba(11, 14, 20, 0.85);
+            backdrop-filter: blur(12px);
+            padding: 0.8rem 0;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .header-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: -1px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--muted);
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        nav a:hover { color: var(--primary); }
+
+        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 4rem; color: #fff; }
+        .section-title span { color: var(--primary); }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 120px 1.5rem 100px; 
+        }
+
+        .hero h1 {
+            font-size: clamp(2.2rem, 6vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, #fff, #58a6ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            max-width: 1000px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            color: var(--muted);
+            font-size: 1.15rem;
+            max-width: 700px;
+            margin-bottom: 3rem;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 1.1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 0 25px rgba(88, 166, 255, 0.4);
+            transform: translateY(-4px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text);
+            border: 1px solid var(--glass-border);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary);
+            background: rgba(88, 166, 255, 0.05);
+        }
+
+        /* --- SOBRE MIM --- */
+        .about-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4rem;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-text h2 {
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+
+        .about-text p {
+            color: var(--muted);
+            font-size: 1.15rem;
+            line-height: 1.8;
+        }
+
+        .about-img-container {
+            flex: 0.5;
+            display: flex;
+            justify-content: center;
+            min-width: 300px;
+        }
+
+        .about-img-inner {
+            position: relative;
+            width: 100%;
+            max-width: 320px;
+            aspect-ratio: 1/1; /* Mantém quadrado responsivamente */
+        }
+
+        .about-blob {
+            position: absolute;
+            inset: -15px;
+            border: 2px solid var(--primary);
+            animation: blob 10s infinite alternate;
+        }
+
+        .about-img {
+            width: 100%;
+            height: 100%;
+            background: #21262d;
+            border-radius: 24px;
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+        }
+
+        .about-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* --- SERVIÇOS --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            border: 1px solid var(--glass-border);
+            padding: 3.5rem 2rem;
+            border-radius: 24px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-12px);
+            border-color: var(--primary);
+            background: rgba(33, 38, 45, 0.9);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        }
+
+        .service-card i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .service-card h3 { margin-bottom: 1rem; }
+        .service-card p { color: var(--muted); font-size: 0.95rem; }
+
+        /* --- JORNADA INTERCALADA --- */
+        .timeline-box {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .timeline-box::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            background: var(--glass-border);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            margin-bottom: 4rem;
+            position: relative;
+            width: 50%;
+            padding: 0 3rem;
+        }
+
+        .timeline-item.left { left: 0; text-align: right; }
+        .timeline-item.right { left: 50%; text-align: left; }
+
+        .timeline-dot {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--primary);
+            border-radius: 50%;
+            top: 15px;
+            box-shadow: 0 0 15px var(--primary);
+            z-index: 2;
+        }
+
+        .left .timeline-dot { right: -10px; }
+        .right .timeline-dot { left: -10px; }
+
+        .timeline-content {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid var(--glass-border);
+            transition: var(--transition);
+        }
+
+        .timeline-content:hover {
+            border-color: var(--primary);
+            transform: scale(1.03);
+        }
+
+        .timeline-content h3 { color: var(--primary); margin-bottom: 0.5rem; }
+        .timeline-content span { font-weight: 800; color: var(--muted); font-size: 0.9rem; display: block; margin-bottom: 1rem; }
+        .timeline-content p { color: var(--muted); font-size: 0.95rem; }
+
+        /* --- PROJETOS --- */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 2.5rem;
+        }
+
+        .project-card {
+            grid-column: span 4;
+            background: var(--card-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 1.5rem;
+            transition: var(--transition);
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card.featured {
+            grid-column: span 8;
+            border-color: rgba(88, 166, 255, 0.3);
+            background: linear-gradient(135deg, rgba(31, 111, 235, 0.1), rgba(22, 27, 34, 0.7));
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .project-media {
+            width: 100%;
+            height: 220px;
+            border-radius: 16px;
+            margin-bottom: 1.5rem;
+            background: #161b22;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .project-media img { width: 100%; height: 100%; object-fit: cover; }
+        .featured .project-media { height: 320px; }
+
+        .tag-list { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1rem; }
+        .tag { font-size: 0.75rem; padding: 4px 12px; border-radius: 6px; background: rgba(88, 166, 255, 0.1); color: var(--primary); border: 1px solid rgba(88, 166, 255, 0.2); font-weight: 600; }
+
+        .project-info h3 { color: #fff; font-size: 1.4rem; margin-bottom: 0.8rem; transition: var(--transition); }
+        .project-card:hover h3 { color: var(--primary); }
+        .project-info p { color: var(--muted); font-size: 0.95rem; line-height: 1.6; }
+
+        /* --- SKILLS --- */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.2rem;
+        }
+
+        .skill-card {
+            background: var(--card-bg);
+            border: 1px solid var(--glass-border);
+            padding: 1.2rem 2rem;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: var(--transition);
+        }
+
+        .skill-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+            background: rgba(88, 166, 255, 0.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .skill-card i { font-size: 1.5rem; color: var(--primary); }
+        .skill-card span { font-weight: 600; font-size: 0.95rem; color: #fff; }
+
+        /* --- CLIENTES --- */
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 3rem;
+            justify-items: center;
+            align-items: center;
+        }
+
+        .client-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .client-logo-wrapper {
+            width: 120px;
+            height: 120px;
+            background: rgb(226, 226, 226);
+            border: 1px solid var(--glass-border);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            transition: var(--transition);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+
+        .client-card:hover .client-logo-wrapper {
+            border-color: var(--primary);
+            transform: scale(1.1);
+            box-shadow: 0 0 25px rgba(88, 166, 255, 0.25);
+        }
+
+        .client-logo-wrapper img { width: 100%; border-radius: 50%; }
+
+        .client-card span { font-weight: 800; color: var(--muted); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; transition: var(--transition); }
+        .client-card:hover span { color: #fff; }
+
+        /* FAQ */
+        .faq-item { max-width: 850px; margin: 1.5rem auto; border-radius: 16px; background: var(--card-bg); border: 1px solid var(--glass-border); overflow: hidden; }
+        .faq-btn { width: 100%; padding: 1.5rem 2rem; background: none; border: none; color: #fff; text-align: left; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-size: 1.1rem; }
+        .faq-ans { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; padding: 0 2rem; color: var(--muted); }
+        .faq-item.active .faq-ans { max-height: 500px; padding-bottom: 1.5rem; }
+
+        /* --- FOOTER --- */
+        footer {
+            padding: 80px 0 40px;
+            border-top: 1px solid var(--glass-border);
+            text-align: center;
+            background: linear-gradient(to bottom, transparent, rgba(88, 166, 255, 0.03));
+        }
+
+        .footer-logo-container { margin-bottom: 2rem; display: flex; justify-content: center; }
+        .footer-logo-img { max-width: 150px; height: auto; filter: drop-shadow(0 0 10px rgba(88, 166, 255, 0.15)); animation: floatLogo 6s ease-in-out infinite; }
+
+        @keyframes floatLogo {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .footer-description { color: var(--muted); max-width: 550px; margin: 0 auto 2.5rem; font-size: 1rem; line-height: 1.6; }
+
+        .footer-nav-central { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-bottom: 3rem; }
+        .footer-nav-central a { color: var(--text); text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: var(--transition); opacity: 0.7; }
+        .footer-nav-central a:hover { opacity: 1; color: var(--primary); transform: translateY(-2px); }
+
+        .footer-social-row { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 3rem; }
+        .footer-social-row a { width: 50px; height: 50px; background: var(--card-bg); border: 1px solid var(--glass-border); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 1.2rem; transition: var(--transition); }
+        .footer-social-row a:hover { border-color: var(--primary); color: var(--primary); transform: translateY(-6px) scale(1.1); box-shadow: 0 10px 25px rgba(88, 166, 255, 0.2); }
+
+        .footer-copyright { padding-top: 2rem; border-top: 1px solid var(--glass-border); color: var(--muted); font-size: 0.85rem; }
+
+        /* Mobile Menu Button */
+        #btn-mobile { display: none; background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer; }
+
+        /* =========================================
+           MEDIA QUERIES (RESPONSIVIDADE MELHORADA)
+           ========================================= */
+
+        /* Tablets */
+        @media (max-width: 992px) {
+            .container { padding: 80px 1.5rem; }
+            
+            /* Correção da Grade de Projetos para 1 coluna nos Mobile/Tablet */
+            .projects-grid { 
+                grid-template-columns: 1fr; /* Força 1 coluna apenas */
+                gap: 2rem;
+            }
+            .project-card, .project-card.featured { 
+                grid-column: span 1; 
+            }
+            .featured .project-media { height: 250px; }
+            
+            /* Correção da Timeline para Tablet/Mobile */
+            .timeline-box::before { left: 0; }
+            .timeline-item { width: 100%; left: 0 !important; text-align: left !important; padding: 0 0 0 3rem; margin-bottom: 3rem; }
+            .timeline-dot { left: -10px !important; right: auto !important; }
+            
+            .about-wrapper { gap: 3rem; }
+        }
+
+        /* Smartphones */
+        @media (max-width: 768px) {
+            .container { padding: 60px 1.25rem; }
+            .section-title { font-size: 2rem; margin-bottom: 2.5rem; }
+            
+            /* Navbar Mobile Ajustada */
+            #btn-mobile { 
+                display: block; 
+                margin-left: auto; /* Força o ícone hambúrguer totalmente para a direita */
+            }
+            nav {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+            }
+            nav ul { 
+                background: rgba(11, 14, 20, 0.95); 
+                backdrop-filter: blur(15px);
+                padding: 2rem 1.5rem; 
+                gap: 1.5rem; 
+                border-bottom: 1px solid var(--glass-border); 
+                flex-direction: column;
+                
+                /* Animação suave */
+                opacity: 0;
+                transform: translateY(-10px);
+                pointer-events: none;
+                transition: all 0.3s ease-in-out;
+                display: flex;
+                width: 100%;
+            }
+            nav ul.active { 
+                opacity: 1;
+                transform: translateY(0);
+                pointer-events: auto;
+            }
+            nav a { font-size: 1.1rem; display: block; width: 100%; }
+
+            /* Hero Mobile */
+            .hero { padding: 120px 1.25rem 60px; }
+            .hero h1 { font-size: 2.2rem; }
+            .hero p { font-size: 1rem; margin-bottom: 2rem; }
+            .cta-group { flex-direction: column; width: 100%; }
+            .btn { width: 100%; padding: 1rem; } /* Botões Full Width */
+
+            /* Sobre Mim Mobile */
+            .about-wrapper { flex-direction: column; text-align: center; }
+            .about-text h2 { text-align: center; }
+            .about-img-container { width: 100%; }
+            .about-img-inner { max-width: 260px; }
+
+            /* Grid Ajustes */
+            .services-grid { grid-template-columns: 1fr; }
+            .service-card { padding: 2.5rem 1.5rem; }
+            
+            /* FAQ Ajustes */
+            .faq-btn { padding: 1.2rem; font-size: 1rem; }
+            .faq-ans { padding: 0 1.2rem; }
+            
+            /* Footer Ajustes */
+            .footer-nav-central { flex-direction: column; gap: 1rem; }
+            footer { padding: 60px 0 30px; }
+        }
+
+        /* Small Phones (iPhone SE, etc) */
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 1.8rem; }
+            .project-card { padding: 1.2rem; } /* Diminui o padding interno para sobrar margem na tela */
+            .project-media { height: 180px; margin-bottom: 1.2rem; }
+            .service-card { padding: 2rem 1.2rem; } /* Impede que o card estoure as laterais */
+            .timeline-item { padding: 0 0 0 2rem; }
+            .timeline-content { padding: 1.2rem; }
+            .skill-card { width: 100%; justify-content: center; } /* Skills full width no celular pequeno */
+        }
+
+        @keyframes blob {
+            0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+            100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+        }
     </style>
-    <script src="https://kit.fontawesome.com/4c65401d66.js" crossorigin="anonymous" defer></script>
-    <script src="https://unpkg.com/scrollreveal" defer></script>
-
 </head>
-
 <body>
-    <div id="content" class="hide">
-        <header>
-            <div class="header-nav">
-                <a href="/index.html">
-                    <img src="/assets/logo.svg" alt="Logo Brian Ail" width="25%" class="imagem-header">
+
+    <header id="main-header">
+        <div class="container header-nav">
+            <a href="#" class="logo">BRIAN<span>AIL</span></a>
+            <button id="btn-mobile" aria-label="Abrir Menu"><i class="fas fa-bars"></i></button>
+            <nav>
+                <ul id="menu">
+                    <li><a href="#about" class="nav-link">Sobre</a></li>
+                    <li><a href="#services" class="nav-link">Serviços</a></li>
+                    <li><a href="#timeline" class="nav-link">Jornada</a></li>
+                    <li><a href="#projects" class="nav-link">Projetos</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#clients" class="nav-link">Clientes</a></li>
+                    <li><a href="#faq" class="nav-link">FAQ</a></li>
+                    <li><a href="#contact" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero container">
+            <h1 id="typewriter">Olá, sou Brian! Estou muito animado para apresentar o meu portfólio a você.</h1>
+            <p>Estou à disposição para ajudar e colaborar de qualquer maneira que eu puder. Fique à vontade para explorar e me contactar para transformar a sua ideia em realidade!</p>
+            <div class="cta-group">
+                <a href="#contact" class="btn btn-primary">Iniciar Projeto</a>
+                <a href="seu-curriculo.pdf" target="_blank" class="btn btn-outline"><i class="fas fa-download"></i> Descarregar CV</a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="container">
+            <div class="about-wrapper">
+                <div class="about-text">
+                    <h2 class="section-title">Sobre <span>Mim</span></h2>
+                    <p>
+                        Sou estudante de <strong>Análise de Dados</strong> e Desenvolvedor Freelancer. A minha paixão reside na união entre o código eficiente e a precisão estatística. 
+                        <br><br>
+                        Trabalho para simplificar o complexo. O meu objetivo é criar ferramentas que não apenas resolvam problemas técnicos, mas que tragam clareza e retorno financeiro real para os meus clientes.
+                    </p>
+                </div>
+                <div class="about-img-container">
+                    <div class="about-img-inner">
+                        <div class="about-blob"></div>
+                        <div class="about-img">
+                            <img src="/assets/fotoperfil.jpeg" alt="Brian Ail" onerror="this.src='https://placehold.co/320x320/21262d/8b949e?text=PROFILE'">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Serviços Section -->
+        <section id="services" class="container">
+            <h2 class="section-title">O que <span>Faço</span></h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-terminal"></i>
+                    <h3>Sistemas Web</h3>
+                    <p>Desenvolvimento de interfaces rápidas, intuitivas e totalmente responsivas com foco em SEO.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Análise de Dados</h3>
+                    <p>Criação de dashboards inteligentes e processamento para decisões estratégicas.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-robot"></i>
+                    <h3>Automação ETL</h3>
+                    <p>Scripts customizados para extração automática de grandes volumes de informação.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-envelope-open-text"></i>
+                    <h3>E-mails Profissionais</h3>
+                    <p>Infraestrutura corporativa com domínio personalizado e alta performance.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Jornada Intercalada -->
+        <section id="timeline" class="container">
+            <h2 class="section-title">Minha <span>Jornada</span></h2>
+            <div class="timeline-box">
+                <div class="timeline-item left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span>2019</span>
+                        <h3>Início nos estudos</h3>
+                        <p>Iniciei os meus estudos em lógica de programação e fundações sólidas de desenvolvimento web.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span>2022</span>
+                        <h3>Primeiros Projetos</h3>
+                        <p>Entrega das primeiras soluções comerciais como freelancer full-stack de sucesso.</p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span>2023</span>
+                        <h3>Especialização em Dados</h3>
+                        <p>Foco intenso em análise preditiva e ferramentas avançadas de inteligência de negócio.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span>2024</span>
+                        <h3>XLSX Extractor</h3>
+                        <p>Lançamento do software que revolucionou a extração de dados da Galvão Advogados.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projetos Destaque -->
+        <section id="projects" class="container">
+            <h2 class="section-title">Projetos em <span>Destaque</span></h2>
+            <div class="projects-grid">
+                <a href="#" class="project-card featured">
+                    <div class="project-media">
+                        <img src="/assets/xlsx-thumb.png" alt="XLSX Extractor Interface" onerror="this.src='https://placehold.co/800x400/161b22/58a6ff?text=XLSX+Extractor'">
+                    </div>
+                    <div class="project-info">
+                        <div class="tag-list">
+                            <span class="tag">Python</span>
+                            <span class="tag">Pandas</span>
+                            <span class="tag">Automation</span>
+                        </div>
+                        <h3>XLSX Extractor - Inteligência Jurídica</h3>
+                        <p>Solução personalizada para processamento em massa de dados jurídicos. Uma ferramenta que automatizou fluxos complexos e reduziu erros humanos.</p>
+                    </div>
                 </a>
-                <nav id="nav">
-                    <button id="btn-mobile" aria-label="Abrir Menu" aria-haspopup="true" aria-controls="menu"
-                        aria-expanded="false">
-                        <span id="hamburger"></span>
-                    </button>
-                    <ul id="menu" role="menu">
-                        <li><a href="#about-me">Sobre mim</a></li>
-                        <li><a href="#timeline">Timeline</a></li>
-                        <li><a href="#projects">Projetos</a></li>
-                        <li><a href="#galvao-app">XLSX Extractor</a></li>
-                        <li><a href="#service">Serviços</a></li>
-                        <li><a href="#skils">Minhas Skils</a></li>
-                        <li><a href="#contact-me">Contato</a></li>
-                    </ul>
-                </nav>
+
+                <a href="https://marinacampos.netlify.app" target="_blank" class="project-card">
+                    <div class="project-media">
+                        <img src="/assets/Marina Campos.png" alt="Marina Campos Portfolio" onerror="this.src='https://placehold.co/400x250/161b22/58a6ff?text=Marina+Campos'">
+                    </div>
+                    <div class="project-info">
+                        <div class="tag-list">
+                            <span class="tag">HTML/CSS</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                        <h3>Marina Campos</h3>
+                        <p>Portfólio elegante projetado para destacar produções visuais de alta fidelidade.</p>
+                    </div>
+                </a>
+
+                <a href="https://petegato.netlify.app" target="_blank" class="project-card">
+                    <div class="project-media">
+                        <img src="/assets/pet-thumb.png" alt="Pet & Gatô E-commerce" onerror="this.src='https://placehold.co/400x250/161b22/58a6ff?text=Pet+%26+Gato'">
+                    </div>
+                    <div class="project-info">
+                        <div class="tag-list">
+                            <span class="tag">E-commerce</span>
+                            <span class="tag">JS</span>
+                        </div>
+                        <h3>Pet & Gatô</h3>
+                        <p>Interface moderna de vendas focada em conversão e experiência de compra fluida.</p>
+                    </div>
+                </a>
             </div>
-        </header>
+        </section>
 
-        <main>
-            <div class="conteudo-header">
-                <div class="conteudo-texto">
-                    <h1 id="principal-titulo" class="principal-titulo">
-                        Olá, sou Brian! Estou muito animado para apresentar meu portfólio a você. Estou à disposição
-                        para ajudar e colaborar de qualquer maneira que eu puder. Fique à vontade para explorar e me
-                        contatar se precisar de alguma assistência!
-                    </h1>
-
-                    <a href="#contat-me"><button>Entre em contato</button></a>
-                </div>
-
-                <img src="/assets/undraw_programming_re_kg9v.svg" width="45%" class="header-logo">
+        <!-- Skills Section -->
+        <section id="skills" class="container">
+            <h2 class="section-title">Minhas <span>Skills</span></h2>
+            <div class="skills-grid">
+                <div class="skill-card"><i class="fab fa-python"></i> <span>Python</span></div>
+                <div class="skill-card"><i class="fas fa-database"></i> <span>SQL</span></div>
+                <div class="skill-card"><i class="fab fa-js"></i> <span>JavaScript</span></div>
+                <div class="skill-card"><i class="fab fa-html5"></i> <span>HTML5 / CSS3</span></div>
+                <div class="skill-card"><i class="fas fa-chart-pie"></i> <span>Power BI</span></div>
+                <div class="skill-card"><i class="fab fa-figma"></i> <span>UI/UX Design</span></div>
+                <div class="skill-card"><i class="fab fa-git-alt"></i> <span>Git & GitHub</span></div>
+                <div class="skill-card"><i class="fas fa-robot"></i> <span>Automação</span></div>
             </div>
+        </section>
 
-            <section id="about-me">
-                <h1 class="titulo"> Sobre Mim</h1>
-                <div class="info-me">
-                    <div class="informacoes-text">
-                        <p class="paragrafo-about-me">
-                            Agradeço sinceramente por dedicar um tempo para conhecer meu trabalho. Caso tenha sugestões
-                            ou comentários, terei o maior prazer em recebê-los por e-mail. Sua opinião é sempre muito
-                            bem-vinda!
-                            <br><br>
-                            Sou estudante de Análise de Dados, atuo como analista de cadastros e também trabalho como
-                            freelancer na criação de sites. Tenho uma paixão genuína por tecnologia e seus infinitos
-                            potenciais, com um olhar especial para a Análise de Dados — uma área que considero essencial
-                            e repleta de possibilidades transformadoras.
-                            <br><br>
-                            Atualmente, estou aprofundando meus conhecimentos em programação, estatística e visualização
-                            de dados. Minha jornada com a tecnologia começou há muitos anos, e sigo motivado pelo desejo
-                            de contribuir com soluções que façam a diferença. Estou sempre aberto a boas ideias,
-                            parcerias e novos desafios na área de TI.
-                        </p>
-                      
+        <!-- Clientes Section -->
+        <section id="clients" class="container">
+            <h2 class="section-title">Empresas que <span>Confiam</span></h2>
+            <div class="clients-grid">
+                <div class="client-card">
+                    <div class="client-logo-wrapper">
+                        <img src="/assets/logos/logo.svg" alt="Galvão Advogados" onerror="this.src='https://placehold.co/100x100/e2e2e2/0b0e14?text=GALVÃO'">
                     </div>
-                    <div class="about-img">
-                        <img src="/assets/fotoperfil.jpeg" alt="Foto de Brian" class="img-perfil">
-                    </div>
+                    <span>Galvão Advogados</span>
                 </div>
-            </section>
-
-            <section id="timeline">
-                <h1 class="titulo">Minha Jornada</h1>
-                <div class="timeline-wrapper">
-                    <div class="timeline-line"></div>
-                    <div class="timeline-entry left" style="top: 0px;">
-                        <div class="timeline-circle">2019</div>
-                        <div class="timeline-content">
-                            <h3>Início nos estudos</h3>
-                            <p>Comecei minha jornada no mundo da tecnologia, estudando lógica de programação e HTML.</p>
-                        </div>
+                <div class="client-card">
+                    <div class="client-logo-wrapper">
+                        <img src="/assets/logos/Logo-marina.svg" alt="Marina Campos" onerror="this.src='https://placehold.co/100x100/e2e2e2/0b0e14?text=MARINA'">
                     </div>
-                    <div class="timeline-entry right" style="top: 100px;">
-                        <div class="timeline-circle">2022</div>
-                        <div class="timeline-content">
-                            <h3>Primeiros Projetos</h3>
-                            <p>Realizei meus primeiros projetos como freelancer, criando sites simples e responsivos.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="timeline-entry left" style="top: 150px;">
-                        <div class="timeline-circle">2023</div>
-                        <div class="timeline-content">
-                            <h3>Foco em Dados</h3>
-                            <p>Aprofundei meus conhecimentos em Python e análise de dados, com foco em automações e
-                                dashboards.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-entry right" style="top: 200px;">
-                        <div class="timeline-circle">2024</div>
-                        <div class="timeline-content">
-                            <h3>XLSX Extractor</h3>
-                            <p>Desenvolvi o XLSX Extractor para o setor jurídico, otimizando processos e ganhando
-                                destaque interno.</p>
-                        </div>
-                    </div>
+                    <span>Marina Campos</span>
                 </div>
-            </section>
-
-            <section id="projects" class="projects">
-                <h1 class="titulo">Meus Projetos </h1>
-                <div class="cards-projetos">
-                    <div class="card">
-                        <a href="https://marinacampos.netlify.app">
-                            <h2>Marina Campos</h2>
-                            <p>HTML | CSS | JAVASCRIPT</p>
-                        </a>
-                        <div class="foto">
-                            <img src="/assets/marina.png">
-                        </div>
-
+                <div class="client-card">
+                    <div class="client-logo-wrapper">
+                        <img src="/assets/logos/logo-pet.svg" alt="Pet & Gatô" onerror="this.src='https://placehold.co/100x100/e2e2e2/0b0e14?text=PET'">
                     </div>
-                    <div class="card">
-                        <a href="https://petegato.netlify.app">
-                            <h2>Pet & Gatô</h2>
-                            <p>HTML | CSS | JAVASCRIPT</p>
-                        </a>
-                        <div class="foto">
-                            <img src="/assets/pet.png">
-                        </div>
-
-                    </div>
-
-                    <div class="card">
-                        <a href="https://loopstudio-home.netlify.app">
-                            <h2>Loopstudios</h2>
-                            <p>HTML | CSS | JAVASCRIPT</p>
-                        </a>
-                        <div class="foto">
-                            <img src="/assets/Arquivo 3.png">
-                        </div>
-
-                    </div>
-
-                    <div class="card">
-                        <a href="https://home-fylo.netlify.app">
-                            <h2>Fylo</h2>
-                            <p>HTML | CSS | JAVASCRIPT</p>
-                        </a>
-                        <div class="foto">
-                            <img src="/assets/Arquivo 2.png" width="100%">
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <a href="https://easy-bank-home.netlify.app">
-                            <h2>Easybank</h2>
-                            <p>HTML | CSS | JAVASCRIPT</p>
-                        </a>
-                        <div class="foto">
-                            <img src="/assets/arquivo 10.png" width="100%">
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="galvao-app">
-                <h1 class="titulo">XLSX Extractor - Galvão Advogados</h1>
-                <p class="descricao">
-                    O <strong>XLSX Extractor</strong> foi desenvolvido para Galvão Advogados, com o intuito de
-                    revolucionar o processo de extração de dados de planilhas Excel. Em um ambiente jurídico onde a
-                    precisão e a eficiência são fundamentais, este aplicativo permite a coleta e a organização de
-                    informações de forma simplificada, otimizando o fluxo de trabalho da equipe jurídica e reduzindo o
-                    tempo gasto em tarefas manuais.
-                </p>
-                <div class="funcionalidades">
-                    <h2>Funcionalidades Principais:</h2>
-                    <ul>
-                        <li><strong>Extração Rápida de Dados:</strong> O aplicativo permite importar e extrair dados de
-                            arquivos XLSX com facilidade, agilizando o acesso a informações essenciais.</li>
-                        <li><strong>Interface Intuitiva:</strong> Desenvolvida com foco na usabilidade, a interface é
-                            amigável e permite que usuários de todos os níveis de habilidade naveguem pelo aplicativo
-                            sem dificuldades.</li>
-                        <li><strong>Relatórios Personalizados:</strong> Crie relatórios dinâmicos e adaptáveis com base
-                            nos dados extraídos, permitindo que a equipe atenda às necessidades específicas de cada caso
-                            jurídico.</li>
-                        <li><strong>Suporte para Múltiplos Formatos:</strong> Trabalhe com diversos formatos de dados,
-                            incluindo texto, números e datas, aplicando filtros personalizados para facilitar a análise.
-                        </li>
-                        <li><strong>Reconhecimento Automático de Dados:</strong> O aplicativo possui a capacidade de
-                            identificar automaticamente linhas de telefone e outros campos relevantes, simplificando
-                            ainda mais a extração.</li>
-                        <li><strong>Exportação Exclusiva para .txt:</strong> Os dados extraídos são salvos em um arquivo
-                            .txt totalmente customizado, com um cabeçalho personalizado e todos os dados obtidos do
-                            XLSX. Isso garante uma integração direta com outras ferramentas e sistemas e atende aos
-                            requisitos específicos da equipe jurídica.</li>
-                        <li><strong>Armazenamento Seguro:</strong> Todas as informações extraídas são armazenadas de
-                            forma segura, garantindo a privacidade e a confidencialidade dos dados sensíveis tratados
-                            pelo escritório de advocacia.</li>
-                        <li><strong>Atualizações e Manutenção:</strong> O aplicativo é projetado para ser facilmente
-                            atualizado, com novas funcionalidades e melhorias sendo implementadas regularmente, com base
-                            no feedback dos usuários.</li>
-                    </ul>
-                </div>
-                <div class="imagens-app">
-                    <img src="/assets/xlsx.jpg" alt="Captura de tela do XLSX Extractor">
-                </div>
-
-                <div class="depoimento-gestora">
-                    <div class="depoimento-conteudo">
-                        <img src="/assets/logos/logo.svg" alt="Galvão Advogados" width="30%" >
-                        <div class="texto-depoimento">
-                            <p class="mensagem">
-                                “O XLSX Extractor transformou significativamente a rotina do nosso setor jurídico.
-                                Reduzimos drasticamente o tempo gasto com tarefas manuais, e hoje conseguimos atuar de
-                                forma mais estratégica e com muito mais agilidade. É uma ferramenta que veio para
-                                ficar.”
-                            </p>
-                            <p class="nome-gestora">— Cristiane Cardoso, Gestora do Setor Oficios da Galvão Advogados</p>
-                        </div>
-                    </div>
-                </div>
-
-                <p class="conclusao">
-                    O desenvolvimento do <strong>XLSX Extractor</strong> foi uma experiência enriquecedora que me
-                    permitiu aplicar e expandir minhas habilidades em programação, design de interface e gestão de
-                    projetos. O aplicativo não apenas melhorou a eficiência operacional da equipe de Galvão Advogados,
-                    mas também me proporcionou uma compreensão mais profunda das necessidades do setor jurídico. O
-                    feedback positivo dos usuários e os resultados tangíveis alcançados destacam o valor da solução
-                    criada, reforçando meu compromisso em desenvolver aplicações que atendam a demandas reais do
-                    mercado.
-                </p>
-            </section>
-
-            <section id="service">
-                <h1 class="titulo">Serviços</h1>
-                <p class="descricao">Exploro e ofereço uma variedade de serviços para fortalecer a presença digital e a
-                    experiência do usuário, atendendo desde desenvolvimento de sites a criação de aplicativos. Cada
-                    serviço é adaptado para trazer resultados eficazes e profissionais.</p>
-                <div class="cards-services">
-                    <div class="card">
-                        <i class="fas fa-file-code"></i>
-                        <h3>Criação de Sites</h3>
-                        <p>Desenvolvimento de sites responsivos, modernos e otimizados para SEO, proporcionando uma
-                            experiência agradável e funcional aos visitantes.</p>
-                    </div>
-
-                    <div class="card">
-                        <i class="fas fa-envelope-open-text"></i>
-                        <h3>E-mails Profissionais</h3>
-                        <p>Configuração de e-mails corporativos com domínio personalizado, reforçando a credibilidade e
-                            profissionalismo da sua marca.</p>
-                    </div>
-
-                    <div class="card">
-                        <i class="fab fa-figma"></i>
-                        <h3>UX/UI Design</h3>
-                        <p>Design centrado no usuário para interfaces intuitivas, garantindo uma navegação fluida e
-                            visual agradável para seus clientes.</p>
-                    </div>
-
-                    <div class="card">
-                        <i class="fas fa-mobile-alt"></i>
-                        <h3>Desenvolvimento de Aplicativos</h3>
-                        <p>Aplicativos customizados, com design responsivo e performance otimizada, focados nas
-                            necessidades e objetivos do usuário final.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section id="skils">
-                <h1 class="titulo">Skils</h1>
-                <div class="card-skils">
-                    <div class="skils">
-                        <i class="fab fa-html5"></i>
-                    </div>
-
-                    <div class="skils">
-                        <i class="fab fa-css3-alt"></i>
-                    </div>
-                    <div class="skils">
-                        <i class="fab fa-bootstrap"></i>
-                    </div>
-
-                    <div class="skils">
-                        <i class="fab fa-js-square"></i>
-                    </div>
-
-                    <div class="skils">
-                        <i class="fab fa-swift"></i>
-                    </div>
-
-                    <div class="skils">
-                        <i class="fab fa-python"></i>
-                    </div>
-
-                    <div class="skils">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                </div>
-            </section>
-
-            <section id="clientes" class="section-padrao">
-                <h1 class="titulo">Empresas que confiam em meu trabalho</h1>
-                <div class="clientes-logos">
-                    <div class="logo-empresa">
-                        <img src="/assets/logos/logo.svg" alt="Galvão Advogados">
-                    </div>
-                    <div class="logo-empresa">
-                        <img src="/assets/logos/Logo-marina.svg" alt="Marina Campos">
-                    </div>
-                    <div class="logo-empresa">
-                        <img src="/assets/logos/logo-pet.svg" alt="Pet & Gatô">
-                    </div>
-                </div>
-            </section>
-
-            <section class="faq">
-                <h2 class="titulo">F.A.Q</h2>
-                <h3>Perguntas Frequentes</h3>
-
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">Qual o meu foco como desenvolvedor? <span
-                            class="toggle-icon">+</span></button>
-                    <div class="faq-answer">
-                        <p>Meu foco está em criar soluções personalizadas e de fácil usabilidade, sempre otimizadas para
-                            proporcionar a melhor experiência ao usuário, com um design moderno e funcionalidades
-                            eficientes.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">Quanto tempo leva para desenvolver um projeto?
-                        <span class="toggle-icon">+</span></button>
-                    <div class="faq-answer">
-                        <p>O prazo depende da complexidade e das especificações do projeto, mas trabalho sempre com um
-                            cronograma estruturado, mantendo uma comunicação transparente para cumprir os prazos com a
-                            melhor qualidade.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">Como sei se o projeto vai ficar como eu espero?
-                        <span class="toggle-icon">+</span></button>
-                    <div class="faq-answer">
-                        <p>Durante o desenvolvimento, faço reuniões periódicas para alinhar expectativas e apresentar o
-                            progresso. Assim, cada etapa é validada, garantindo que o resultado final esteja de acordo
-                            com suas expectativas.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">Quais são os serviços que ofereço? <span
-                            class="toggle-icon">+</span></button>
-                    <div class="faq-answer">
-                        <p>Atualmente, ofereço criação de sites responsivos, design de interfaces, e desenvolvimento de
-                            aplicativos e sistemas. Todos os serviços são personalizados e adaptados para atender
-                            necessidades específicas.</p>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <footer id="contact-me">
-            <div class="footer-container">
-                <div class="footer-logo">
-                    <img src="/assets/logo.svg" alt="Logo do Portfólio" width="220">
-                </div>
-                <div class="footer-contact">
-                    <h2>Vamos conversar?</h2>
-                    <p>Entre em contato comigo para iniciarmos um projeto juntos ou simplesmente para trocar ideias!</p>
-                    <a href="mailto:brianail.dev@gmail.com" class="footer-button">Enviar e-mail</a>
-                </div>
-                <div class="footer-social">
-                    <a href="https://www.instagram.com/brian_ail/" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="https://github.com/brianail" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/brian-ail-b2748b168/" target="_blank"><i
-                            class="fab fa-linkedin-in"></i></a>
-                    <a href="tel:+51996874804"><i class="fas fa-phone-alt"></i></a>
-                </div>
-                <div class="footer-copy">
-                    <p>&copy; 2026 Brian Ail. Todos os direitos reservados.</p>
+                    <span>Pet & Gatô</span>
                 </div>
             </div>
-        </footer>
-    </div>
+        </section>
 
-    <script src="/index.js"></script>
+        <!-- FAQ Section -->
+        <section id="faq" class="container">
+            <h2 class="section-title">Perguntas <span>Frequentes</span></h2>
+            
+            <div class="faq-item">
+                <button class="faq-btn">Qual o meu diferencial? <i class="fas fa-plus"></i></button>
+                <div class="faq-ans">
+                    <p>O meu foco está em unir o desenvolvimento de interfaces modernas com a inteligência da análise de dados. Desenvolvo ferramentas que não apenas são estéticas, mas que resolvem gargalos operacionais reais e geram insights valiosos para o negócio.</p>
+                </div>
+            </div>
 
+            <div class="faq-item">
+                <button class="faq-btn">Quanto tempo leva para desenvolver um projeto? <i class="fas fa-plus"></i></button>
+                <div class="faq-ans">
+                    <p>O prazo varia conforme a complexidade: uma Landing Page costuma levar entre 5 a 10 dias úteis, enquanto sistemas mais robustos de dados ou e-commerces podem levar de 4 a 8 semanas. Trabalho sempre com cronogramas transparentes e entregas parciais.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-btn">Trabalhas com empresas de fora do Rio Grande do Sul? <i class="fas fa-plus"></i></button>
+                <div class="faq-ans">
+                    <p>Sim! Atendo clientes de forma totalmente remota em qualquer localidade. Utilizo ferramentas de gestão de projetos e reuniões por vídeo para garantir que a comunicação seja fluida e que o cliente esteja sempre a par de cada etapa do desenvolvimento.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-btn">Quais tecnologias são utilizadas nos projetos? <i class="fas fa-plus"></i></button>
+                <div class="faq-ans">
+                    <p>Para Web, utilizo principalmente React.js, Node.js e Tailwind CSS. Na área de dados, o foco é Python (Pandas, Scikit-learn), SQL e Power BI. Escolho a tecnologia baseando-me na necessidade específica de performance e escalabilidade do seu negócio.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-btn">Ofereces suporte técnico após a entrega do projeto? <i class="fas fa-plus"></i></button>
+                <div class="faq-ans">
+                    <p>Sim, todos os meus projetos incluem um período de suporte gratuito de 30 dias para ajustes e correções. Também ofereço planos de manutenção mensal para garantir que o seu sistema ou site esteja sempre atualizado, seguro e performático.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-logo-container">
+                <img src="/assets/logo.svg" alt="Brian Ail Logo" class="footer-logo-img" onerror="this.src='https://placehold.co/180x60/161b22/58a6ff?text=BRIAN+AIL'">
+            </div>
+
+            <p class="footer-description">
+                Unindo tecnologia de ponta e análise estratégica para transformar dados em inteligência de negócio e interfaces excepcionais.
+            </p>
+
+            <div class="footer-nav-central">
+                <a href="#about">Sobre</a>
+                <a href="#services">Serviços</a>
+                <a href="#projects">Projetos</a>
+                <a href="#skills">Skills</a>
+                <a href="#timeline">Jornada</a>
+                <a href="mailto:brianail.dev@gmail.com">Contacto</a>
+            </div>
+
+            <div class="footer-social-row">
+                <a href="https://linkedin.com/in/brian-ail-b2748b168/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/brianail" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://instagram.com/brian_ail/" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+
+            <div class="footer-copyright">
+                <p>&copy; 2026 Brian Ail. Todos os direitos reservados. Porto Alegre, Brasil.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Header Effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('#main-header');
+            header.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Mobile Menu Logic
+        const btnMobile = document.getElementById('btn-mobile');
+        const menu = document.getElementById('menu');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        btnMobile.addEventListener('click', () => {
+            menu.classList.toggle('active');
+            const icon = btnMobile.querySelector('i');
+            if (menu.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Close menu when clicking a link
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.remove('active');
+                btnMobile.querySelector('i').classList.remove('fa-times');
+                btnMobile.querySelector('i').classList.add('fa-bars');
+            });
+        });
+
+        // FAQ Toggle
+        document.querySelectorAll('.faq-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.parentElement;
+                const wasActive = item.classList.contains('active');
+                
+                // Close all others
+                document.querySelectorAll('.faq-item').forEach(faq => {
+                    faq.classList.remove('active');
+                    faq.querySelector('i').classList.remove('fa-minus');
+                    faq.querySelector('i').classList.add('fa-plus');
+                });
+
+                if (!wasActive) {
+                    item.classList.add('active');
+                    btn.querySelector('i').classList.remove('fa-plus');
+                    btn.querySelector('i').classList.add('fa-minus');
+                }
+            });
+        });
+
+        // ScrollReveal Animations
+        const sr = ScrollReveal({ origin: 'bottom', distance: '50px', duration: 1000, reset: false });
+        sr.reveal('.section-title');
+        sr.reveal('.about-text', { origin: 'left', distance: '30px' });
+        sr.reveal('.about-img-container', { origin: 'right', distance: '30px' });
+        sr.reveal('.service-card', { interval: 100 });
+        sr.reveal('.project-card', { interval: 100 });
+        sr.reveal('.client-card', { interval: 100 });
+        sr.reveal('.timeline-item', { interval: 150 });
+        sr.reveal('.skill-card', { interval: 50 });
+        sr.reveal('.footer-logo-container, .footer-description, .footer-social-row', { interval: 100 });
+
+        // Typewriter Effect
+        const typewriter = document.getElementById('typewriter');
+        const text = typewriter.innerHTML;
+        typewriter.innerHTML = '';
+        let i = 0;
+        function type() {
+            if (i < text.length) {
+                typewriter.innerHTML += text.charAt(i++);
+                setTimeout(type, 35);
+            }
+        }
+        // Only run typing effect when window is fully loaded
+        window.addEventListener('load', type);
+    </script>
 </body>
-
 </html>
