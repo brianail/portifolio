@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- SEO & Social Sharing -->
     <title>Brian Ail | Web Dev & Data Analytics</title>
-    <meta name="description" content="Desenvolvedor Web e Analista de Dados focado em automação e soluções inteligentes.">
+    <meta name="description"
+        content="Desenvolvedor Web e Analista de Dados focado em automação e soluções inteligentes.">
     <meta property="og:title" content="Brian Ail | Portfólio Profissional">
     <meta property="og:description" content="Especialista em transformar dados complexos em interfaces funcionais.">
     <meta property="og:type" content="website">
@@ -35,11 +37,14 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            overflow-wrap: break-word; /* Evita que textos muito longos quebrem o limite da tela */
+            overflow-wrap: break-word;
+            /* Evita que textos muito longos quebrem o limite da tela */
         }
 
-        html, body {
-            overflow-x: hidden; /* Trava mestre para impedir rolagem horizontal */
+        html,
+        body {
+            overflow-x: hidden;
+            /* Trava mestre para impedir rolagem horizontal */
             width: 100%;
         }
 
@@ -56,20 +61,24 @@
         body::before {
             content: "";
             position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background: radial-gradient(circle at 10% 20%, rgba(88, 166, 255, 0.05) 0%, transparent 40%),
-                        radial-gradient(circle at 90% 80%, rgba(31, 111, 235, 0.05) 0%, transparent 40%);
+                radial-gradient(circle at 90% 80%, rgba(31, 111, 235, 0.05) 0%, transparent 40%);
             z-index: -1;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 100px 1.5rem; /* Ajustado padding geral */
+            padding: 100px 1.5rem;
+            /* Ajustado padding geral */
         }
 
         /* Header */
-        header  {
+        header {
             position: fixed;
             top: 0;
             width: 100%;
@@ -78,10 +87,10 @@
             transition: var(--transition);
         }
 
-        header .container{
+        header .container {
             padding: 0 1.5rem;
         }
-        
+
         header.scrolled {
             background: rgba(11, 14, 20, 0.85);
             backdrop-filter: blur(12px);
@@ -117,10 +126,20 @@
             transition: var(--transition);
         }
 
-        nav a:hover { color: var(--primary); }
+        nav a:hover {
+            color: var(--primary);
+        }
 
-        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 4rem; color: #fff; }
-        .section-title span { color: var(--primary); }
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 4rem;
+            color: #fff;
+        }
+
+        .section-title span {
+            color: var(--primary);
+        }
 
         /* Hero */
         .hero {
@@ -130,7 +149,7 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 120px 1.5rem 100px; 
+            padding: 120px 1.5rem 100px;
         }
 
         .hero h1 {
@@ -230,7 +249,8 @@
             position: relative;
             width: 100%;
             max-width: 320px;
-            aspect-ratio: 1/1; /* Mantém quadrado responsivamente */
+            aspect-ratio: 1/1;
+            /* Mantém quadrado responsivamente */
         }
 
         .about-blob {
@@ -280,7 +300,7 @@
             transform: translateY(-12px);
             border-color: var(--primary);
             background: rgba(33, 38, 45, 0.9);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
         }
 
         .service-card i {
@@ -290,8 +310,14 @@
             display: block;
         }
 
-        .service-card h3 { margin-bottom: 1rem; }
-        .service-card p { color: var(--muted); font-size: 0.95rem; }
+        .service-card h3 {
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
 
         /* --- JORNADA INTERCALADA --- */
         .timeline-box {
@@ -317,8 +343,15 @@
             padding: 0 3rem;
         }
 
-        .timeline-item.left { left: 0; text-align: right; }
-        .timeline-item.right { left: 50%; text-align: left; }
+        .timeline-item.left {
+            left: 0;
+            text-align: right;
+        }
+
+        .timeline-item.right {
+            left: 50%;
+            text-align: left;
+        }
 
         .timeline-dot {
             position: absolute;
@@ -331,8 +364,13 @@
             z-index: 2;
         }
 
-        .left .timeline-dot { right: -10px; }
-        .right .timeline-dot { left: -10px; }
+        .left .timeline-dot {
+            right: -10px;
+        }
+
+        .right .timeline-dot {
+            left: -10px;
+        }
 
         .timeline-content {
             background: var(--card-bg);
@@ -347,9 +385,23 @@
             transform: scale(1.03);
         }
 
-        .timeline-content h3 { color: var(--primary); margin-bottom: 0.5rem; }
-        .timeline-content span { font-weight: 800; color: var(--muted); font-size: 0.9rem; display: block; margin-bottom: 1rem; }
-        .timeline-content p { color: var(--muted); font-size: 0.95rem; }
+        .timeline-content h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content span {
+            font-weight: 800;
+            color: var(--muted);
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-content p {
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
 
         /* --- PROJETOS --- */
         .projects-grid {
@@ -393,16 +445,50 @@
             justify-content: center;
             overflow: hidden;
         }
-        
-        .project-media img { width: 100%; height: 100%; object-fit: cover; }
-        .featured .project-media { height: 320px; }
 
-        .tag-list { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1rem; }
-        .tag { font-size: 0.75rem; padding: 4px 12px; border-radius: 6px; background: rgba(88, 166, 255, 0.1); color: var(--primary); border: 1px solid rgba(88, 166, 255, 0.2); font-weight: 600; }
+        .project-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-        .project-info h3 { color: #fff; font-size: 1.4rem; margin-bottom: 0.8rem; transition: var(--transition); }
-        .project-card:hover h3 { color: var(--primary); }
-        .project-info p { color: var(--muted); font-size: 0.95rem; line-height: 1.6; }
+        .featured .project-media {
+            height: 320px;
+        }
+
+        .tag-list {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            padding: 4px 12px;
+            border-radius: 6px;
+            background: rgba(88, 166, 255, 0.1);
+            color: var(--primary);
+            border: 1px solid rgba(88, 166, 255, 0.2);
+            font-weight: 600;
+        }
+
+        .project-info h3 {
+            color: #fff;
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+            transition: var(--transition);
+        }
+
+        .project-card:hover h3 {
+            color: var(--primary);
+        }
+
+        .project-info p {
+            color: var(--muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
 
         /* --- SKILLS --- */
         .skills-grid {
@@ -430,8 +516,16 @@
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
 
-        .skill-card i { font-size: 1.5rem; color: var(--primary); }
-        .skill-card span { font-weight: 600; font-size: 0.95rem; color: #fff; }
+        .skill-card i {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .skill-card span {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: #fff;
+        }
 
         /* --- CLIENTES --- */
         .clients-grid {
@@ -461,7 +555,7 @@
             justify-content: center;
             padding: 1.5rem;
             transition: var(--transition);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
         }
 
         .client-card:hover .client-logo-wrapper {
@@ -470,98 +564,236 @@
             box-shadow: 0 0 25px rgba(88, 166, 255, 0.25);
         }
 
-        .client-logo-wrapper img { width: 100%; border-radius: 50%; }
-
-        .client-card span { font-weight: 800; color: var(--muted); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; transition: var(--transition); }
-        .client-card:hover span { color: #fff; }
-
-        /* FAQ */
-        .faq-item { max-width: 850px; margin: 1.5rem auto; border-radius: 16px; background: var(--card-bg); border: 1px solid var(--glass-border); overflow: hidden; }
-        .faq-btn { width: 100%; padding: 1.5rem 2rem; background: none; border: none; color: #fff; text-align: left; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-size: 1.1rem; }
-        .faq-ans { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; padding: 0 2rem; color: var(--muted); }
-        .faq-item.active .faq-ans { max-height: 500px; padding-bottom: 1.5rem; }
-
-        /* --- FOOTER --- */
-        footer {
-            padding: 80px 0 40px;
-            border-top: 1px solid var(--glass-border);
-            text-align: center;
-            background: linear-gradient(to bottom, transparent, rgba(88, 166, 255, 0.03));
+        .client-logo-wrapper img {
+            width: 100%;
+            border-radius: 50%;
         }
 
-        .footer-logo-container { margin-bottom: 2rem; display: flex; justify-content: center; }
-        .footer-logo-img { max-width: 150px; height: auto; filter: drop-shadow(0 0 10px rgba(88, 166, 255, 0.15)); animation: floatLogo 6s ease-in-out infinite; }
+        .client-card span {
+            font-weight: 800;
+            color: var(--muted);
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            transition: var(--transition);
+        }
+
+        .client-card:hover span {
+            color: #fff;
+        }
+
+        /* FAQ */
+        .faq-item {
+            max-width: 850px;
+            margin: 1.5rem auto;
+            border-radius: 16px;
+            background: var(--card-bg);
+            border: 1px solid var(--glass-border);
+            overflow: hidden;
+        }
+
+        .faq-btn {
+            width: 100%;
+            padding: 1.5rem 2rem;
+            background: none;
+            border: none;
+            color: #fff;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .faq-ans {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+            padding: 0 2rem;
+            color: var(--muted);
+        }
+
+        .faq-item.active .faq-ans {
+            max-height: 500px;
+            padding-bottom: 1.5rem;
+        }
+
+        /* --- FOOTER --- */
+        .footer-site {
+            width: 100%;
+            text-align: center;
+            padding-bottom: 4rem;
+        }
+
+        .footer-logo-main {
+            margin-bottom: 2.5rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .footer-logo-main img {
+            max-width: 280px;
+            height: auto;
+            filter: drop-shadow(0 0 15px rgba(88, 166, 255, 0.2));
+            animation: floatLogo 6s ease-in-out infinite;
+        }
 
         @keyframes floatLogo {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-10px); }
         }
 
-        .footer-description { color: var(--muted); max-width: 550px; margin: 0 auto 2.5rem; font-size: 1rem; line-height: 1.6; }
+        .footer-nav-main {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            margin-bottom: 3.5rem;
+            flex-wrap: wrap;
+        }
 
-        .footer-nav-central { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-bottom: 3rem; }
-        .footer-nav-central a { color: var(--text); text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: var(--transition); opacity: 0.7; }
-        .footer-nav-central a:hover { opacity: 1; color: var(--primary); transform: translateY(-2px); }
+        .footer-nav-main a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            opacity: 0.6;
+            transition: var(--transition);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
 
-        .footer-social-row { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 3rem; }
-        .footer-social-row a { width: 50px; height: 50px; background: var(--card-bg); border: 1px solid var(--glass-border); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 1.2rem; transition: var(--transition); }
-        .footer-social-row a:hover { border-color: var(--primary); color: var(--primary); transform: translateY(-6px) scale(1.1); box-shadow: 0 10px 25px rgba(88, 166, 255, 0.2); }
+        .footer-nav-main a:hover {
+            opacity: 1;
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
 
-        .footer-copyright { padding-top: 2rem; border-top: 1px solid var(--glass-border); color: var(--muted); font-size: 0.85rem; }
+        .footer-social-main {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-social-main a {
+            width: 55px;
+            height: 55px;
+            background: var(--card-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--muted);
+            font-size: 1.4rem;
+            transition: var(--transition);
+        }
+
+        .footer-social-main a:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-8px) scale(1.1);
+            box-shadow: 0 10px 25px rgba(88, 166, 255, 0.2);
+        }
+
+        .footer-tagline {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.8rem;
+            color: var(--muted);
+            opacity: 0.4;
+            letter-spacing: 3px;
+        }
 
         /* Mobile Menu Button */
-        #btn-mobile { display: none; background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer; }
-
-        /* =========================================
-           MEDIA QUERIES (RESPONSIVIDADE MELHORADA)
-           ========================================= */
+        #btn-mobile {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
 
         /* Tablets */
         @media (max-width: 992px) {
-            .container { padding: 80px 1.5rem; }
-            
+            .container {
+                padding: 80px 1.5rem;
+            }
+
             /* Correção da Grade de Projetos para 1 coluna nos Mobile/Tablet */
-            .projects-grid { 
-                grid-template-columns: 1fr; /* Força 1 coluna apenas */
+            .projects-grid {
+                grid-template-columns: 1fr;
+                /* Força 1 coluna apenas */
                 gap: 2rem;
             }
-            .project-card, .project-card.featured { 
-                grid-column: span 1; 
+
+            .project-card,
+            .project-card.featured {
+                grid-column: span 1;
             }
-            .featured .project-media { height: 250px; }
-            
+
+            .featured .project-media {
+                height: 250px;
+            }
+
             /* Correção da Timeline para Tablet/Mobile */
-            .timeline-box::before { left: 0; }
-            .timeline-item { width: 100%; left: 0 !important; text-align: left !important; padding: 0 0 0 3rem; margin-bottom: 3rem; }
-            .timeline-dot { left: -10px !important; right: auto !important; }
-            
-            .about-wrapper { gap: 3rem; }
+            .timeline-box::before {
+                left: 0;
+            }
+
+            .timeline-item {
+                width: 100%;
+                left: 0 !important;
+                text-align: left !important;
+                padding: 0 0 0 3rem;
+                margin-bottom: 3rem;
+            }
+
+            .timeline-dot {
+                left: -10px !important;
+                right: auto !important;
+            }
+
+            .about-wrapper {
+                gap: 3rem;
+            }
         }
 
         /* Smartphones */
         @media (max-width: 768px) {
-            .container { padding: 60px 1.25rem; }
-            .section-title { font-size: 2rem; margin-bottom: 2.5rem; }
-            
-            /* Navbar Mobile Ajustada */
-            #btn-mobile { 
-                display: block; 
-                margin-left: auto; /* Força o ícone hambúrguer totalmente para a direita */
+            .container {
+                padding: 60px 1.25rem;
             }
+
+            .section-title {
+                font-size: 2rem;
+                margin-bottom: 2.5rem;
+            }
+
+            /* Navbar Mobile Ajustada */
+            #btn-mobile {
+                display: block;
+                margin-left: auto;
+                /* Força o ícone hambúrguer totalmente para a direita */
+            }
+
             nav {
                 position: absolute;
                 top: 100%;
                 left: 0;
                 width: 100%;
             }
-            nav ul { 
-                background: rgba(11, 14, 20, 0.95); 
+
+            nav ul {
+                background: rgba(11, 14, 20, 0.95);
                 backdrop-filter: blur(15px);
-                padding: 2rem 1.5rem; 
-                gap: 1.5rem; 
-                border-bottom: 1px solid var(--glass-border); 
+                padding: 2rem 1.5rem;
+                gap: 1.5rem;
+                border-bottom: 1px solid var(--glass-border);
                 flex-direction: column;
-                
+
                 /* Animação suave */
                 opacity: 0;
                 transform: translateY(-10px);
@@ -570,56 +802,140 @@
                 display: flex;
                 width: 100%;
             }
-            nav ul.active { 
+
+            nav ul.active {
                 opacity: 1;
                 transform: translateY(0);
                 pointer-events: auto;
             }
-            nav a { font-size: 1.1rem; display: block; width: 100%; }
+
+            nav a {
+                font-size: 1.1rem;
+                display: block;
+                width: 100%;
+            }
 
             /* Hero Mobile */
-            .hero { padding: 120px 1.25rem 60px; }
-            .hero h1 { font-size: 2.2rem; }
-            .hero p { font-size: 1rem; margin-bottom: 2rem; }
-            .cta-group { flex-direction: column; width: 100%; }
-            .btn { width: 100%; padding: 1rem; } /* Botões Full Width */
+            .hero {
+                padding: 120px 1.25rem 60px;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+            }
+
+            .cta-group {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn {
+                width: 100%;
+                padding: 1rem;
+            }
 
             /* Sobre Mim Mobile */
-            .about-wrapper { flex-direction: column; text-align: center; }
-            .about-text h2 { text-align: center; }
-            .about-img-container { width: 100%; }
-            .about-img-inner { max-width: 260px; }
+            .about-wrapper {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .about-text h2 {
+                text-align: center;
+            }
+
+            .about-img-container {
+                width: 100%;
+            }
+
+            .about-img-inner {
+                max-width: 260px;
+            }
 
             /* Grid Ajustes */
-            .services-grid { grid-template-columns: 1fr; }
-            .service-card { padding: 2.5rem 1.5rem; }
-            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-card {
+                padding: 2.5rem 1.5rem;
+            }
+
             /* FAQ Ajustes */
-            .faq-btn { padding: 1.2rem; font-size: 1rem; }
-            .faq-ans { padding: 0 1.2rem; }
-            
+            .faq-btn {
+                padding: 1.2rem;
+                font-size: 1rem;
+            }
+
+            .faq-ans {
+                padding: 0 1.2rem;
+            }
+
             /* Footer Ajustes */
-            .footer-nav-central { flex-direction: column; gap: 1rem; }
-            footer { padding: 60px 0 30px; }
+            .footer-nav-central {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            footer {
+                padding: 60px 0 30px;
+            }
         }
 
         /* Small Phones (iPhone SE, etc) */
         @media (max-width: 480px) {
-            .hero h1 { font-size: 1.8rem; }
-            .project-card { padding: 1.2rem; } /* Diminui o padding interno para sobrar margem na tela */
-            .project-media { height: 180px; margin-bottom: 1.2rem; }
-            .service-card { padding: 2rem 1.2rem; } /* Impede que o card estoure as laterais */
-            .timeline-item { padding: 0 0 0 2rem; }
-            .timeline-content { padding: 1.2rem; }
-            .skill-card { width: 100%; justify-content: center; } /* Skills full width no celular pequeno */
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .project-card {
+                padding: 1.2rem;
+            }
+
+            /* Diminui o padding interno para sobrar margem na tela */
+            .project-media {
+                height: 180px;
+                margin-bottom: 1.2rem;
+            }
+
+            .service-card {
+                padding: 2rem 1.2rem;
+            }
+
+            /* Impede que o card estoure as laterais */
+            .timeline-item {
+                padding: 0 0 0 2rem;
+            }
+
+            .timeline-content {
+                padding: 1.2rem;
+            }
+
+            .skill-card {
+                width: 100%;
+                justify-content: center;
+            }
+
+            /* Skills full width no celular pequeno */
         }
 
         @keyframes blob {
-            0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
-            100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+            0% {
+                border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            }
+
+            100% {
+                border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <header id="main-header">
@@ -644,11 +960,16 @@
     <main>
         <!-- Hero Section -->
         <section class="hero container">
-            <h1 id="typewriter">Olá, sou Brian! Estou muito animado para apresentar o meu portfólio a você.</h1>
-            <p>Estou à disposição para ajudar e colaborar de qualquer maneira que eu puder. Fique à vontade para explorar e me contactar para transformar a sua ideia em realidade!</p>
+            <h1 id="typewriter">Transformo presença online em oportunidades reais.</h1>
+            <p>Estou à disposição para ajudar e colaborar de qualquer maneira que eu puder. Fique à vontade para
+                explorar e me contactar para transformar a sua ideia em realidade!</p>
             <div class="cta-group">
-                <a href="#contact" class="btn btn-primary">Iniciar Projeto</a>
-                <a href="seu-curriculo.pdf" target="_blank" class="btn btn-outline"><i class="fas fa-download"></i> Descarregar CV</a>
+                <a href="https://wa.me/5551996974804?text=Olá,%20gostaria%20de%20iniciar%20um%20projeto" target="_blank"
+                    class="btn btn-primary">
+                    Iniciar Projeto
+                </a>
+                <a href="/curriculo.html" target="_blank" class="btn btn-outline"><i class="fas fa-download"></i>
+                    Descarregar CV</a>
             </div>
         </section>
 
@@ -658,16 +979,19 @@
                 <div class="about-text">
                     <h2 class="section-title">Sobre <span>Mim</span></h2>
                     <p>
-                        Sou estudante de <strong>Análise de Dados</strong> e Desenvolvedor Freelancer. A minha paixão reside na união entre o código eficiente e a precisão estatística. 
+                        Sou estudante de <strong>Análise de Dados</strong> e Desenvolvedor Freelancer. A minha paixão
+                        reside na união entre o código eficiente e a precisão estatística.
                         <br><br>
-                        Trabalho para simplificar o complexo. O meu objetivo é criar ferramentas que não apenas resolvam problemas técnicos, mas que tragam clareza e retorno financeiro real para os meus clientes.
+                        Trabalho para simplificar o complexo. O meu objetivo é criar ferramentas que não apenas resolvam
+                        problemas técnicos, mas que tragam clareza e retorno financeiro real para os meus clientes.
                     </p>
                 </div>
                 <div class="about-img-container">
                     <div class="about-img-inner">
                         <div class="about-blob"></div>
                         <div class="about-img">
-                            <img src="/assets/fotoperfil.jpeg" alt="Brian Ail" onerror="this.src='https://placehold.co/320x320/21262d/8b949e?text=PROFILE'">
+                            <img src="/assets/fotoperfil.jpeg" alt="Brian Ail"
+                                onerror="this.src='https://placehold.co/320x320/21262d/8b949e?text=PROFILE'">
                         </div>
                     </div>
                 </div>
@@ -676,27 +1000,33 @@
 
         <!-- Serviços Section -->
         <section id="services" class="container">
-            <h2 class="section-title">O que <span>Faço</span></h2>
+            <h2 class="section-title">Soluções que <span>Entrego</span></h2>
             <div class="services-grid">
                 <div class="service-card">
                     <i class="fas fa-terminal"></i>
-                    <h3>Sistemas Web</h3>
-                    <p>Desenvolvimento de interfaces rápidas, intuitivas e totalmente responsivas com foco em SEO.</p>
+                    <h3>Presença Digital Estratégica</h3>
+                    <p>Estruturas digitais modernas, rápidas e responsivas, pensadas para atrair, engajar e converter
+                        visitantes em oportunidades reais.</p>
                 </div>
+
                 <div class="service-card">
                     <i class="fas fa-chart-line"></i>
-                    <h3>Análise de Dados</h3>
-                    <p>Criação de dashboards inteligentes e processamento para decisões estratégicas.</p>
+                    <h3>Performance & Conversão</h3>
+                    <p>Arquitetura focada em posicionamento no Google e estratégias orientadas a resultados mensuráveis.
+                    </p>
                 </div>
+
                 <div class="service-card">
                     <i class="fas fa-robot"></i>
-                    <h3>Automação ETL</h3>
-                    <p>Scripts customizados para extração automática de grandes volumes de informação.</p>
+                    <h3>Automação Inteligente</h3>
+                    <p>Processos automatizados que otimizam captação, organização e acompanhamento de leads.</p>
                 </div>
+
                 <div class="service-card">
                     <i class="fas fa-envelope-open-text"></i>
-                    <h3>E-mails Profissionais</h3>
-                    <p>Infraestrutura corporativa com domínio personalizado e alta performance.</p>
+                    <h3>Estrutura Profissional</h3>
+                    <p>Implementação de comunicação corporativa personalizada para fortalecer autoridade e
+                        credibilidade.</p>
                 </div>
             </div>
         </section>
@@ -709,32 +1039,59 @@
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <span>2019</span>
-                        <h3>Início nos estudos</h3>
-                        <p>Iniciei os meus estudos em lógica de programação e fundações sólidas de desenvolvimento web.</p>
+                        <h3>Fundação Técnica</h3>
+                        <p>Início da jornada em desenvolvimento web, com foco em lógica, estrutura e construção de bases
+                            sólidas em tecnologia.</p>
                     </div>
                 </div>
+
                 <div class="timeline-item right">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <span>2022</span>
-                        <h3>Primeiros Projetos</h3>
-                        <p>Entrega das primeiras soluções comerciais como freelancer full-stack de sucesso.</p>
+                        <h3>Primeiros Projetos Comerciais</h3>
+                        <p>Entrega de soluções digitais para clientes reais, unindo design, performance e estratégia de
+                            negócio.</p>
                     </div>
                 </div>
+
                 <div class="timeline-item left">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <span>2023</span>
-                        <h3>Especialização em Dados</h3>
-                        <p>Foco intenso em análise preditiva e ferramentas avançadas de inteligência de negócio.</p>
+                        <h3>Foco em Performance e Dados</h3>
+                        <p>Aprofundamento em análise de dados e otimização de resultados, integrando tecnologia com
+                            tomada de decisão estratégica.</p>
                     </div>
                 </div>
+
                 <div class="timeline-item right">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <span>2024</span>
-                        <h3>XLSX Extractor</h3>
-                        <p>Lançamento do software que revolucionou a extração de dados da Galvão Advogados.</p>
+                        <h3>Soluções Sob Medida</h3>
+                        <p>Desenvolvimento de sistemas personalizados e ferramentas internas para automatização e ganho
+                            de eficiência operacional.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span>2025</span>
+                        <h3>Aprimoramento Estratégico</h3>
+                        <p>Aprofundamento em arquitetura de conversão, performance digital e posicionamento estratégico
+                            para negócios.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item right">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span>2026</span>
+                        <h3>Contrato Corporativo – Lyda</h3>
+                        <p>Formalização de parceria para desenvolvimento de soluções digitais e estrutura estratégica
+                            para presença online.</p>
                     </div>
                 </div>
             </div>
@@ -744,46 +1101,85 @@
         <section id="projects" class="container">
             <h2 class="section-title">Projetos em <span>Destaque</span></h2>
             <div class="projects-grid">
+                <a href="https://propostalyda.netlify.app" target="_blank" class="project-card">
+                    <div class="project-media">
+                        <img src="/assets/Lyda | Importação Estratégica de Medicamentos.png" alt="Lyda – Importação Estratégica de Medicamentos"
+                            onerror="this.src='https://placehold.co/400x250/161b22/58a6ff?text=Lyda'">
+                    </div>
+                    <div class="project-info">
+                        <div class="tag-list">
+                            <span class="tag">Landing Page</span>
+                            <span class="tag">B2B</span>
+                        </div>
+                        <h3>Lyda</h3>
+                        <p>Landing page criada para apresentar a proposta corporativa de importação estratégica e
+                            soluções logísticas em saúde, com foco em clareza, confiança e geração de leads.</p>
+                    </div>
+                </a>
                 <a href="#" class="project-card featured">
                     <div class="project-media">
-                        <img src="/assets/xlsx-thumb.png" alt="XLSX Extractor Interface" onerror="this.src='https://placehold.co/800x400/161b22/58a6ff?text=XLSX+Extractor'">
+                        <img src="/assets/xlsx.jpg" alt="XLSX Extractor Interface"
+                            onerror="this.src='https://placehold.co/800x400/161b22/58a6ff?text=XLSX+Extractor'"
+                            style="width:100%; height:100%; object-fit:cover; object-position:top;">
                     </div>
                     <div class="project-info">
                         <div class="tag-list">
                             <span class="tag">Python</span>
-                            <span class="tag">Pandas</span>
                             <span class="tag">Automation</span>
                         </div>
                         <h3>XLSX Extractor - Inteligência Jurídica</h3>
-                        <p>Solução personalizada para processamento em massa de dados jurídicos. Uma ferramenta que automatizou fluxos complexos e reduziu erros humanos.</p>
+                        <p>Solução personalizada para processamento em massa de dados jurídicos. Uma ferramenta que
+                            automatizou fluxos complexos e reduziu erros humanos.</p>
+                    </div>
+                </a>
+
+                <a href="https://cop-advogados-institucional.netlify.app" target="_blank" class="project-card">
+                    <div class="project-media">
+                        <img src="/assets/cop.png" alt="COP Advogados - Website Institucional "
+                            onerror="this.src='https://placehold.co/400x250/161b22/C8102E?text=COP+Advogados'">
+                    </div>
+                    <div class="project-info">
+                        <div class="tag-list">
+                            <span class="tag">Institucional</span>
+                            <span class="tag">UI/UX</span>
+                            <span class="tag">Tailwind</span>
+                        </div>
+                        <h3>COP Advogados</h3>
+                        <p>Portal jurídico de alto padrão com design editorial escuro, integrações dinâmicas de mídia e
+                            foco absoluto em
+                            autoridade.</p>
                     </div>
                 </a>
 
                 <a href="https://marinacampos.netlify.app" target="_blank" class="project-card">
                     <div class="project-media">
-                        <img src="/assets/Marina Campos.png" alt="Marina Campos Portfolio" onerror="this.src='https://placehold.co/400x250/161b22/58a6ff?text=Marina+Campos'">
+                        <img src="/assets/Marina Campos.png" alt="Portfólio Marina Campos"
+                            onerror="this.src='https://placehold.co/400x250/161b22/58a6ff?text=Portfolio'">
                     </div>
                     <div class="project-info">
                         <div class="tag-list">
-                            <span class="tag">HTML/CSS</span>
-                            <span class="tag">JavaScript</span>
+                            <span class="tag">Portfólio</span>
+                            <span class="tag">UI/UX</span>
                         </div>
                         <h3>Marina Campos</h3>
-                        <p>Portfólio elegante projetado para destacar produções visuais de alta fidelidade.</p>
+                        <p>Portfólio desenvolvido para apresentação profissional e valorização de identidade visual com
+                            design elegante e responsivo.</p>
                     </div>
                 </a>
 
                 <a href="https://petegato.netlify.app" target="_blank" class="project-card">
                     <div class="project-media">
-                        <img src="/assets/pet-thumb.png" alt="Pet & Gatô E-commerce" onerror="this.src='https://placehold.co/400x250/161b22/58a6ff?text=Pet+%26+Gato'">
+                        <img src="/assets/Pet & Gatô | Especialistas em Banho, Tosa e Nutrição Pet.png" alt="Landing Page Pet & Gatô"
+                            onerror="this.src='https://placehold.co/400x250/161b22/58a6ff?text=Landing+Page'">
                     </div>
                     <div class="project-info">
                         <div class="tag-list">
-                            <span class="tag">E-commerce</span>
-                            <span class="tag">JS</span>
+                            <span class="tag">Landing Page</span>
+                            <span class="tag">Conversão</span>
                         </div>
                         <h3>Pet & Gatô</h3>
-                        <p>Interface moderna de vendas focada em conversão e experiência de compra fluida.</p>
+                        <p>Landing page moderna e estratégica, projetada para apresentação e captação de oportunidades
+                            com experiência fluida.</p>
                     </div>
                 </a>
             </div>
@@ -808,21 +1204,31 @@
         <section id="clients" class="container">
             <h2 class="section-title">Empresas que <span>Confiam</span></h2>
             <div class="clients-grid">
+                 <div class="client-card">
+                    <div class="client-logo-wrapper">
+                        <img src="/assets/logos/lydalogo.png" alt="LYDA"
+                            onerror="this.src='https://placehold.co/100x100/e2e2e2/0b0e14?text=LYDA'">
+                    </div>
+                    <span>LYDA</span>
+                </div>
                 <div class="client-card">
                     <div class="client-logo-wrapper">
-                        <img src="/assets/logos/logo.svg" alt="Galvão Advogados" onerror="this.src='https://placehold.co/100x100/e2e2e2/0b0e14?text=GALVÃO'">
+                        <img src="/assets/logos/logo.svg" alt="Galvão Advogados"
+                            onerror="this.src='https://placehold.co/100x100/e2e2e2/0b0e14?text=GALVÃO'">
                     </div>
                     <span>Galvão Advogados</span>
                 </div>
                 <div class="client-card">
                     <div class="client-logo-wrapper">
-                        <img src="/assets/logos/Logo-marina.svg" alt="Marina Campos" onerror="this.src='https://placehold.co/100x100/e2e2e2/0b0e14?text=MARINA'">
+                        <img src="/assets/logos/Logo-marina.svg" alt="Marina Campos"
+                            onerror="this.src='https://placehold.co/100x100/e2e2e2/0b0e14?text=MARINA'">
                     </div>
                     <span>Marina Campos</span>
                 </div>
                 <div class="client-card">
                     <div class="client-logo-wrapper">
-                        <img src="/assets/logos/logo-pet.svg" alt="Pet & Gatô" onerror="this.src='https://placehold.co/100x100/e2e2e2/0b0e14?text=PET'">
+                        <img src="/assets/logos/logo-pet.svg" alt="Pet & Gatô"
+                            onerror="this.src='https://placehold.co/100x100/e2e2e2/0b0e14?text=PET'">
                     </div>
                     <span>Pet & Gatô</span>
                 </div>
@@ -832,75 +1238,81 @@
         <!-- FAQ Section -->
         <section id="faq" class="container">
             <h2 class="section-title">Perguntas <span>Frequentes</span></h2>
-            
+
             <div class="faq-item">
                 <button class="faq-btn">Qual o meu diferencial? <i class="fas fa-plus"></i></button>
                 <div class="faq-ans">
-                    <p>O meu foco está em unir o desenvolvimento de interfaces modernas com a inteligência da análise de dados. Desenvolvo ferramentas que não apenas são estéticas, mas que resolvem gargalos operacionais reais e geram insights valiosos para o negócio.</p>
+                    <p>O meu foco está em unir o desenvolvimento de interfaces modernas com a inteligência da análise de
+                        dados. Desenvolvo ferramentas que não apenas são estéticas, mas que resolvem gargalos
+                        operacionais reais e geram insights valiosos para o negócio.</p>
                 </div>
             </div>
 
             <div class="faq-item">
-                <button class="faq-btn">Quanto tempo leva para desenvolver um projeto? <i class="fas fa-plus"></i></button>
+                <button class="faq-btn">Quanto tempo leva para desenvolver um projeto? <i
+                        class="fas fa-plus"></i></button>
                 <div class="faq-ans">
-                    <p>O prazo varia conforme a complexidade: uma Landing Page costuma levar entre 5 a 10 dias úteis, enquanto sistemas mais robustos de dados ou e-commerces podem levar de 4 a 8 semanas. Trabalho sempre com cronogramas transparentes e entregas parciais.</p>
+                    <p>O prazo varia conforme a complexidade: uma Landing Page costuma levar entre 5 a 10 dias úteis,
+                        enquanto sistemas mais robustos de dados ou e-commerces podem levar de 4 a 8 semanas. Trabalho
+                        sempre com cronogramas transparentes e entregas parciais.</p>
                 </div>
             </div>
 
             <div class="faq-item">
-                <button class="faq-btn">Trabalhas com empresas de fora do Rio Grande do Sul? <i class="fas fa-plus"></i></button>
+                <button class="faq-btn">Trabalhas com empresas de fora do Rio Grande do Sul? <i
+                        class="fas fa-plus"></i></button>
                 <div class="faq-ans">
-                    <p>Sim! Atendo clientes de forma totalmente remota em qualquer localidade. Utilizo ferramentas de gestão de projetos e reuniões por vídeo para garantir que a comunicação seja fluida e que o cliente esteja sempre a par de cada etapa do desenvolvimento.</p>
+                    <p>Sim! Atendo clientes de forma totalmente remota em qualquer localidade. Utilizo ferramentas de
+                        gestão de projetos e reuniões por vídeo para garantir que a comunicação seja fluida e que o
+                        cliente esteja sempre a par de cada etapa do desenvolvimento.</p>
                 </div>
             </div>
 
             <div class="faq-item">
-                <button class="faq-btn">Quais tecnologias são utilizadas nos projetos? <i class="fas fa-plus"></i></button>
+                <button class="faq-btn">Quais tecnologias são utilizadas nos projetos? <i
+                        class="fas fa-plus"></i></button>
                 <div class="faq-ans">
-                    <p>Para Web, utilizo principalmente React.js, Node.js e Tailwind CSS. Na área de dados, o foco é Python (Pandas, Scikit-learn), SQL e Power BI. Escolho a tecnologia baseando-me na necessidade específica de performance e escalabilidade do seu negócio.</p>
+                    <p>Para Web, utilizo principalmente React.js, Node.js e Tailwind CSS. Na área de dados, o foco é
+                        Python (Pandas, Scikit-learn), SQL e Power BI. Escolho a tecnologia baseando-me na necessidade
+                        específica de performance e escalabilidade do seu negócio.</p>
                 </div>
             </div>
 
             <div class="faq-item">
-                <button class="faq-btn">Ofereces suporte técnico após a entrega do projeto? <i class="fas fa-plus"></i></button>
+                <button class="faq-btn">Ofereces suporte técnico após a entrega do projeto? <i
+                        class="fas fa-plus"></i></button>
                 <div class="faq-ans">
-                    <p>Sim, todos os meus projetos incluem um período de suporte gratuito de 30 dias para ajustes e correções. Também ofereço planos de manutenção mensal para garantir que o seu sistema ou site esteja sempre atualizado, seguro e performático.</p>
+                    <p>Sim, todos os meus projetos incluem um período de suporte gratuito de 30 dias para ajustes e
+                        correções. Também ofereço planos de manutenção mensal para garantir que o seu sistema ou site
+                        esteja sempre atualizado, seguro e performático.</p>
                 </div>
             </div>
         </section>
     </main>
 
     <!-- FOOTER -->
-    <footer id="contact">
-        <div class="container">
-            <div class="footer-logo-container">
-                <img src="/assets/logo.svg" alt="Brian Ail Logo" class="footer-logo-img" onerror="this.src='https://placehold.co/180x60/161b22/58a6ff?text=BRIAN+AIL'">
+   <footer class="footer-site">
+            <div class="footer-logo-main">
+                <img src="/assets/logo.svg" alt="Brian Ail Logo" onerror="this.src='https://placehold.co/180x60/161b22/58a6ff?text=BRIAN+AIL'">
             </div>
 
-            <p class="footer-description">
-                Unindo tecnologia de ponta e análise estratégica para transformar dados em inteligência de negócio e interfaces excepcionais.
+            <nav class="footer-nav-main">
+                <a href="/index.html#about">Sobre</a>
+                <a href="/index.html#services">Serviços</a>
+                <a href="/index.html#projects">Projetos</a>
+                <a href="/index.html#contact">Contacto</a>
+            </nav>
+
+            <div class="footer-social-main">
+                <a href="https://linkedin.com/in/brian-ail-b2748b168/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/brianail" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://instagram.com/brian_ail/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+
+            <p class="footer-tagline">
+                Brian Ail // &copy; 2026 // 
             </p>
-
-            <div class="footer-nav-central">
-                <a href="#about">Sobre</a>
-                <a href="#services">Serviços</a>
-                <a href="#projects">Projetos</a>
-                <a href="#skills">Skills</a>
-                <a href="#timeline">Jornada</a>
-                <a href="mailto:brianail.dev@gmail.com">Contacto</a>
-            </div>
-
-            <div class="footer-social-row">
-                <a href="https://linkedin.com/in/brian-ail-b2748b168/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://github.com/brianail" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://instagram.com/brian_ail/" target="_blank"><i class="fab fa-instagram"></i></a>
-            </div>
-
-            <div class="footer-copyright">
-                <p>&copy; 2026 Brian Ail. Todos os direitos reservados. Porto Alegre, Brasil.</p>
-            </div>
-        </div>
-    </footer>
+        </footer>
 
     <script>
         // Header Effect
@@ -940,7 +1352,7 @@
             btn.addEventListener('click', () => {
                 const item = btn.parentElement;
                 const wasActive = item.classList.contains('active');
-                
+
                 // Close all others
                 document.querySelectorAll('.faq-item').forEach(faq => {
                     faq.classList.remove('active');
@@ -983,4 +1395,5 @@
         window.addEventListener('load', type);
     </script>
 </body>
+
 </html>

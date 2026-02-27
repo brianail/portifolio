@@ -1,96 +1,210 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Página não encontrada - 404</title>
-  <link rel="stylesheet" href="/style.css" />
-  <style>
-    body {
-      background: #161b22;
-      color: #fff;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 | Lost in Data | Brian Ail</title>
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/4c65401d66.js" crossorigin="anonymous"></script>
 
-    main {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      padding: 2rem;
-      background: linear-gradient(135deg, #16181d);
-    }
+    <style>
+        :root {
+            --bg-color: #05070a;
+            --card-bg: rgba(13, 17, 23, 0.8);
+            --primary: #58a6ff;
+            --accent: #1f6feb;
+            --error-red: #f85149;
+            --text: #e6edf3;
+            --muted: #8b949e;
+            --glass-border: rgba(88, 166, 255, 0.15);
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
 
-    .box-404 {
-      background: linear-gradient(135deg, #1d2b64, #f8cdda);
-      border-radius: var(--border-radius);
-      box-shadow: 0 0 30px rgba(88, 166, 255, 0.08);
-      padding: 4rem 2rem;
-      max-width: 600px;
-      width: 100%;
-      text-align: center;
-      animation: fadeIn 0.6s ease-in-out;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    img {
-      display: block;
-      max-width: 480px;
-      width: 100%;
-      margin: 2rem auto;
-      opacity: 0.9;
-    }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            perspective: 1000px;
+        }
 
-    .erro-codigo {
-      font-size: 5rem;
-      color: var( --bg-color);
-      margin-bottom: 0.5rem;
-      text-shadow: 0 0 10px rgba(88, 166, 255, 0.3);
-    }
+        /* Animated Grid Background */
+        .grid-bg {
+            position: fixed;
+            top: 0; left: 0; width: 200%; height: 200%;
+            background-image: 
+                linear-gradient(rgba(88, 166, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(88, 166, 255, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+            transform: rotateX(60deg) translateY(-50%);
+            animation: gridMove 20s linear infinite;
+            z-index: -1;
+            mask-image: radial-gradient(circle, black, transparent 80%);
+        }
 
-    .mensagem-erro {
-      font-size: 1.25rem;
-      color: var( --highlight);
-      margin-bottom: 2rem;
-      line-height: 1.6;
-    }
+        @keyframes gridMove {
+            0% { transform: rotateX(60deg) translateY(-50%) translateX(0); }
+            100% { transform: rotateX(60deg) translateY(-50%) translateX(-50px); }
+        }
 
-    a.btn-voltar {
-      background-color: var(--accent);
-      color: #fff;
-      padding: 0.8rem 1.5rem;
-      border-radius: var(--border-radius);
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s ease, transform 0.3s ease;
-    }
+        .error-wrapper {
+            text-align: center;
+            padding: 2rem;
+            width: 100%;
+            max-width: 700px;
+            z-index: 10;
+        }
 
-    a.btn-voltar:hover {
-      background-color: #3081d0;
-      transform: scale(1.05);
-    }
+        .error-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            padding: 5rem 3rem;
+            border-radius: 40px;
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.6);
+            transform-style: preserve-3d;
+            transition: transform 0.1s ease;
+        }
 
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: scale(0.98);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-  </style>
+        /* Glitch Effect 404 */
+        .glitch {
+            font-size: clamp(6rem, 15vw, 10rem);
+            font-weight: 800;
+            position: relative;
+            color: #fff;
+            margin-bottom: 1rem;
+            text-shadow: 0.05em 0 0 var(--primary), -0.025em -0.05em 0 var(--accent),
+                         0.025em 0.05em 0 var(--error-red);
+            animation: glitch 1.5s infinite;
+        }
+
+        @keyframes glitch {
+            0% { text-shadow: 0.05em 0 0 var(--primary), -0.025em -0.05em 0 var(--accent), 0.025em 0.05em 0 var(--error-red); }
+            14% { text-shadow: 0.05em 0 0 var(--primary), -0.025em -0.05em 0 var(--accent), 0.025em 0.05em 0 var(--error-red); }
+            15% { text-shadow: -0.05em -0.025em 0 var(--primary), 0.025em 0.025em 0 var(--accent), -0.05em -0.05em 0 var(--error-red); }
+            49% { text-shadow: -0.05em -0.025em 0 var(--primary), 0.025em 0.025em 0 var(--accent), -0.05em -0.05em 0 var(--error-red); }
+            50% { text-shadow: 0.025em 0.05em 0 var(--primary), 0.05em 0 0 var(--accent), 0.05em -0.025em 0 var(--error-red); }
+            99% { text-shadow: 0.025em 0.05em 0 var(--primary), 0.05em 0 0 var(--accent), 0.05em -0.025em 0 var(--error-red); }
+            100% { text-shadow: -0.025em 0 0 var(--primary), -0.025em -0.025em 0 var(--accent), -0.025em -0.05em 0 var(--error-red); }
+        }
+
+        .debug-console {
+            background: rgba(0, 0, 0, 0.4);
+            font-family: 'Fira Code', monospace;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            text-align: left;
+            font-size: 0.9rem;
+            color: #a5d6ff;
+            border-left: 3px solid var(--primary);
+        }
+
+        .debug-console span { color: var(--muted); }
+        .debug-console .keyword { color: #ff7b72; }
+        .debug-console .function { color: #d2a8ff; }
+
+        .btn-home {
+            margin-top: 2rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--accent);
+            color: white;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: 1px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-home::before {
+            content: "";
+            position: absolute;
+            top: 0; left: -100%; width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .btn-home:hover::before { left: 100%; }
+
+        .btn-home:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(31, 111, 235, 0.4);
+            border-color: var(--primary);
+        }
+
+        @media (max-width: 480px) {
+            .error-card { padding: 3rem 1.5rem; }
+            .debug-console { display: none; }
+        }
+    </style>
 </head>
 <body>
-  <main>
-    <div class="box-404">
-      <img src="/assets/undraw_page-not-found_6wni.svg" alt="Erro 404">
-      <p class="mensagem-erro">Oops! A página que você está procurando não foi encontrada.</p>
-      <a href="/" class="btn-voltar">Voltar para a página inicial</a>
+
+    <div class="grid-bg"></div>
+
+    <div class="error-wrapper">
+        <div class="error-card" id="card">
+            <div class="glitch" data-text="404">404</div>
+            
+            <h1 style="font-size: 2rem; margin-bottom: 0.5rem;">Erro de Segmentação</h1>
+            <p style="color: var(--muted);">O caminho solicitado não retornou resultados no banco de dados.</p>
+
+            <div class="debug-console">
+                <div><span>></span> <span class="keyword">try</span> {</div>
+                <div style="padding-left: 1.5rem;"> <span class="function">find_page</span>(request.url); </div>
+                <div>} <span class="keyword">catch</span> (PageNotFoundException e) {</div>
+                <div style="padding-left: 1.5rem;"> console.<span class="function">log</span>(<span style="color: #a5d6ff;">"Redirecionando..."</span>); </div>
+                <div>}</div>
+            </div>
+            
+            <a href="/" class="btn-home">
+                <i class="fas fa-terminal"></i>
+                Reestabelecer Conexão
+            </a>
+        </div>
+        
+        <p style="margin-top: 3rem; font-size: 0.8rem; opacity: 0.4; letter-spacing: 2px;">
+            BRIAN AIL // SYSTEM ENGINE
+        </p>
     </div>
-  </main>
+
+    <script>
+        const card = document.getElementById('card');
+        const wrapper = document.querySelector('body');
+
+        wrapper.addEventListener('mousemove', (e) => {
+            let xAxis = (window.innerWidth / 2 - e.pageX) / 40;
+            let yAxis = (window.innerHeight / 2 - e.pageY) / 40;
+            card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+        });
+
+        wrapper.addEventListener('mouseenter', () => {
+            card.style.transition = 'none';
+        });
+
+        wrapper.addEventListener('mouseleave', () => {
+            card.style.transition = 'transform 0.5s ease';
+            card.style.transform = `rotateY(0deg) rotateX(0deg)`;
+        });
+    </script>
 </body>
 </html>
