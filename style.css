@@ -586,7 +586,7 @@ nav a:hover::after {
   border-radius: 16px;
   background: var(--card-bg);
   border: 1px solid var(--glass-border);
-  overflow: hidden;
+  overflow: visible; /* ← aqui */
   transition: border-color 0.3s ease;
 }
 
@@ -609,18 +609,9 @@ nav a:hover::after {
   font-size: 1.1rem;
 }
 
-.faq-btn i {
-  transition: transform 0.4s ease;
-  flex-shrink: 0;
-}
-
-.faq-item.active .faq-btn i {
-  transform: rotate(45deg);
-}
-
 .faq-ans {
   max-height: 0;
-  overflow: hidden;
+  overflow: hidden; /* ← o hidden fica aqui */
   padding: 0 2rem;
   color: var(--muted);
   transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
