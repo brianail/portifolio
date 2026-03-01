@@ -78,6 +78,7 @@ header.scrolled {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
 .logo {
@@ -90,20 +91,40 @@ header.scrolled {
 
 nav ul {
   display: flex;
-  gap: 2rem;
+  gap: 2.5rem;
   list-style: none;
+  align-items: center;
 }
 
 nav a {
   text-decoration: none;
-  color: var(--muted);
+  color: var(--text);
   font-weight: 500;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   transition: var(--transition);
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+/* Efeito de sublinhado animado no hover (Desktop) */
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--primary);
+  transition: width 0.3s ease;
+  border-radius: 2px;
 }
 
 nav a:hover {
   color: var(--primary);
+}
+
+nav a:hover::after {
+  width: 100%;
 }
 
 .section-title {
@@ -566,6 +587,11 @@ nav a:hover {
   background: var(--card-bg);
   border: 1px solid var(--glass-border);
   overflow: hidden;
+  transition: border-color 0.3s ease;
+}
+
+.faq-item.active {
+  border-color: var(--primary);
 }
 
 .faq-btn {
@@ -583,17 +609,27 @@ nav a:hover {
   font-size: 1.1rem;
 }
 
+.faq-btn i {
+  transition: transform 0.4s ease;
+  flex-shrink: 0;
+}
+
+.faq-item.active .faq-btn i {
+  transform: rotate(45deg);
+}
+
 .faq-ans {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.4s ease-out;
   padding: 0 2rem;
   color: var(--muted);
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              padding 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .faq-item.active .faq-ans {
   max-height: 500px;
-  padding-bottom: 1.5rem;
+  padding: 0 2rem 1.5rem;
 }
 
 /* --- FOOTER --- */
@@ -617,15 +653,8 @@ nav a:hover {
 }
 
 @keyframes floatLogo {
-
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-10px);
-  }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
 .footer-nav-main {
@@ -695,20 +724,73 @@ nav a:hover {
   background: none;
   border: none;
   color: #fff;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+  z-index: 1001; /* Garante que fica acima do menu dropdown */
 }
 
-/* Tablets */
+#btn-mobile.active {
+  color: var(--primary);
+  transform: rotate(90deg);
+}
+
+/* =========================================
+   MEDIA QUERIES - TABLETS & MOBILE MENU
+   ========================================= */
 @media (max-width: 992px) {
   .container {
     padding: 80px 1.5rem;
   }
 
+  /* --- MENU MOBILE CONFIGURAÇÃO --- */
+  #btn-mobile {
+    display: block;
+    margin-left: auto;
+  }
+
+  nav ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(11, 14, 20, 0.98);
+    backdrop-filter: blur(15px);
+    padding: 2rem 1.5rem;
+    gap: 1.5rem;
+    border-bottom: 1px solid var(--glass-border);
+    flex-direction: column;
+    text-align: center;
+    
+    /* Configuração para transição suave */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  nav ul.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  nav a {
+    font-size: 1.15rem;
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+  }
+
+  /* Remove o sublinhado animado no telemóvel para ficar mais limpo */
+  nav a::after {
+    display: none;
+  }
+  /* ---------------------------------------------------------------- */
+
   /* Correção da Grade de Projetos para 1 coluna nos Mobile/Tablet */
   .projects-grid {
     grid-template-columns: 1fr;
-    /* Força 1 coluna apenas */
     gap: 2rem;
   }
 
@@ -744,7 +826,9 @@ nav a:hover {
   }
 }
 
-/* Smartphones */
+/* =========================================
+   MEDIA QUERIES - SMARTPHONES 
+   ========================================= */
 @media (max-width: 768px) {
   .container {
     padding: 60px 1.25rem;
@@ -753,49 +837,6 @@ nav a:hover {
   .section-title {
     font-size: 2rem;
     margin-bottom: 2.5rem;
-  }
-
-  /* Navbar Mobile Ajustada */
-  #btn-mobile {
-    display: block;
-    margin-left: auto;
-    /* Força o ícone hambúrguer totalmente para a direita */
-  }
-
-  nav {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-  }
-
-  nav ul {
-    background: rgba(11, 14, 20, 0.95);
-    backdrop-filter: blur(15px);
-    padding: 2rem 1.5rem;
-    gap: 1.5rem;
-    border-bottom: 1px solid var(--glass-border);
-    flex-direction: column;
-
-    /* Animação suave */
-    opacity: 0;
-    transform: translateY(-10px);
-    pointer-events: none;
-    transition: all 0.3s ease-in-out;
-    display: flex;
-    width: 100%;
-  }
-
-  nav ul.active {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
-  }
-
-  nav a {
-    font-size: 1.1rem;
-    display: block;
-    width: 100%;
   }
 
   /* Hero Mobile */
@@ -870,7 +911,9 @@ nav a:hover {
   }
 }
 
-/* Small Phones (iPhone SE, etc) */
+/* =========================================
+   MEDIA QUERIES - SMALL PHONES 
+   ========================================= */
 @media (max-width: 480px) {
   .hero h1 {
     font-size: 1.8rem;
@@ -903,15 +946,12 @@ nav a:hover {
     width: 100%;
     justify-content: center;
   }
-
-  /* Skills full width no celular pequeno */
 }
 
 @keyframes blob {
   0% {
     border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
   }
-
   100% {
     border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
   }
