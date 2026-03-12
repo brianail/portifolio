@@ -1,6 +1,3 @@
-// =========================================
-// HEADER SCROLL
-// =========================================
 window.addEventListener('scroll', () => {
     const header = document.querySelector('header');
     if (header) {
@@ -8,9 +5,6 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// =========================================
-// MENU MOBILE
-// =========================================
 const btnMobile = document.getElementById('btn-mobile');
 const menu = document.querySelector('nav ul');
 const navLinks = document.querySelectorAll('nav a');
@@ -51,9 +45,6 @@ if (btnMobile && menu) {
     });
 }
 
-// =========================================
-// SCROLL REVEAL
-// =========================================
 if (typeof ScrollReveal !== 'undefined') {
     const sr = ScrollReveal({ origin: 'bottom', distance: '40px', duration: 900, reset: false, easing: 'cubic-bezier(0.4, 0, 0.2, 1)' });
     sr.reveal('.section-title', { delay: 100 });
@@ -71,9 +62,6 @@ if (typeof ScrollReveal !== 'undefined') {
     sr.reveal('.clients-strip', { delay: 200 });
 }
 
-// =========================================
-// CONTADOR ANIMADO DE STATS
-// =========================================
 function animateCounter(el, target, suffix = '') {
     let current = 0;
     const step = Math.ceil(target / 60);
@@ -115,9 +103,6 @@ const statsObserver = new IntersectionObserver((entries) => {
 const heroMetrics = document.querySelector('.hero-metrics');
 if (heroMetrics) statsObserver.observe(heroMetrics);
 
-// =========================================
-// ACTIVE NAV LINK ON SCROLL
-// =========================================
 const sections = document.querySelectorAll('section[id]');
 
 window.addEventListener('scroll', () => {
@@ -136,12 +121,7 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// =========================================
-// CODE BANNER — DIGITAÇÃO AO VIVO
-// =========================================
 (function () {
-    // O código final que queremos mostrar
-    // Cada token: [texto, classe_css]  — classe '' = texto normal
     const CODE_TOKENS = [
         ['function ', 'kw'], ['apresentar', 'fn'], ['() {', 'pun'],
         ['\n', ''],
@@ -164,15 +144,12 @@ window.addEventListener('scroll', () => {
         ['// ✓ Pronto para transformar sua ideia em código', 'cmt'],
     ];
 
-    // Velocidade de digitação por tipo de caractere (ms)
     function charDelay(char) {
         if (char === '\n') return 80;
         if (char === ' ' || char === ',' || char === ';') return 30;
-        // Simula ritmo humano com leve variação aleatória
         return 35 + Math.random() * 30;
     }
 
-    // Constrói a sequência de caracteres com suas classes
     const CHARS = [];
     for (const [text, cls] of CODE_TOKENS) {
         for (const ch of text) {
@@ -190,12 +167,11 @@ window.addEventListener('scroll', () => {
                 txt += chars[i].ch;
                 i++;
             }
-            // Preserva espaços múltiplos e escapa HTML
             const escaped = txt
                 .replace(/&/g, '&amp;')
                 .replace(/</g, '&lt;')
                 .replace(/>/g, '&gt;')
-                .replace(/ {2,}/g, m => '&nbsp;'.repeat(m.length)); // mantém alinhamento
+                .replace(/ {2,}/g, m => '&nbsp;'.repeat(m.length));
             if (cls) {
                 html += `<span class="${cls}">${escaped}</span>`;
             } else {
@@ -209,7 +185,6 @@ window.addEventListener('scroll', () => {
         const area = document.getElementById('code-area');
         if (!area) return;
 
-        // Insere cursor imediatamente
         area.innerHTML = '<span class="type-cursor"></span>';
 
         let typed = [];
@@ -217,7 +192,6 @@ window.addEventListener('scroll', () => {
 
         function typeNext() {
             if (idx >= CHARS.length) {
-                // Terminou — cursor continua piscando na última posição
                 area.innerHTML = buildHTML(typed) + '<span class="type-cursor"></span>';
                 return;
             }
