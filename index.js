@@ -1,42 +1,35 @@
-// Adiciona classe 'scrolled' ao header ao rolar a página
+// =========================================
+// HEADER SCROLL
+// =========================================
 window.addEventListener('scroll', () => {
-    // Busca a tag genérica header em vez de id para combinar com o CSS
-    const header = document.querySelector('header'); 
+    const header = document.querySelector('header');
     if (header) {
         header.classList.toggle('scrolled', window.scrollY > 50);
     }
 });
 
-// Controle do Menu Mobile
+// =========================================
+// MENU MOBILE
+// =========================================
 const btnMobile = document.getElementById('btn-mobile');
-const menu = document.querySelector('nav ul'); // O CSS usa 'nav ul' para o menu
-const navLinks = document.querySelectorAll('nav a'); // O CSS usa 'nav a' para os links
+const menu = document.querySelector('nav ul');
+const navLinks = document.querySelectorAll('nav a');
 
 if (btnMobile && menu) {
     btnMobile.addEventListener('click', () => {
         menu.classList.toggle('active');
-        btnMobile.classList.toggle('active'); // Adiciona rotação ao ícone baseada no CSS
-        
-        // Removemos o cálculo de getHeaderHeight() porque o 'top: 100%' no CSS já resolve isso
-        
+        btnMobile.classList.toggle('active');
         const icon = btnMobile.querySelector('i');
         if (icon) {
-            if (menu.classList.contains('active')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            }
+            icon.classList.toggle('fa-bars', !menu.classList.contains('active'));
+            icon.classList.toggle('fa-times', menu.classList.contains('active'));
         }
     });
 
-    // Fecha menu ao clicar em um link
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             menu.classList.remove('active');
             btnMobile.classList.remove('active');
-            
             const icon = btnMobile.querySelector('i');
             if (icon) {
                 icon.classList.remove('fa-times');
@@ -45,12 +38,10 @@ if (btnMobile && menu) {
         });
     });
 
-    // Fecha menu ao clicar fora
     document.addEventListener('click', (e) => {
         if (!menu.contains(e.target) && !btnMobile.contains(e.target) && menu.classList.contains('active')) {
             menu.classList.remove('active');
             btnMobile.classList.remove('active');
-            
             const icon = btnMobile.querySelector('i');
             if (icon) {
                 icon.classList.remove('fa-times');
@@ -60,62 +51,188 @@ if (btnMobile && menu) {
     });
 }
 
-// Controle do FAQ (Acordeão)
-document.querySelectorAll('.faq-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-        const item = btn.parentElement;
-        const wasActive = item.classList.contains('active');
+// =========================================
+// SCROLL REVEAL
+// =========================================
+if (typeof ScrollReveal !== 'undefined') {
+    const sr = ScrollReveal({ origin: 'bottom', distance: '40px', duration: 900, reset: false, easing: 'cubic-bezier(0.4, 0, 0.2, 1)' });
+    sr.reveal('.section-title', { delay: 100 });
+    sr.reveal('.label-tag', { delay: 50 });
+    sr.reveal('.about-text', { origin: 'left', distance: '40px', delay: 100 });
+    sr.reveal('.about-img-container', { origin: 'right', distance: '40px', delay: 200 });
+    sr.reveal('.service-card', { interval: 100 });
+    sr.reveal('.project-card', { interval: 120 });
+    sr.reveal('.testimonial-card', { interval: 100 });
+    sr.reveal('.process-step', { interval: 100 });
+    sr.reveal('.hero-metrics', { delay: 600 });
+    sr.reveal('.contact-content h2', { delay: 100 });
+    sr.reveal('.contact-ctas', { delay: 200 });
+    sr.reveal('.contact-extras', { delay: 300 });
+    sr.reveal('.clients-strip', { delay: 200 });
+}
 
-        // Fecha todos
-        document.querySelectorAll('.faq-item').forEach(faq => {
-            faq.classList.remove('active');
-            const icon = faq.querySelector('i');
-            if (icon) {
-                icon.classList.remove('fa-minus');
-                icon.classList.add('fa-plus');
-            }
-        });
+// =========================================
+// CONTADOR ANIMADO DE STATS
+// =========================================
+function animateCounter(el, target, suffix = '') {
+    let current = 0;
+    const step = Math.ceil(target / 60);
+    const timer = setInterval(() => {
+        current += step;
+        if (current >= target) {
+            el.textContent = target + suffix;
+            clearInterval(timer);
+        } else {
+            el.textContent = current + suffix;
+        }
+    }, 25);
+}
 
-        // Abre somente se não estava aberto
-        if (!wasActive) {
-            item.classList.add('active');
-            const icon = btn.querySelector('i');
-            if (icon) {
-                icon.classList.remove('fa-plus');
-                icon.classList.add('fa-minus');
-            }
+const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const metrics = entry.target.querySelectorAll('.metric strong');
+            const values  = [20, 6, 100];
+            const suffixes = ['+', '+', '%'];
+            metrics.forEach((el, i) => {
+                // strip inner <span> text, animate only the number part
+                const span = el.querySelector('span');
+                const suffix = span ? span.outerHTML : suffixes[i];
+                let current = 0;
+                const target = values[i];
+                const step = Math.ceil(target / 50);
+                const timer = setInterval(() => {
+                    current = Math.min(current + step, target);
+                    el.innerHTML = current + suffix;
+                    if (current >= target) clearInterval(timer);
+                }, 20);
+            });
+            statsObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.5 });
+
+const heroMetrics = document.querySelector('.hero-metrics');
+if (heroMetrics) statsObserver.observe(heroMetrics);
+
+// =========================================
+// ACTIVE NAV LINK ON SCROLL
+// =========================================
+const sections = document.querySelectorAll('section[id]');
+
+window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+        if (window.scrollY >= section.offsetTop - 150) {
+            current = section.getAttribute('id');
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('active');
         }
     });
 });
 
-// Inicialização do ScrollReveal (se a biblioteca estiver incluída no HTML)
-if (typeof ScrollReveal !== 'undefined') {
-    const sr = ScrollReveal({ origin: 'bottom', distance: '50px', duration: 1000, reset: false });
-    sr.reveal('.section-title');
-    sr.reveal('.about-text', { origin: 'left', distance: '30px' });
-    sr.reveal('.about-img-container', { origin: 'right', distance: '30px' });
-    sr.reveal('.service-card', { interval: 100 });
-    sr.reveal('.project-card', { interval: 100 });
-    sr.reveal('.client-card', { interval: 100 });
-    sr.reveal('.timeline-item', { interval: 150 });
-    sr.reveal('.skill-card', { interval: 50 });
-    sr.reveal('.faq-item', { interval: 100 });
-}
+// =========================================
+// CODE BANNER — DIGITAÇÃO AO VIVO
+// =========================================
+(function () {
+    // O código final que queremos mostrar
+    // Cada token: [texto, classe_css]  — classe '' = texto normal
+    const CODE_TOKENS = [
+        ['function ', 'kw'], ['apresentar', 'fn'], ['() {', 'pun'],
+        ['\n', ''],
+        ['  const ', 'kw'], ['dev', 'var'], [' = {', 'pun'],
+        ['\n', ''],
+        ['    nome         ', 'prop'], [': ', 'pun'], ['"Brian Ail"', 'str'], [',', 'pun'],
+        ['\n', ''],
+        ['    missão       ', 'prop'], [': ', 'pun'], ['"Ideias que viram resultados"', 'str'], [',', 'pun'],
+        ['\n', ''],
+        ['    especialidade', 'prop'], [': ', 'pun'], ['"Web · Auto · Dados"', 'str'], [',', 'pun'],
+        ['\n', ''],
+        ['  };', 'pun'],
+        ['\n', ''],
+        ['\n', ''],
+        ['  ', ''], ['return ', 'kw'], ['dev', 'var'], ['.missão', 'prop'], [';', 'pun'],
+        ['\n', ''],
+        ['}', 'pun'],
+        ['\n', ''],
+        ['\n', ''],
+        ['// ✓ Pronto para transformar sua ideia em código', 'cmt'],
+    ];
 
-// Efeito Typewriter (Máquina de Escrever)
-window.addEventListener('load', () => {
-    const typewriter = document.getElementById('typewriter');
-    if (!typewriter) return;
-    
-    const text = typewriter.innerHTML;
-    typewriter.innerHTML = '';
-    let i = 0;
-    
-    function type() {
-        if (i < text.length) {
-            typewriter.innerHTML += text.charAt(i++);
-            setTimeout(type, 35);
+    // Velocidade de digitação por tipo de caractere (ms)
+    function charDelay(char) {
+        if (char === '\n') return 80;
+        if (char === ' ' || char === ',' || char === ';') return 30;
+        // Simula ritmo humano com leve variação aleatória
+        return 35 + Math.random() * 30;
+    }
+
+    // Constrói a sequência de caracteres com suas classes
+    const CHARS = [];
+    for (const [text, cls] of CODE_TOKENS) {
+        for (const ch of text) {
+            CHARS.push({ ch, cls });
         }
     }
-    type();
-});
+
+    function buildHTML(chars) {
+        let html = '';
+        let i = 0;
+        while (i < chars.length) {
+            const cls = chars[i].cls;
+            let txt = '';
+            while (i < chars.length && chars[i].cls === cls) {
+                txt += chars[i].ch;
+                i++;
+            }
+            // Preserva espaços múltiplos e escapa HTML
+            const escaped = txt
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/ {2,}/g, m => '&nbsp;'.repeat(m.length)); // mantém alinhamento
+            if (cls) {
+                html += `<span class="${cls}">${escaped}</span>`;
+            } else {
+                html += escaped;
+            }
+        }
+        return html;
+    }
+
+    function startTyping() {
+        const area = document.getElementById('code-area');
+        if (!area) return;
+
+        // Insere cursor imediatamente
+        area.innerHTML = '<span class="type-cursor"></span>';
+
+        let typed = [];
+        let idx = 0;
+
+        function typeNext() {
+            if (idx >= CHARS.length) {
+                // Terminou — cursor continua piscando na última posição
+                area.innerHTML = buildHTML(typed) + '<span class="type-cursor"></span>';
+                return;
+            }
+
+            typed.push(CHARS[idx]);
+            area.innerHTML = buildHTML(typed) + '<span class="type-cursor"></span>';
+            idx++;
+
+            setTimeout(typeNext, charDelay(CHARS[idx - 1].ch));
+        }
+
+        typeNext();
+    }
+
+    window.addEventListener('load', () => {
+        setTimeout(startTyping, 700);
+    });
+})();
