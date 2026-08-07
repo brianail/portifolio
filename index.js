@@ -209,4 +209,23 @@ window.addEventListener('scroll', () => {
     window.addEventListener('load', () => {
         setTimeout(startTyping, 700);
     });
+
+    // --- FAQ Accordion Logic ---
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        if (question) {
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                
+                // Fecha todas as outras respostas
+                faqItems.forEach(i => i.classList.remove('active'));
+                
+                // Abre apenas a que foi clicada (se estava fechada)
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        }
+    });
 })();
