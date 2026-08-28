@@ -300,12 +300,14 @@ nav a.active::after { width: 100%; }
   animation: fadeUp 0.9s var(--ease) 0.3s both;
   width: 520px;
   max-width: 100%;
+  min-width: 0;
   flex-shrink: 0;
   align-self: start;
 }
 
 .code-banner {
   width: 100%;
+  min-width: 0;
   border-radius: 14px;
   overflow: hidden;
   box-shadow:
@@ -350,6 +352,7 @@ nav a.active::after { width: 100%; }
 .mac-body {
   background: #0d1117;
   display: flex;
+  min-width: 0;
   padding: 1.5rem 0;
   position: relative;
   overflow: hidden;
@@ -382,6 +385,7 @@ nav a.active::after { width: 100%; }
 
 .code-area {
   flex: 1;
+  min-width: 0;
   font-family: var(--font-mono);
   font-size: 0.92rem;
   line-height: 1.75rem;
@@ -389,6 +393,7 @@ nav a.active::after { width: 100%; }
   padding: 0 1.5rem 0 1.2rem;
   margin: 0;
   white-space: pre;
+  text-align: left;
   overflow-x: auto;
   background: transparent;
   border: none;
@@ -1608,4 +1613,118 @@ nav a.active::after { width: 100%; }
   .contact-inner h2 { font-size: 1.7rem; }
   .footer-inner { gap: 1.5rem; }
   .footer-logo { font-size: 1.2rem; }
+  .code-area { font-size: 0.75rem; line-height: 1.5rem; padding: 0 1rem 0 0.8rem; }
+  .line-numbers span { font-size: 0.65rem; line-height: 1.5rem; }
+  .line-numbers { min-width: 36px; padding: 0 0.6rem 0 0.8rem; }
+}
+
+/* --- Tech Stack Section --- */
+.tech-stack {
+  overflow: hidden;
+  padding: 3rem 0;
+  background: rgba(13, 17, 23, 0.4);
+  border-top: 1px solid rgba(255,255,255,0.03);
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  margin-top: -2rem;
+  margin-bottom: 2rem;
+}
+
+.tech-stack-inner {
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.tech-track {
+  display: flex;
+  gap: 2.5rem;
+  padding-left: 2.5rem;
+  animation: scrollTech 25s linear infinite;
+  width: max-content;
+}
+
+.tech-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  color: var(--muted);
+  white-space: nowrap;
+  background: rgba(255,255,255,0.02);
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  border: 1px solid rgba(255,255,255,0.05);
+  transition: all 0.3s ease;
+}
+
+.tech-item:hover {
+  color: #fff;
+  border-color: var(--accent);
+  background: rgba(88, 166, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+@keyframes scrollTech {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-50% - 1.25rem)); }
+}
+
+/* --- Cookie Banner (LGPD) --- */
+.cookie-banner {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(150%);
+  width: 90%;
+  max-width: 600px;
+  background: rgba(13, 17, 23, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(88, 166, 255, 0.2);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  z-index: 9999;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cookie-banner.show {
+  transform: translateX(-50%) translateY(0);
+}
+
+.cookie-banner.hidden {
+  display: none !important;
+}
+
+.cookie-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cookie-content p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .cookie-banner {
+    flex-direction: column;
+    text-align: center;
+    bottom: 10px;
+    padding: 1.5rem;
+  }
+  .cookie-content {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  #accept-cookies { width: 100%; }
 }

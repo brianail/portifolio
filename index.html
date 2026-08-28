@@ -39,8 +39,17 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
         rel="stylesheet">
-    <script src="https://kit.fontawesome.com/4c65401d66.js" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/scrollreveal"></script>
+    <script defer src="https://kit.fontawesome.com/4c65401d66.js" crossorigin="anonymous"></script>
+    <script defer src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8M3ZB5KZ4V"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-8M3ZB5KZ4V');
+    </script>
 </head>
 
 <body>
@@ -154,6 +163,7 @@
                     </p>
 
                     <div class="skills-pills">
+                        <span>Apps iOS (Swift)</span>
                         <span>Web Design</span>
                         <span>Redes Sociais</span>
                         <span>Tráfego Pago</span>
@@ -167,6 +177,35 @@
                         Conversar sobre seu projeto
                         <i class="fas fa-arrow-right"></i>
                     </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="tech-stack" class="tech-stack">
+            <div class="tech-stack-inner">
+                <div class="tech-track">
+                    <div class="tech-item"><i class="fab fa-html5"></i> HTML5</div>
+                    <div class="tech-item"><i class="fab fa-css3-alt"></i> CSS3</div>
+                    <div class="tech-item"><i class="fab fa-js"></i> JavaScript</div>
+                    <div class="tech-item"><i class="fab fa-python"></i> Python</div>
+                    <div class="tech-item"><i class="fab fa-node-js"></i> Node.js</div>
+                    <div class="tech-item"><i class="fab fa-swift"></i> Swift</div>
+                    <div class="tech-item"><i class="fab fa-git-alt"></i> Git</div>
+                    <div class="tech-item"><i class="fab fa-figma"></i> Figma</div>
+                    <div class="tech-item"><i class="fab fa-google"></i> Google Ads</div>
+                    <div class="tech-item"><i class="fab fa-facebook"></i> Meta Ads</div>
+                    
+                    <!-- Duplicate for infinite scroll loop -->
+                    <div class="tech-item" aria-hidden="true"><i class="fab fa-html5"></i> HTML5</div>
+                    <div class="tech-item" aria-hidden="true"><i class="fab fa-css3-alt"></i> CSS3</div>
+                    <div class="tech-item" aria-hidden="true"><i class="fab fa-js"></i> JavaScript</div>
+                    <div class="tech-item" aria-hidden="true"><i class="fab fa-python"></i> Python</div>
+                    <div class="tech-item" aria-hidden="true"><i class="fab fa-node-js"></i> Node.js</div>
+                    <div class="tech-item" aria-hidden="true"><i class="fab fa-swift"></i> Swift</div>
+                    <div class="tech-item" aria-hidden="true"><i class="fab fa-git-alt"></i> Git</div>
+                    <div class="tech-item" aria-hidden="true"><i class="fab fa-figma"></i> Figma</div>
+                    <div class="tech-item" aria-hidden="true"><i class="fab fa-google"></i> Google Ads</div>
+                    <div class="tech-item" aria-hidden="true"><i class="fab fa-facebook"></i> Meta Ads</div>
                 </div>
             </div>
         </section>
@@ -235,6 +274,21 @@
                             <li><i class="fas fa-check"></i> Escala de vendas previsível</li>
                         </ul>
                         <span class="service-time">Foco total em ROI (Retorno)</span>
+                    </div>
+
+                    <div class="service-card service-big">
+                        <div class="service-icon-wrap">
+                            <i class="fab fa-apple"></i>
+                        </div>
+                        <h3>Desenvolvimento de Apps (iOS)</h3>
+                        <p>Criação de aplicativos mobile nativos para ecossistema Apple (iPhone/iPad) utilizando Swift. Foco em performance, segurança e design premium.</p>
+                        <ul class="service-list">
+                            <li><i class="fas fa-check"></i> Desenvolvimento Nativo em Swift</li>
+                            <li><i class="fas fa-check"></i> UI/UX intuitivo e moderno</li>
+                            <li><i class="fas fa-check"></i> Integração com sistemas via API</li>
+                            <li><i class="fas fa-check"></i> Suporte para publicação na App Store</li>
+                        </ul>
+                        <span class="service-time">Projetos sob medida</span>
                     </div>
                 </div>
             </div>
@@ -358,6 +412,26 @@
     </div>
 
 </a>
+
+                <div class="project-card no-link">
+                    <div class="project-media">
+                        <img loading="lazy" src="/assets/projetos/projeto-dsf-pmoc.png" alt="Sistema PMOC DSF"
+                            onerror="this.src='https://placehold.co/400x250/0d1117/58a6ff?text=Dashboard+DSF'">
+                        <div class="project-overlay private" style="background: rgba(13, 17, 23, 0.85); color: #58a6ff; border: 1px solid rgba(88, 166, 255, 0.2);">
+                            <span><i class="fas fa-tools"></i> Em Desenvolvimento</span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="tag-list">
+                            <span class="tag">Sistema Web</span>
+                            <span class="tag">Dashboard</span>
+                            <span class="tag">SaaS</span>
+                            <span class="tag">Engenharia</span>
+                        </div>
+                        <h3>Sistema de Gestão PMOC — DSF</h3>
+                        <p>Plataforma SaaS sob medida para gestão completa de PMOC (Plano de Manutenção, Operação e Controle). O sistema substitui planilhas manuais por um Dashboard em tempo real, gerando relatórios técnicos automatizados, organizando cronogramas de manutenção preventiva, controle de Ordens de Serviço (OS) e garantindo total conformidade técnica e legal com as normas da ANVISA.</p>
+                    </div>
+                </div>
 
                 <div class="project-card no-link">
                     <div class="project-media">
@@ -661,7 +735,14 @@
         </div>
     </footer>
 
-
+    <!-- Cookie Banner (LGPD) -->
+    <div id="cookie-banner" class="cookie-banner hidden">
+        <div class="cookie-content">
+            <i class="fas fa-cookie-bite" style="color: var(--accent);"></i>
+            <p>Usamos cookies para personalizar conteúdo, anúncios e analisar nosso tráfego. Ao continuar navegando, você concorda com nossa política.</p>
+        </div>
+        <button id="accept-cookies" class="btn btn-primary" style="padding: 0.5rem 1.5rem; font-size: 0.9rem;">Entendi</button>
+    </div>
 
     <noscript>
         <style>

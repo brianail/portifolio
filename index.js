@@ -228,4 +228,23 @@ window.addEventListener('scroll', () => {
             });
         }
     });
+
+    // --- LGPD Cookie Banner Logic ---
+    const cookieBanner = document.getElementById('cookie-banner');
+    const acceptCookiesBtn = document.getElementById('accept-cookies');
+
+    if (cookieBanner && acceptCookiesBtn) {
+        if (!localStorage.getItem('lgpd_cookies_accepted')) {
+            setTimeout(() => {
+                cookieBanner.classList.remove('hidden');
+                setTimeout(() => cookieBanner.classList.add('show'), 50);
+            }, 1500);
+        }
+
+        acceptCookiesBtn.addEventListener('click', () => {
+            localStorage.setItem('lgpd_cookies_accepted', 'true');
+            cookieBanner.classList.remove('show');
+            setTimeout(() => cookieBanner.classList.add('hidden'), 500);
+        });
+    }
 })();
