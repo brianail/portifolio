@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 420">
+  <defs>
+    <linearGradient id="plateV" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141922"/>
+      <stop offset="100%" stop-color="#0B0E14"/>
+    </linearGradient>
+  </defs>
+
+  <!-- icon mark, centered -->
+  <rect x="146" y="24" width="228" height="228" rx="50" fill="url(#plateV)" stroke="#232A38" stroke-width="2"/>
+  <text x="227" y="180" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="142" fill="#FFFFFF" text-anchor="middle">B</text>
+  <rect x="293" y="154" width="56" height="17" rx="4" fill="#58A6FF"/>
+
+  <!-- wordmark, centered below -->
+  <text x="260" y="325" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="60" letter-spacing="-1" text-anchor="middle">
+    <tspan fill="#FFFFFF">brian</tspan><tspan fill="#58A6FF">_</tspan><tspan fill="#FFFFFF">ail</tspan>
+  </text>
+
+  <!-- tagline, centered -->
+  <text x="260" y="364" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="16" letter-spacing="2.5" fill="#8A93A3" text-anchor="middle">DESENVOLVEDOR WEB &amp; AUTOMAÇÃO</text>
+</svg>
